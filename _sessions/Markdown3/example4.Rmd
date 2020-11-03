@@ -1,0 +1,46 @@
+---
+title: "Markdown"
+output: html_document
+---
+
+```{r setup, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = F, fig.width = 8, fig.height = 8)
+
+
+```
+
+
+<style>
+.chunk {
+  color: #333;
+  background-color: "white";
+  border-radius: 0px;
+  margin: 0 0 10px;
+  display: block;
+  font-size: 14px;
+  line-height: 1.42857143;
+  font-family: Monaco;
+  }
+.chunk a{
+  color: #333;
+  text-decoration: none; 
+}
+</style>
+<div class="chunk" width=100%>
+
+&num;&num; Überschrift 2
+
+&lt;h3&gt;Überschrift 3&lt;/h3&gt;
+
+Dieses &ast;&ast;Wort&ast;&ast; ist fett durch Markdown. Dieses &lt;b&gt;Wort&lt;/b&gt; durch HTML. 
+
+</div>
+
+## Überschrift 2
+
+<h3>Überschrift 3</h3>
+
+Dieses **Wort** ist fett durch Markdown. Dieses **Wort** durch HTML. 
+
+
+

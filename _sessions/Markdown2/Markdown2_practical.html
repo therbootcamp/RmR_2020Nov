@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Markdown II</title>
+
+<script src="Markdown2_practical_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Markdown2_practical_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Markdown2_practical_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Markdown2_practical_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Markdown2_practical_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="Markdown2_practical_files/navigation-1.1/tabsets.js"></script>
+<link href="Markdown2_practical_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="Markdown2_practical_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="practical.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Markdown II</h1>
+<h4 class="author"><table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'>
+<col width='10%'>
+<col width='10%'>
+<tr style="border:none">
+<td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
+<font style='font-style:normal'>Reporting mit R</font><br> <a href='https://therbootcamp.github.io/RmR_2020Jun/'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>
+</td>
+<td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
+<img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
+</td>
+</tr>
+</table></h4>
+
+</div>
+
+
+<style>
+pre code,  .md:not(.use-csslab) pre code {
+  white-space: pre-wrap;
+  }
+</style>
+<p align="center" width="100%">
+<img src="image/flat_crop.png" alt="Chunks" style="width:100%"> <br> <font style="font-size:10px">from <a href="https://www.airbnb.ca/rooms/1347514/photos/13227297?guests=4&s=4fFl&source_impression_id=p3_1591077094_V6VkyaMzWmptgznT&adults=1">airbnb.ca</a></font>
+</p>
+<div id="section" class="section level1 tabset">
+<h1></h1>
+<div id="überblick" class="section level2">
+<h2>Überblick</h2>
+<p>In diesem Practical wirst du nun die Grafiken in deinem Dokument gestalten und Bausteine, Text und Tabellen, einfügen.</p>
+<ol style="list-style-type: decimal">
+<li>Grafiken formatieren.</li>
+<li>Datentabellen einfügen und im Detail gestalten.</li>
+<li>Ergebnisse eines Regressionsmodells einbinden.</li>
+</ol>
+</div>
+<div id="aufgaben" class="section level2">
+<h2>Aufgaben</h2>
+<div id="a---setup" class="section level3">
+<h3>A - Setup</h3>
+<ol style="list-style-type: decimal">
+<li><p>Öffne dein <code>TheRBootcamp</code> R Projekt. Es sollte die Ordner <code>1_Data</code>, <code>2_Assets</code>, und <code>3_Markdown</code> enthalten.</p></li>
+<li><p>Lade die <code>airbnb_level_one.Rmd</code> Datei, das fertige Produkt am Ende des ersten Markdown Practicals.</p></li>
+<li><p>Zusätzlich lade die Pakete <code>knitr</code>, <code>kableExtra</code> <code>sjPlot</code> im <code>setup</code> chunk.</p></li>
+</ol>
+</div>
+<div id="b---präambel-fussnote-einfügen" class="section level3">
+<h3>B - Präambel: Fussnote einfügen</h3>
+<ol style="list-style-type: decimal">
+<li><p>Ergänze eine Fussnote nach dem Texteil ‘verfügbarer Daten’ <code>^[Daten wurde heruntergeladen von [insideairbnb.com](http://insideairbnb.com/get-the-data.html)]</code></p></li>
+<li><p><code>Knitte</code> das Dokument. Siehst du nun eine Fussnote am Ende des Dokuments?</p></li>
+</ol>
+</div>
+<div id="c---neueinstellungen-plots" class="section level3">
+<h3>C - Neueinstellungen: Plots</h3>
+<ol style="list-style-type: decimal">
+<li><p>Nun geht es darum die Darstellung der Grafiken zu verbessern und Bildunterschriften einzufügen. Setze zunächst das Seitenverhältnis der ersten Grafik auf .5 (<code>fig.asp = .5</code>). Knitte das Dokument. Die Grafik sollte nun schmaler sein.</p></li>
+<li><p>Füge <code>fig.cap = cap</code> in den Optionen des Chunks der ersten Grafik ein. Dies wird dir ermöglichen gleich die Bildunterschrift im Chunk zu definieren.</p></li>
+<li><p>Am Ende des Grafik Chunks ergänze nun <code>cap = Abbildung 1. Neueinstellungen pro Monat.</code>. Knitte das Dokument. Du solltest nun eine Bildunterschrift sehen.</p></li>
+<li><p>Weitere zur nächsten Grafik. Setze das Seitenverhältnis für die zweite Grafik auf .5.</p></li>
+<li><p>Füge nun zunächst <code>fig.cap = cap</code> in den Optionen des Chunks der zweiten Grafik ein und dann innerhalb des Chunks <code>cap = Abbildung 2. Neueinstellungen pro Bezirk.</code>.</p></li>
+<li><p><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</p></li>
+</ol>
+</div>
+<div id="d---preise-neuer-texteil" class="section level3">
+<h3>D - Preise: Neuer Texteil</h3>
+<ol style="list-style-type: decimal">
+<li><p>Für einen neuen Abschnitt füge <code>Preis</code> als Level 3 Header ein.</p></li>
+<li><p>Setze darunter den folgenden Text.</p></li>
+</ol>
+<pre class="wrap"><code>Der durchschnittliche Preis der Neueinstellungen beträgt 80.8 €. Im Vergleich zum Vorjahr sind die Preise der Neueinstellungen um 1.7% gestiegen.</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>In diesem Text werden die Zahlen nicht berechnet - füge inline Code für den durschschnittlichen Preis aus dem Datensatz <code>airbnb_1819</code> direkt im Text ein. Siehe unten.</li>
+</ol>
+<pre class="r"><code>round(mean(airbnb_1819 %&gt;% pull(Preis)),1)</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Wähle die gleiche Vorgangsweise für die prozentuelle Steigerung der Preise. Verwende folgenden Code für die Berechnung innerhalb des Texts.</li>
+</ol>
+<pre class="r"><code>m &lt;- mean(airbnb_1819 %&gt;% filter(year(Erstellungsdatum) == 2019) %&gt;% pull(Preis))/ mean(airbnb_1819 %&gt;% filter(year(Erstellungsdatum) == 2018) %&gt;% pull(Preis)) ; round(m, 3) * 100 - 100</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</li>
+</ol>
+</div>
+<div id="e---preise-neuer-texteil" class="section level3">
+<h3>E - Preise: Neuer Texteil</h3>
+<ol style="list-style-type: decimal">
+<li><p>Erstelle eine neue Überschrift, <code>Einfluss Ausstattung</code>, als Level 4 Header.</p></li>
+<li><p>Berechne als ersten Schritt in einem eigenem Code Chunk wie sich die verschiedenen Ausstattungsmerkmale (Küche, Wifi, …) auf die durchschnittlichen Preise auswirken.</p></li>
+</ol>
+<pre class="r"><code># Vektor mit Ausstattungsmerkmalen
+ausstattung_var = c(&#39;Küche&#39;,&#39;Wifi&#39;,&#39;TV&#39;,&#39;Kaffeemaschine&#39;,
+                    &#39;Geschirrspüler&#39;,&#39;Terrasse_Balkon&#39;,
+                    &#39;Check_in_24h&#39;)
+
+# Bestimme Preise als Funktion der Ausstattungsmerkmale
+ausstattung &lt;- airbnb_1819 %&gt;% 
+               select(all_of(ausstattung_var), Preis) %&gt;%
+               pivot_longer(-Preis,
+               names_to = &#39;Ausstattung&#39;,
+               values_to = &#39;Ausstattung_vorhanden&#39;) %&gt;% 
+              group_by(Ausstattung) %&gt;% 
+  summarize(Nicht_vorhanden = mean(Preis[!Ausstattung_vorhanden]),
+            Vorhanden = mean(Preis[Ausstattung_vorhanden]),
+            Differenz = Vorhanden - Nicht_vorhanden, 
+            Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %&gt;% 
+  arrange(desc(Differenz)) </code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Füge einen neuen Textteil ein.</li>
+</ol>
+<pre class="wrap"><code>Das Austattungsmerkmal mit dem grössten Unterschied im Preis ist Check_in_24h (72.9), das Austattungsmerkmal mit dem kleinsten Unterschied im Preis ist Küche (-88.9).</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Ersetze den Variablenamen und den numerischen Wert in Klammer (grösster Unterschied im Preis) mit zwei separaten inline Code-Elementen.</li>
+</ol>
+<pre class="r"><code>ausstattung %&gt;% pull(Ausstattung) %&gt;% first()
+ausstattung %&gt;% pull(Differenz) %&gt;% first() %&gt;% round(1)</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Ersetze genauso Variablename und numerischen Wert in Klammer für den kleinsten Unterschied im Preis.</li>
+</ol>
+<pre class="{r"><code>ausstattung %&gt;% pull(Ausstattung) %&gt;% last()
+ausstattung %&gt;% pull(Differenz) %&gt;% last() %&gt;% round(1)</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Der folgenden Textabschnitt beinhaltet eine Schlussfolgerung aus den Ergebnissen der Tabelle. Kennzeichne den Textabschnitt mit ** vor und nach dem ersten Wort und setze ihn damit in fetter Schriftart.</li>
+</ol>
+<pre class="wrap"><code>Der stark negative Effekt der Küche überrascht, er könnte jedoch durch die Art der Unterkunft moderiert werden, gegeben dass auch Hotels im Angebot enthalten sind.</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</li>
+</ol>
+</div>
+<div id="f---preis-tabelle-1-erzeugen" class="section level3">
+<h3>F - Preis: Tabelle 1 erzeugen</h3>
+<ol style="list-style-type: decimal">
+<li>Erstelle einen neuen Code Chunk mit einer Tabelle basierend auf <code>ausstattung</code>. Verwende dafür die <code>kable()</code> Funktion. Siehe unten.</li>
+</ol>
+<pre class="r"><code># Plotte Tabelle mit Austattungsmerkmalen
+ausstattung %&gt;% kable(format = &#39;html&#39;)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Beschränke die Anzahl Nachkommastellen mit <code>digits = 2</code> auf zwei.</p></li>
+<li><p>Füge eine Tabellenüberschrift mit <code>caption = 'Tabelle 1. Austattung und Einfluss auf den Preis'</code> ein.</p></li>
+<li><p>Passe die Namen der Spalten an, inklusive neuer Zeilenumbrüche mit <code>&lt;br&gt;</code>: <code>col.names = c('', 'Preis&lt;br&gt;Nicht-vorh.', 'Preis&lt;br&gt;vorh.','Differenz','Prozent&lt;br&gt;vorh.')</code></p></li>
+<li><p><code>Knitte</code> das Dokument. Du wirst bemerken, dass die Spaltenbeschriftung nicht korrekt übersetzt wird. Verwende als weiteres Argument <code>escape = FALSE</code> um dieses Problem zu korrigieren.</p></li>
+<li><p>Lege die Ausrichtung der Zellen mit <code>align = "lcccc"</code> fest. Jeder Buchstabe legt die Ausrichtung für eine Spalte fest. <code>l</code> bedeutet left und <code>c</code> center.</p></li>
+<li><p>Nun vergrössere die Breite der Spalten in dem du <code>column_spec()</code> hinter der <code>kable()</code> Funktion verwendest.</p></li>
+</ol>
+<pre class="r"><code>airbnb_18_19 %&gt;% kable(...) %&gt;% column_spec(c(2,3,4,5), width = &quot;1.2in&quot;)</code></pre>
+<ol start="8" style="list-style-type: decimal">
+<li>Abschliessend, gestalte die Schrifgrösse der Zellen in Abhängigkeit der Grösse der abgebildeten Zahl. Füge dafür vor der <code>kable()</code> Funktion folgenden Code ein und verbinde die beiden Teile mit einer Pipe <code>%&gt;%</code>.</li>
+</ol>
+<pre class="r"><code>airbnb_1819 %&gt;% 
+mutate_if(is.numeric, function(x) {
+    cell_spec(round(x,1), bold = T, 
+              font_size = spec_font_size(x, begin=10, end=16))}) %&gt;% 
+kable(...) %&gt;% column_spec(...)</code></pre>
+<ol start="9" style="list-style-type: decimal">
+<li><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</li>
+</ol>
+</div>
+<div id="g---preise-text-teil" class="section level3">
+<h3>G - Preise: Text Teil</h3>
+<ol style="list-style-type: decimal">
+<li><p>Erstelle eine neue Überschrift, <code>Regressionsmodell</code>, als Level 4 Header</p></li>
+<li><p>Verwende den Code unten um eine Regression in der <code>Preis</code> durch verschiedenen Ausstattungsmerkmalen und den Status Hotel Ja/Nein vorhergesagt wird.</p></li>
+</ol>
+<pre class="r"><code># Reduzierter Vektor mit Ausstattungsmerkmalen
+ausstattung_var &lt;- c(&#39;Küche&#39;,&#39;TV&#39;,&#39;Terrasse_Balkon&#39;,&#39;Check_in_24h&#39;)
+
+# Bereit den Datensatz für die Regression vor
+ausstattung &lt;- airbnb_1819 %&gt;% 
+  mutate(Hotel = Unterkunftsart %in% c(&#39;Boutique hotel&#39;, &#39;Hotel&#39;)) %&gt;% 
+  select(Preis, Hotel, all_of(ausstattung_var)) 
+
+# Rechne Regression des Preises auf Austattungsmerkmale und Hotel
+ausstattung_mod &lt;-  ausstattung%&gt;% 
+  lm(formula = Preis ~ .)
+  
+# Bestimme Anteil Hotels in 2018 und 2019
+hotel &lt;- airbnb_1819 %&gt;% 
+  group_by(year(Erstellungsdatum)) %&gt;% 
+  summarize(Anteil = mean(Unterkunftsart %in% c(&#39;Boutique hotel&#39;, &#39;Hotel&#39;)))   </code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Füge nun folgenden Textblock ein.</li>
+</ol>
+<pre class="wrap"><code>Die Regression legt nahe, dass Küche, TV und Terrasse oder Balkon den grössten Einfluss auf den Preis in denletztene beiden Jahren hatten.
+
+Der Einfluss der Küche ist gegenüber dem Unterschied in Tabelle 1 gesunken, jedoch nach wie vor signifikant.
+
+Überraschenderweise ist der Effekt eines 24h Check-ins, welcher deskriptiv am grössten ausfiel, nicht signifikant. Dies ist ebenfalls auf den Zusammen zur Unterkunftsart zurückzuführen
+
+Es besteht ein substantieller Unterschied im Preis zwischen Unterkunftsarten. Hotels haben eine um 437.3€ höheren Preis als Unterkünfte die keine Hotels sind.
+
+Der Anteil von Hotels ist von 1.1% im Jahre 2018 auf 1.4% im Jahre 2019 gestiegen. Es liegt nahe, dass der Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht.</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Lasse dir die Koeffizienten aus dem Regressionsmodell ausgeben und verwende den Code unten um im vierten Absatz (Hotels haben einen um … höheren Preis) das Ergebnis im Satz zu ersetzen.</li>
+</ol>
+<pre class="r"><code>coefficients(ausstattung_mod)[&#39;HotelTRUE&#39;] %&gt;% round(1)</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Hebe zum Abschluss den 2. (“Überraschenderweise …”) und 4. Absatz (“Der Anteil …”) fett hervor.</p></li>
+<li><p><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</p></li>
+</ol>
+</div>
+<div id="h---preise-regressionstabelle" class="section level3">
+<h3>H - Preise: Regressionstabelle</h3>
+<ol style="list-style-type: decimal">
+<li>Zeige die Regressionsergebnisse in einer Tablle mit der <code>tab_model()</code> Funktion an.</li>
+</ol>
+<pre class="r"><code># Tabelle mit Ergebnissen der Regression
+tab_model(ausstattung_mod)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Ersetze die Namen der Koeffizienten in der Tabelle mit dem Argument <code>pred.labels = c('Achsenabschnitt', names(ausstattung)[-1])</code></p></li>
+<li><p>Füge einen neuen Tabellentitel mit dem Argument <code>title = 'Table 2. Regression des Preises auf die Ausstattung.'</code> ein.</p></li>
+<li><p><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</p></li>
+</ol>
+</div>
+</div>
+<div id="datensatz" class="section level2">
+<h2>Datensatz</h2>
+<p>Der <a href="https://raw.githubusercontent.com/therbootcamp/RmR_2020Jun/master/_materials/case/1_Data/airbnb.csv">airbnb.csv</a> Datensatz enthält Zahlen zu 9868 Berliner Airbnbs</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Preis</td>
+<td align="left">Preis pro Nacht</td>
+</tr>
+<tr class="even">
+<td align="left">Erstellungsdatum</td>
+<td align="left">Eröffnungsdatum des Airbnbs</td>
+</tr>
+<tr class="odd">
+<td align="left">Unterkunftsart</td>
+<td align="left">Appartement, Loft, House, etc.</td>
+</tr>
+<tr class="even">
+<td align="left">Schlafplätze</td>
+<td align="left">Anzahl Schlafplätze</td>
+</tr>
+<tr class="odd">
+<td align="left">Schlafzimmer</td>
+<td align="left">Anzahl Schlafzimmer</td>
+</tr>
+<tr class="even">
+<td align="left">Badezimmer</td>
+<td align="left">Anzahl Badezimmer</td>
+</tr>
+<tr class="odd">
+<td align="left">Reinigungsgebühr</td>
+<td align="left">Reinigungsgebühr</td>
+</tr>
+<tr class="even">
+<td align="left">Verfügbarkeit_90Tage</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Viertel</td>
+<td align="left">In welchem Viertel befindet sich das Airbnb</td>
+</tr>
+<tr class="even">
+<td align="left">Stadtteil</td>
+<td align="left">In welchem Stadtteil befindet sich das Airbnb</td>
+</tr>
+<tr class="odd">
+<td align="left">Breitengrad</td>
+<td align="left">Breitengrad</td>
+</tr>
+<tr class="even">
+<td align="left">Längengrad</td>
+<td align="left">Längengrad</td>
+</tr>
+<tr class="odd">
+<td align="left">Host_id</td>
+<td align="left">Host id</td>
+</tr>
+<tr class="even">
+<td align="left">Host_seit</td>
+<td align="left">Erfahrung des Hosts</td>
+</tr>
+<tr class="odd">
+<td align="left">Host_antwortzeit</td>
+<td align="left">Host Antwortzeit</td>
+</tr>
+<tr class="even">
+<td align="left">Host_antwortrate</td>
+<td align="left">Host Antwortrate</td>
+</tr>
+<tr class="odd">
+<td align="left">Host_superhost</td>
+<td align="left">Superhost Ja/Nein</td>
+</tr>
+<tr class="even">
+<td align="left">Host_anzahl</td>
+<td align="left">Anzahl Gäste</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_gesamt</td>
+<td align="left">Gesamtrating</td>
+</tr>
+<tr class="even">
+<td align="left">Rating_genauigkeit</td>
+<td align="left">Genauigkeitsrating</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_sauberkeit</td>
+<td align="left">Sauberkeitsrating</td>
+</tr>
+<tr class="even">
+<td align="left">Rating_checkin</td>
+<td align="left">Checkinrating</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_kommunikation</td>
+<td align="left">Kommunikationsrating</td>
+</tr>
+<tr class="even">
+<td align="left">Rating_lage</td>
+<td align="left">Lagerating</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_wertigkeit</td>
+<td align="left">Wertigkeitsrating</td>
+</tr>
+<tr class="even">
+<td align="left">Küche</td>
+<td align="left">Küche vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Wifi</td>
+<td align="left">WLAN vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">TV</td>
+<td align="left">TV vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Kaffeemaschine</td>
+<td align="left">Kaffeemaschine vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">Geschirrspüler</td>
+<td align="left">Geschirrspüler vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Terrasse_Balkon</td>
+<td align="left">Terrasse/Balkon vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">Badewanne</td>
+<td align="left">Badewanne vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Check_in_24h</td>
+<td align="left">24h Check-In vorhanden TRUE/FALSE</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="funktionen" class="section level2">
+<h2>Funktionen</h2>
+<div id="paket" class="section level3">
+<h3>Paket</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Paket</th>
+<th align="left">Installation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>tidyverse</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>lubridate</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>knitr</code></td>
+<td align="left"><code>install.packages("knitr")</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>sjPlot</code></td>
+<td align="left"><code>install.packages("sjPlot")</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>kabelExtra</code></td>
+<td align="left"><code>install.packages("kableExtra")</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="funktionen-1" class="section level3">
+<h3>Funktionen</h3>
+<table>
+<colgroup>
+<col width="7%" />
+<col width="12%" />
+<col width="80%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Funktion</th>
+<th align="left">Paket</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>kable()</code></td>
+<td align="left"><code>knitr</code></td>
+<td align="left">Tibble (Data frame) als Tabelle</td>
+</tr>
+<tr class="even">
+<td align="left"><code>cell_spec()</code>, <code>column_spec</code></td>
+<td align="left"><code>kableExtra</code></td>
+<td align="left">Formatiere Zellen und Spalten in <code>kable</code>-Tabelle</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>tab_model()</code></td>
+<td align="left"><code>sjPlot</code></td>
+<td align="left">Tabelle mit den Ergebnissen statistischer Modelle</td>
+</tr>
+<tr class="even">
+<td align="left"><code>coefficients()</code></td>
+<td align="left"><code>stats</code></td>
+<td align="left">Zeiege Koeffizienten einer Regression</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>pivot_longer()</code></td>
+<td align="left"><code>tidyr</code></td>
+<td align="left">Extrahieren eines Vektors</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="materialien" class="section level2">
+<h2>Materialien</h2>
+<ul>
+<li>Allgemeiner Einstieg in <a href="https://rmarkdown.rstudio.com/lesson-1.html"><strong>RMarkdown</strong></a>.</li>
+<li><a href="https://bookdown.org/yihui/rmarkdown/"><strong>DIE Referenz</strong></a> für RMarkdown bis ins letzte Detail.</li>
+<li><a href="https://cran.r-project.org/web/packages/rmarkdown/index.html"><strong>Rmarkdown</strong></a> Dokumentation und Befehlsreferenz.</li>
+</ul>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

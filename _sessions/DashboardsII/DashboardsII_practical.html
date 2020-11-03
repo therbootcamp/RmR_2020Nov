@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Dashboards II Practical</title>
+
+<script src="DashboardsII_practical_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="DashboardsII_practical_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="DashboardsII_practical_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="DashboardsII_practical_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="DashboardsII_practical_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="DashboardsII_practical_files/navigation-1.1/tabsets.js"></script>
+<link href="DashboardsII_practical_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="DashboardsII_practical_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="practical.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Dashboards II Practical</h1>
+<h4 class="author"><table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'>
+<col width='10%'>
+<col width='10%'>
+<tr style="border:none">
+<td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
+<font style='font-style:normal'>Reporting mit R</font><br> <a href='https://therbootcamp.github.io/RmR_2020Jun/'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>
+</td>
+<td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
+<img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
+</td>
+</tr>
+</table></h4>
+
+</div>
+
+
+<p align="center" width="100%">
+<img src="image/airbnb.png" alt="Trulli" style="width:100%"> <br> <font style="font-size:10px">from <a href="">www.cartoonimpact.com</a></font>
+</p>
+<div id="section" class="section level1 tabset">
+<h1></h1>
+<div id="überblick" class="section level2">
+<h2>Überblick</h2>
+<p>In diesem Practical wirst du das Dashboard der letzten Aufgabe weiter ausbauen, interaktiver und dynamischer gestalten. Am Ende wirst du <a href="https://therbootcamp.shinyapps.io/berlindashboard2/">dieses</a> Dashboard erstellen.</p>
+<p>Am Ende des Practicals wirst du wissen wie man:</p>
+<ol style="list-style-type: decimal">
+<li>In leaflet Popupfenster einfügt</li>
+<li>Ein <code>flexdashboard</code> in eine <code>shiny</code> Webapp umwandelt.</li>
+<li>Statische in reaktive Grafiken umwandelt.</li>
+</ol>
+</div>
+<div id="aufgaben" class="section level2">
+<h2>Aufgaben</h2>
+<div id="a---setup" class="section level3">
+<h3>A - Setup</h3>
+<ol style="list-style-type: decimal">
+<li><p>Öffne dein <code>TheRBootcamp</code> R project. Es sollte die Ordner <code>1_Data</code>, <code>2_Assets</code> und <code>3_Markdown</code> enthalten.</p></li>
+<li><p>Lade <a href="https://raw.githubusercontent.com/therbootcamp/RmR_2020Jun/master/_sessions/DashboardsI/app/BerlinDashboard.Rmd"><strong>dieses Markdown</strong></a> Skript herunter und speichere es in deinen <code>3_Markdown</code> Ordner.</p></li>
+<li><p>Öffne das eben heruntergeladene Markdown file. Es enthält das fertige Dashboard der vorherigen Aufgabe. Arbeite mit diesem File weiter, um sicherzustellen, dass alles korrekt implementiert ist.</p></li>
+</ol>
+</div>
+<div id="b---shiny" class="section level3">
+<h3>B - <code>shiny</code></h3>
+<ol style="list-style-type: decimal">
+<li><p>Wandle das Markdown Dokument in eine <code>shiny</code> App um, indem du <code>runtime: shiny</code> im YAML Header, direkt unter <code>social: ["twitter", "facebook"]</code> einfügst und speicherst. Ab jetzt wird beim Rendern eine App geöffnet, die deine R-Session als Server verwendet.</p></li>
+<li><p>Im ersten R Chunk deines Dokuments ändere das <code>setup</code> in der Chunk Definition des <code>setup</code> Chunks in <code>global</code>. Damit wird dein Code, der in diesem Chunk enthalten ist, nur einmal beim Starten der App geladen und so die Performanz verbessert.</p></li>
+<li><p>Ist die App jetzt bereits dynamisch und reaktiv?</p></li>
+<li><p>Nein, du musst zuerst Inputs definieren. Füge vor dem Titel der ersten Seite (vor <code>Übersicht der Airbnbs in Berlin {data-orientation=rows}</code>) eine neue Seite via eine Zeile Gleichheitszeichen und nenne diese <code>Inputs</code>.</p></li>
+<li><p>Hinter das <code>Inputs</code> (aber auf derselben Zeile), schreibe <code>{.sidebar}</code>. Damit wird eine Sidebar definiert, die über alle drei Seiten der App fix auf der linken Seite bestehen bleibt.</p></li>
+<li><p>Fülle nun deine Sidebar. Erstelle unterhalb des <code>Inputs</code> Titels (genauer unterhalb der Gleichheitszeichen) einen neuen Code Chunk.</p></li>
+<li><p>In diesen Chunk fülle jetzt über die folgenden Tasks vier Inputmöglichkeiten. Füge zunächst mit dem untenstehenden Code einen Slider ein. Im ersten Argument wird die <code>inputID</code> spezifiziert, unter welcher der Input, also der mit dem Slider ausgewählte Wert, später ansteuerbar ist. Das zweite Argument spezifiziert das <code>label</code>, also den Titel des Sliders. Setze die <code>inputID</code> auf <code>"Schlafzimmer"</code>, und das <code>label</code> auf <code>"Minimum Anzahl Schlafzimmer"</code>. Die anderen Argumente spezifizieren Minimum, Maximum, und Standardwert.</p></li>
+</ol>
+<pre class="r"><code># Auswahl Airbnbs über Schlafzimmer
+sliderInput(&quot;XXX&quot;, 
+            &quot;XXX&quot;, 
+            min = 0, 
+            max = 12,
+            value = 0)</code></pre>
+<ol start="8" style="list-style-type: decimal">
+<li>Direkt darunter, spezifiziere einen zweiten Slider, mit dem der “Maximale Preis pro Nacht” gesteuert wird. Da die Preisverteilung schief ist, wird hier der 10er Logarithmus (<code>log10</code>) verwendet. Setze die <code>inputID</code> auf <code>"Preis"</code>, und das <code>label</code> auf <code>"Max Preis pro Nacht (log):"</code>. Das zusätzliche <code>step</code> Argument spezifiziert die minimalen Schritte, in denen der Slider bewegt werden kann. Setze es auf <code>.01</code>.</li>
+</ol>
+<pre class="r"><code># Preis pro Nacht
+sliderInput(&quot;XXX&quot;, 
+            &quot;XXX&quot;, 
+            min = 0, max = ceiling(max(log10(airbnb$Preis), na.rm = TRUE)),
+            value = ceiling(max(log10(airbnb$Preis), na.rm = TRUE)),
+            step = XXX)</code></pre>
+<ol start="9" style="list-style-type: decimal">
+<li>Als drittes, spezifiziere Checkboxen, mit denen die Stadtteile ausgewählt werden können. Verwende dazu die <code>checkboxGroupInput()</code> Funktion. Setze die <code>inputID</code> auf <code>"Stadtteile"</code>, und das <code>label</code> auf <code>"Wähle Stadtteile:"</code>. Das <code>choices</code> Argument definiert, wie viele Checkboxes angezeigt werden sollen, und welche Werte diese annehmen können. Im <code>selected</code> Argument wird definiere, welche Checkboxes standardmässig angewählt werden (hier alle).</li>
+</ol>
+<pre class="r"><code># Auswahl der zu Plottenden Stadtteile
+checkboxGroupInput(&quot;XXX&quot;, 
+                   &quot;XXX&quot;,
+                   choices = sort(unique(airbnb$Stadtteil)),
+                   selected = sort(unique(airbnb$Stadtteil)))</code></pre>
+<ol start="10" style="list-style-type: decimal">
+<li>Füge zum Schluss noch einen Auswahlinput ein. Mit der Funktion <code>selectInput</code> wird ein Dropdown-Menu erstellt, aus dem ein Wert ausgewählt wird. <code>choices</code> definiert die möglichen Werte, <code>selected</code> den Standardwert. Setze die Werte <code>"viridis"</code>, <code>"cividis"</code>, <code>"magma"</code>, und <code>"inferno"</code>, beim <code>choices</code> Argument ein. Das sind die Namen vierer Farbpaletten. Definiere <code>"viridis"</code> als Standardwert.</li>
+</ol>
+<pre class="r"><code># Farbpalette
+selectInput(&quot;Farbpalette&quot;, &quot;Wähle Farbpalette:&quot;,
+            choices = c(&quot;XXX&quot;, &quot;XXX&quot;, &quot;XXX&quot;, &quot;XXX&quot;),
+            selected = &quot;XXX&quot;)</code></pre>
+<ol start="11" style="list-style-type: decimal">
+<li>Bevor du nun das Dokument ausführen kannst, musst du zuerst die Plots anpassen. In <code>shiny</code> müssen R outputs, wie Plots, explizit mit der <code>render*()</code> Funktionen gerendert werden. Gehe zuerst zum Code Chunk, in dem sich der <code>leaflet</code> code befindet und packe den gesamten <code>leaflet</code> Code dieses Chunks in die <code>renderLeaflet({})</code> Funktion, zwischen die geschwungenen Klammern, wie unten angezeigt.</li>
+</ol>
+<pre class="r"><code>renderLeaflet({
+  
+  LEAFLET CODE
+  
+})</code></pre>
+<ol start="12" style="list-style-type: decimal">
+<li>Gehe nun zum nächsten Code Chunk, in dem die Häufigkeitsverteilung als <code>plotly</code> Grafik erstellt wird. Packe auch hier den Code des gesamten Chunks in die <code>renderPlotly({})</code> Funktion.</li>
+</ol>
+<pre class="r"><code>renderPlotly({
+  
+  PLOTLY CODE
+  
+})</code></pre>
+<ol start="13" style="list-style-type: decimal">
+<li>Gehe zum nächsten Code Chunk, in dem das Histogram der Gesamtratings definiert wird. Wiederum, packe den Code des gesamten Chunks in die <code>renderPlot({})</code> Funktion.</li>
+</ol>
+<pre class="r"><code>renderPlot({
+  
+  PLOT CODE
+  
+})</code></pre>
+<ol start="14" style="list-style-type: decimal">
+<li>Gehe zum nächsten Code Chunk, in dem der <code>gauge</code> der mittleren Gesamtratings definiert wird. Wiederum, packe den Code des gesamten Chunks in die <code>renderGauge({})</code> Funktion.</li>
+</ol>
+<pre class="r"><code>renderGauge({
+  
+  GAUGE CODE
+  
+})</code></pre>
+<ol start="15" style="list-style-type: decimal">
+<li><p>Wiederhole die Schritte B14 und B15 auch noch für die letzten Chunks (zweimal die Plots und zweimal die Gauges, in abwechselnder Reihenfolge).</p></li>
+<li><p>Nun kannst du dein Dokument ausführen. Passiert etwas, wenn du die Inputwerte veränderst?</p></li>
+<li><p>Der Grund weshalb nichts passiert ist, dass zwar Inputs definiert werden, diese aber bei den Plots nicht vorkommen. Du musst also den Code der Plots anpassen. Um, zum Beispiel, die Auswahl der Stadtteile nicht in jedem Plot durchführen zu müssen, können wir <em>reaktive Objekte</em> erstellen, also Objekte, die mit jeder Veränderung der Inputwerte upgedatet werden. Die grundsätzliche Syntax ist wie folgt:</p></li>
+</ol>
+<pre class="r"><code>DYNAMISCHES_OBJEKT &lt;- reactive({
+  MANIPULATION EINES OBJEKTES BASIEREND AUF INPUT
+})</code></pre>
+<ol start="18" style="list-style-type: decimal">
+<li>Die <code>reactive()</code> Funktion unten erstellt ein reaktives Objekt und führt den in der Funktion geschriebenen Code jedes Mal aus, wenn sich einer der darin enthaltenen Inputwert verändert. Der untenstehende Code definiert zwei reaktive Objekte <code>airbnb_dynamic</code> - eine reaktive Version des <code>airbnb</code> Datensatzes, gefiltert nach <code>Stadtteil</code>, <code>Schlafzimmer</code>, und dem 10er Logarithmus von <code>Preis</code> - sowie <code>farben_dynamic</code> und ein reaktives Objekt, welches basierend auf der ausgewählten Farbpalette (aus dem <code>viridis</code> Paket) und der Anzahl ausgewählter Stadtteile einen Vektor von Farbwerten zurückgibt. Kopiere den Code und füge ihn ganz unten in den R Chunk in dem die Inputs definiert werden (der zweite R Chunk im Dokument) ein.</li>
+</ol>
+<pre class="r"><code># kreiere reaktives airbnb Objekt
+airbnb_dynamic &lt;- reactive({
+
+    airbnb %&gt;%
+      filter(Stadtteil %in% c(input$Stadtteile) &amp;
+               Schlafzimmer &gt;= as.numeric(input$Schlafzimmer) &amp;
+               log10(Preis) &lt;= as.numeric(input$Preis)) 
+  
+    
+})
+
+farben_dynamic &lt;- reactive({
+  ## Farbpalette vorbereiten
+  # Anzahl Stadtteile
+  n_stadtteile &lt;- length(input$Stadtteile)
+  # Definiere n_stadtteile verschiedene Farben aus der viridis palette
+  switch(input$Farbpalette,
+         viridis = viridis(n_stadtteile),
+         cividis = cividis(n_stadtteile),
+         magma = magma(n_stadtteile),
+         inferno = inferno(n_stadtteile))
+})</code></pre>
+<ol start="19" style="list-style-type: decimal">
+<li><p>Um die reaktive Version der <code>airbnb</code> Daten in den Plots und Gauges zu verwenden, ersetze <code>airbnb</code> in den Definitionen der Karte (dem <code>leaflet</code> Plot), der Häufigkeitsverteilung (dem <code>plotly</code> Plot), der Histogramme (dem <code>ggplot2</code> Plot), und der Gauges (also alle die Teile, die du vorhin in eine <code>render*()</code> Funktion gepackt hast) durch <code>airbnb_dynamic()</code>. Dabei sind die Klammern nach <code>airbnb_dynamic</code> unbedingt nötig; das ist eine spezielle Syntax der reaktiven Objekte.</p></li>
+<li><p>Da du das <code>farben_dynamic()</code> Objekt vorgängig definiert hast, wird das <code>farben</code> Objekt nicht mehr benötigt. Lösche dessen Definition oberhalb des Codes für die Häufigkeitsverteilung:</p></li>
+</ol>
+<pre class="r"><code>### LÖSCHE ALLES VON HIER
+# Anzahl Stadtteile
+n_stadtteile &lt;- length(unique(airbnb$Stadtteil))
+# Definiere n_stadtteile verschiedene Farben aus der viridis palette
+farben &lt;- viridis(n_stadtteile)
+### BIS HIER</code></pre>
+<ol start="21" style="list-style-type: decimal">
+<li><p>Ersetze ausserdem im Code der Häufigkeitsverteilung (dem <code>plotly</code> Plot) das Objekt <code>farben</code> durch <code>farben_dynamic()</code>. Du findest das Objekt in der Zeile <code>scale_color_manual(values = farben) +</code>.</p></li>
+<li><p>Klicke auf <code>Run Document</code>. Nun solltest du steuern können, welche Daten und welcher Stadtteile gezeigt werden, sowie welche Farbpalette im Plot auf Seite 2 verwendet wird. Cool oder?</p></li>
+</ol>
+</div>
+<div id="c---leaflet-2" class="section level3">
+<h3>C - <code>leaflet</code> 2</h3>
+<ol style="list-style-type: decimal">
+<li><p>Nun ist es an der Zeit, die Karte noch etwas mehr aufzupeppen! Die Datenpunkte sollen nach Stadtteil eingefärbt werden, Popupfenster sollen Informationen über das jeweilige Airbnb anzeigen, und eine Legende soll zeigen, welche Farbe welchem Stadtteil entspricht. Gehe zum <code>leaflet</code> Code, der die Karte erstellt.</p></li>
+<li><p>Beginne mit der Einfärbung der Punkte. Mit der <code>colorFactor()</code> Funktion des <code>leaflet</code> Pakets kannst du Farbwerte auf Levels einer kategorialen Variable (wie <code>Stadtteil</code>) mappen. Füge den untenstehenden Code vor dem Code der den <code>leaflet</code> Plot erstellt (aber innerhalb von <code>renderLeaflet({})</code>) ein.</p></li>
+</ol>
+<pre class="r"><code>dom &lt;- airbnb_dynamic() %&gt;% 
+  pull(Stadtteil) %&gt;% unique()
+
+# Erstelle Farbpalette
+pal &lt;- colorFactor(farben_dynamic(),
+                   domain = dom)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Das so erstellte <code>pal</code> Objekt kann jetzt in der <code>addCircleMarker()</code> Funktion verwendet werden. Allerdings wird hier eine etwas eigene Syntax verwendet. Füge ein neues Argument <code>color</code> in die <code>addCircleMarker()</code> Funktion ein und setze es auf <code>~pal(Stadtteil)</code> Die Tilde <code>~</code> ersetzt das Gleichheitszeichen <strong>nicht</strong>, sondern gibt <code>leaflet</code> lediglich an, dass hier unterschiedliche Werte für die verschiedenen Airbnbs benutzt werden.</p></li>
+<li><p>Führe die App aus. Jetzt sollten die Punkte nach Stadtteil eingefärbt sein.</p></li>
+<li><p>Im Moment ist aber noch nicht ersichtlich, welche Farbe zu welchem Stadtteil gehört. Es braucht eine Legende. Das geht in <code>leaflet</code> ganz einfach mit der <code>addLegend()</code> Funktion. Dabei muss eine mit <code>colorFactor()</code> erstellte Farbpalette, sowie die Werte nach denen die Marker eingefärbt werden sollen, als Argumente spezifiziert werden. Füge den untenstehenden Code direkt nach der <code>addCircleMarker()</code> Funktion ein, sodass die Pipe (<code>%&gt;%</code>) direkt nach der schliessenden Klammer von <code>addCircleMarker()</code> (also auf derselben Zeile) steht.</p></li>
+</ol>
+<pre class="r"><code> %&gt;% 
+  # Füge Legende hinzu
+  addLegend(pal = pal, values = ~Stadtteil, opacity = 1)</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Das wars schon, jetzt wird auch eine Legende angezeigt. Der letzte Schritt sind die Popupfenster, die Informationen über die Airbnbs anzeigen. Dazu musst du den Code an zwei Stellen anpassen. Zuerst musst du zwischen <code>airbnb_dynamic() %&gt;%</code> und <code>leaflet() %&gt;%</code> eine Zeile mit dem untenstehenden Code einfügen. Der erste Teil erstellt dabei eine Variable <code>superhost</code>, die <code>"Ja"</code> und <code>"Nein"</code> anstelle von <code>TRUE</code> und <code>FALSE</code> angibt. Der zweite Teil erstellt eine Variable <code>info</code>, die Informationen aus unterschiedlichen Variablen mithilfe der <code>paste0()</code> Funktion zusammenfügt. Dabei wird etwas HTML verwendet, damit die Informationen später sauber formatiert untereinander dargestellt werden.</li>
+</ol>
+<pre class="r"><code>  mutate(
+    superhost = case_when(isTRUE(Host_superhost) ~ &quot;Ja&quot;,
+                          TRUE ~ &quot;Nein&quot;),
+    info = paste0(&quot;Unterkunft: &lt;b&gt;&quot;, Unterkunftsart,
+                  &quot;&lt;/b&gt;&lt;br&gt;Schlafzimmer: &lt;b&gt;&quot;, Schlafzimmer,
+                  &quot;&lt;/b&gt;&lt;br&gt;Superhost: &lt;b&gt;&quot;, superhost,
+                  &quot;&lt;/b&gt;&lt;br&gt;Preis pro Nacht: &lt;b&gt;&quot;, Preis, &quot;&amp;euro;&lt;/b&gt;&quot;)
+  ) %&gt;% </code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li><p>Die neu erstellte Variable <code>info</code> muss jetzt noch in <code>addCircleMarkers()</code> aufgerufen, und der angezeigte Text etwas vergrössert werden. Füge dazu die Argumente <code>label = ~lapply(info, HTML)</code> und <code>labelOptions = labelOptions(textsize = "15px")</code> in der <code>addCircleMarkers()</code> Funktion hinzu. <code>lapply(info, HTML)</code> wendet die <code>HTML()</code> Funktion auf jedes Element von <code>info</code> an, was nötig ist, das der Text von <code>leaflet</code> als HTML gerendert wird.</p></li>
+<li><p>Führe die App erneut aus. Jetzt sollte alles klappen. Cool oder?</p></li>
+</ol>
+</div>
+<div id="x---uncharted-territory---here-be-dragons" class="section level3">
+<h3>X - Uncharted territory - Here be dragons</h3>
+<p>Das wars mit den vorgegebenen Aufgaben. In diesem Teil wirst du dein Dashboard auf eigene Faust erweitern und uns am Ende kurz zeigen, was du gemacht hast.</p>
+<p>Untenstehend findest du einige Vorschläge, wie du dein Dashboard erweitern könntest. Versuche eigenständig weitere Features einzubauen. Dazu kannst du auf die Vorschläge unten zurückgreifen, aber auch gerne eigene Ideen umsetzen; je nach dem was dich am meisten reizt.</p>
+<ol style="list-style-type: decimal">
+<li><p>Schaue dir die Popupfenster der beiden Plots auf den Seiten 1 und 2 an. Gibt es zusätzliche Dinge die du angezeigt haben möchtest? Das können weitere Variablen, neu kreierte Variablen oder konditionale Variablen sein. Versuche diese zu implementieren.</p></li>
+<li><p><code>leaflet</code> ermöglicht es auch Icons anstatt nur Punkte zu plotten. Eine Anleitung findest du <a href="https://rstudio.github.io/leaflet/markers.html">hier</a> (siehe dazu auch das Beispiel in den <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/DashboardI_slides.html">Slides zu Dashboards I</a>). Du könntest zum Beispiel versuchen, Marker mit unterschiedlichen Icons zu verwenden. Zum Beispiel könntest du ein bestimmtes Icon für Superhosts verwenden und ein weiteres für ganz schlechte Airbnbs, und ein weiteres für den Rest. Eine weiter Möglichkeit wäre, unterschiedliche Icons pro Unterkunftsart zu wählen.</p></li>
+<li><p>Gestern hast du im Bericht eine Regression gerechnet. Du könntest eine vierte Seite in das Dashboard einbauen, in der du z.B. Inputs für ein Regressionsmodell definierst und dir den jeweiligen Output als Tabelle anzeigen lasst. Zusätzlich könntest du einen Plot mit den vorhergesagten und tatsächlichen Werten einbauen. <a href="https://shiny.rstudio.com/gallery/widget-gallery.html"><strong>Hier</strong></a> findest du eine Übersicht der möglichen Inputformate.</p></li>
+<li><p>Keine der obigen Optionen spricht dich an (oder vielleicht hast du ja bereits alle gemacht)? Überlege dir, wie du das Dashboard weiter aufpeppen kannst. Das kann das Styling betreffen, die Inputs, die angezeigte Information etc… Wir sind gespannt auf deine Kreationen!</p></li>
+</ol>
+</div>
+</div>
+<div id="datensatz" class="section level2">
+<h2>Datensatz</h2>
+<p>Der <a href="https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/master/_materials/case/airbnb.csv">airbnb.csv</a> Datensatz enthält Zahlen zu 9868 Berliner Airbnbs</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Preis</td>
+<td align="left">Preis pro Nacht</td>
+</tr>
+<tr class="even">
+<td align="left">Erstellungsdatum</td>
+<td align="left">Eröffnungsdatum des Airbnbs</td>
+</tr>
+<tr class="odd">
+<td align="left">Unterkunftsart</td>
+<td align="left">Appartement, Loft, House, etc.</td>
+</tr>
+<tr class="even">
+<td align="left">Schlafplätze</td>
+<td align="left">Anzahl Schlafplätze</td>
+</tr>
+<tr class="odd">
+<td align="left">Schlafzimmer</td>
+<td align="left">Anzahl Schlafzimmer</td>
+</tr>
+<tr class="even">
+<td align="left">Badezimmer</td>
+<td align="left">Anzahl Badezimmer</td>
+</tr>
+<tr class="odd">
+<td align="left">Reinigungsgebühr</td>
+<td align="left">Reinigungsgebühr</td>
+</tr>
+<tr class="even">
+<td align="left">Verfügbarkeit_90Tage</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Viertel</td>
+<td align="left">In welchem Viertel befindet sich das Airbnb</td>
+</tr>
+<tr class="even">
+<td align="left">Stadtteil</td>
+<td align="left">In welchem Stadtteil befindet sich das Airbnb</td>
+</tr>
+<tr class="odd">
+<td align="left">Breitengrad</td>
+<td align="left">Breitengrad</td>
+</tr>
+<tr class="even">
+<td align="left">Längengrad</td>
+<td align="left">Längengrad</td>
+</tr>
+<tr class="odd">
+<td align="left">Host_id</td>
+<td align="left">Host id</td>
+</tr>
+<tr class="even">
+<td align="left">Host_seit</td>
+<td align="left">Erfahrung des Hosts</td>
+</tr>
+<tr class="odd">
+<td align="left">Host_antwortzeit</td>
+<td align="left">Host Antwortzeit</td>
+</tr>
+<tr class="even">
+<td align="left">Host_antwortrate</td>
+<td align="left">Host Antwortrate</td>
+</tr>
+<tr class="odd">
+<td align="left">Host_superhost</td>
+<td align="left">Superhost Ja/Nein</td>
+</tr>
+<tr class="even">
+<td align="left">Host_anzahl</td>
+<td align="left">Anzahl Gäste</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_gesamt</td>
+<td align="left">Gesamtrating</td>
+</tr>
+<tr class="even">
+<td align="left">Rating_genauigkeit</td>
+<td align="left">Genauigkeitsrating</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_sauberkeit</td>
+<td align="left">Sauberkeitsrating</td>
+</tr>
+<tr class="even">
+<td align="left">Rating_checkin</td>
+<td align="left">Checkinrating</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_kommunikation</td>
+<td align="left">Kommunikationsrating</td>
+</tr>
+<tr class="even">
+<td align="left">Rating_lage</td>
+<td align="left">Lagerating</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_wertigkeit</td>
+<td align="left">Wertigkeitsrating</td>
+</tr>
+<tr class="even">
+<td align="left">Küche</td>
+<td align="left">Küche vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Wifi</td>
+<td align="left">WLAN vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">TV</td>
+<td align="left">TV vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Kaffeemaschine</td>
+<td align="left">Kaffeemaschine vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">Geschirrspüler</td>
+<td align="left">Geschirrspüler vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Terrasse_Balkon</td>
+<td align="left">Terrasse/Balkon vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">Badewanne</td>
+<td align="left">Badewanne vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Check_in_24h</td>
+<td align="left">24h Check-In vorhanden TRUE/FALSE</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="funktionen" class="section level2">
+<h2>Funktionen</h2>
+<div id="paket" class="section level3">
+<h3>Paket</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Paket</th>
+<th align="left">Installation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>tidyverse</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>flexdashboard</code></td>
+<td align="left"><code>install.packages("flexdashboard")</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>plotly</code></td>
+<td align="left"><code>install.packages("plotly")</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>leaflet</code></td>
+<td align="left"><code>install.packages("leaflet")</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>viridis</code></td>
+<td align="left"><code>install.packages("viridis")</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>htmltools</code></td>
+<td align="left"><code>install.packages("htmltools")</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>shiny</code></td>
+<td align="left"><code>install.packages("shiny")</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="funktionen-1" class="section level3">
+<h3>Funktionen</h3>
+<table>
+<colgroup>
+<col width="7%" />
+<col width="12%" />
+<col width="80%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Funktion</th>
+<th align="left">Paket</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>gauge()</code></td>
+<td align="left"><code>flexdashboard</code></td>
+<td align="left">Erstelle einen gauge.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>renderGauge()</code></td>
+<td align="left"><code>flexdashboard</code></td>
+<td align="left">Rendere Gauges in <code>shiny</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>valueBox()</code></td>
+<td align="left"><code>flexdashboard</code></td>
+<td align="left">Erstelle eine value Box</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ggplotly()</code></td>
+<td align="left"><code>plotly</code></td>
+<td align="left">Konvertiere <code>ggplot2</code> Objekt in <code>plotly</code> Objekt</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>renderPlotly()</code></td>
+<td align="left"><code>plotly</code></td>
+<td align="left">Rendere <code>plotly</code> Plot in <code>shiny</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>leaflet()</code></td>
+<td align="left"><code>leaflet</code></td>
+<td align="left">Initiiere <code>leaflet</code> Karte</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>setView()</code></td>
+<td align="left"><code>leaflet</code></td>
+<td align="left">Definiere Anfangsfenster</td>
+</tr>
+<tr class="even">
+<td align="left"><code>addTiles()</code></td>
+<td align="left"><code>leaflet</code></td>
+<td align="left">Zeige Karte</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>addCircleMarkers()</code></td>
+<td align="left"><code>leaflet</code></td>
+<td align="left">Füge Kreisförmige Marker auf die Karte</td>
+</tr>
+<tr class="even">
+<td align="left"><code>renderLeaflet()</code></td>
+<td align="left"><code>leaflet</code></td>
+<td align="left">Rendere <code>leaflet</code> Plot in <code>shiny</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>reactive()</code></td>
+<td align="left"><code>shiny</code></td>
+<td align="left">Initiiere reaktives Objekt</td>
+</tr>
+<tr class="even">
+<td align="left"><code>XXXInput()</code></td>
+<td align="left"><code>shiny</code></td>
+<td align="left">Definiere Inputwidget. Siehe <a href="https://shiny.rstudio.com/gallery/widget-gallery.html">hier</a> für eine Übersicht der möglichen Inputformate.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="materialien" class="section level2">
+<h2>Materialien</h2>
+<ul>
+<li>Eine gutes <a href="https://rmarkdown.rstudio.com/flexdashboard/index.html"><strong>flexdashboard</strong></a> Tutorial.</li>
+<li>R <a href="https://shiny.rstudio.com/"><strong>shiny</strong></a> Dokumentation und Einführung.</li>
+<li><a href="https://rstudio.github.io/shinydashboard/index.html"><strong>shinydashboard</strong></a> Dokumentation und Einführung.</li>
+<li>Buch <a href="https://mastering-shiny.org/"><strong>Mastering Shiny</strong></a> von Hadley Wickham.</li>
+<li>R <a href="https://rstudio.github.io/leaflet/"><strong>leaflet</strong></a> Dokumentation und Einführung.</li>
+<li>R <a href="https://plotly.com/r/"><strong>plotly</strong></a> Dokumentation und Einführung.</li>
+<li><a href="https://www.w3schools.com/html/default.asp"><strong>HTML</strong></a> Dokumentation und Einführung.</li>
+</ul>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

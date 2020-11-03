@@ -1,0 +1,36 @@
+---
+title: "Markdown"
+output: html_document
+---
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo=FALSE, 
+                      message=FALSE, 
+                      warning=FALSE)
+
+# Lade Pakete
+library(tidyverse)
+
+# Lade Daten
+data <- read_csv('1_Data/daten.csv')
+```
+
+## Überschrift
+
+Zwei plus zwei ist `r 2 + 2`.
+
+```{r}
+summary(cars)
+```
+
+
+
+
+
+
+
+
+
+
+
+

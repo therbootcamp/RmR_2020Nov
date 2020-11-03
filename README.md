@@ -1,2 +1,3 @@
-# RmR_2020Nov
-Reporting mit R 2020 November
+# Reporting with R by Basel R Bootcamp
+
+Eine der wichtigsten Aufgaben bei datengestützten Projekten ist die Kommunikation der Ergebnisse. Dabei kann es sich um Berichte, Präsentationen, oder interaktive Dashboards handeln. Die Programmiersprache R und R Studio gehören für diese Zwecke zu den besten verfügbaren Tools. In diesem intensiven Zweitageskurs lernen Sie, wie Sie mit Hilfe von RMarkdown dynamische Berichte und Folien ganz einfach in unterschiedlichen Formaten wie .pdf, .docx oder .pptx erstellen und gestalten können. Dabei lernen Sie Analysen, Visualisierungen und Text in einem einzigen, beliebig reproduzierbaren Dokument zu erstellen. Ausserdem lernen Sie interaktive Dashboards mit Shiny erstellen können, damit Sie Daten und Abbildungen einfach explorieren und zur Exploration zur Verfügung stellen können. 

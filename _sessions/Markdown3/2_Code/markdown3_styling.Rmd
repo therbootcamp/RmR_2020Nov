@@ -1,0 +1,31 @@
+---
+title: "Styling Practical"
+author: "MSM"
+date: "5/29/2020"
+output: 
+  html_document:
+    includes:
+      after_body: footer.html
+      before_body: header.html
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(knitr)
+
+airbnb <- read.csv('../1_Data/airbnb.csv')
+```
+
+<h1 style="color:blue; text-align:center;">Zusammenfassung der `airbnb` Dantensatzes</h1>
+
+In diesem Datensatz sind `r airbnb %>% summarise(n())` Wohnungen gelistet. 
+Davon haben `r airbnb %>% count(Geschirrspüler) %>% filter(Geschirrspüler == TRUE) %>% select(n)` einen Geschirrspüler. 
+Der durchschnittlicher Mietpreis in Berlin ist: `r airbnb %>% summarise(Mittelwert = mean(as.numeric(Preis), rm.na = TRUE))` USD.
+
+<h2 style="color:lightgrey;">Auflistung der Variablen</h1>
+
+Es sind folgende Variablen im Datensatz enthalten:
+```{r}
+kable(unique(airbnb$Unterkunftsart)) 
+```

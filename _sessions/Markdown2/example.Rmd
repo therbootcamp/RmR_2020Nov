@@ -1,0 +1,72 @@
+---
+title: "Markdown"
+output: html_document
+---
+
+```{r setup, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width = 8, fig.height = 8)
+
+library(tidyverse)
+library(lubridate)
+
+# load data
+airbnb_1819 <- read_csv('1_Data/airbnb.csv') %>% 
+  filter(Erstellungsdatum > "2018-01-01", 
+         Erstellungsdatum < "2019-12-31")
+
+airbnb_plot <- ggplot(airbnb_1819 %>% 
+         group_by(Jahr = year(Erstellungsdatum), month = month(Erstellungsdatum)) %>% 
+         summarize(
+           Monat = forcats::as_factor(paste(first(Jahr), first(month), sep = '-')),
+           Wohnungen = n()), 
+       aes(x = Monat, y = Wohnungen)) + 
+  geom_bar(stat='identity', position='dodge') + 
+  theme(legend.position = 'none',
+        axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+<style>
+.chunk {
+  color: #333;
+  background-color: #f5f5f5;
+  border-radius: 0px;
+  margin: 0 0 10px;
+  display: block;
+  font-size: 14px;
+  line-height: 1.42857143;
+  font-family: monospace;
+}
+</style>
+
+
+## Überschrift
+
+Text vor der Abbildung.
+
+<div class="chunk" width=100%>
+&grave;&grave;&grave;{r fig.asp = .5, dpi = 300, fig.cap = cap}<br>
+ggplot<br>
+cap <- "Abbildung 1. Neueinstellungen pro Monat."<br>
+&grave;&grave;&grave;
+</div>
+
+
+```{r echo = FALSE, fig.asp = .52, dpi=300, fig.cap = cap}
+airbnb_plot 
+cap <- "Abbildung 1. Neueinstellungen pro Monat."
+```
+
+Text nach der Abbildung.
+
+
+
+
+
+
+
+
+
+
+
+

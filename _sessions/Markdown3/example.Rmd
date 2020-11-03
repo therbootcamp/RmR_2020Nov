@@ -1,0 +1,43 @@
+---
+title: Markdown
+output: 
+  html_document:
+    theme: lumen
+    toc: true
+    toc_depth: 4
+    includes:
+      in_header: example.Rhtml
+---
+
+```{r setup, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width = 8, fig.height = 8)
+
+library(tidyverse)
+library(lubridate)
+
+```
+
+
+
+# Überschrift 1
+
+Die ist ein Text Block.
+
+## Überschrift 2
+
+Die ist ein Text Block.
+
+#### Überschrift 4
+
+Die ist ein Text Block.
+
+
+
+
+
+
+
+
+
+
+

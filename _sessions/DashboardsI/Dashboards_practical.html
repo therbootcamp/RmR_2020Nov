@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Dashboards Practical</title>
+
+<script src="Dashboards_practical_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Dashboards_practical_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Dashboards_practical_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Dashboards_practical_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Dashboards_practical_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="Dashboards_practical_files/navigation-1.1/tabsets.js"></script>
+<link href="Dashboards_practical_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="Dashboards_practical_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="practical.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Dashboards Practical</h1>
+<h4 class="author"><table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'>
+<col width='10%'>
+<col width='10%'>
+<tr style="border:none">
+<td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
+<font style='font-style:normal'>Reporting mit R</font><br> <a href='https://therbootcamp.github.io/RmR_2020Jun/'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>
+</td>
+<td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
+<img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
+</td>
+</tr>
+</table></h4>
+
+</div>
+
+
+<p align="center" width="100%">
+<img src="image/dashboard_comic2.png" alt="Trulli" style="width:100%"> <br> <font style="font-size:10px">from <a href="https://dilbert.com/">https://dilbert.com/</a></font>
+</p>
+<div id="section" class="section level1 tabset">
+<h1></h1>
+<div id="überblick" class="section level2">
+<h2>Überblick</h2>
+<p>In diesem Practical übst du, (dynamische) Dashboards in Markdown zu erstellen. Genauer wirst du <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboards/BerlinDashboard.html">dieses</a> Dashboard erstellen.</p>
+<p>Am Ende des Practicals wirst du wissen wie man:</p>
+<ol style="list-style-type: decimal">
+<li>Dashboard-Layouts bestimmt.</li>
+<li>Die einzelnen Komponenten mit Inhalt füllst.</li>
+<li>Ein Storyboard erstellst.</li>
+<li>Karten mit <code>leaflet</code> plottest.</li>
+<li>Grafiken mit <code>plotly</code> aufpeppst.</li>
+</ol>
+</div>
+<div id="aufgaben" class="section level2">
+<h2>Aufgaben</h2>
+<div id="a---setup" class="section level3">
+<h3>A - Setup</h3>
+<ol style="list-style-type: decimal">
+<li><p>Öffne dein <code>TheRBootcamp</code> R Projekt. Es sollte die Ordner <code>1_Data</code> und <code>2_Code</code> enthalten. Stelle sicher, dass du alle Datensätze, welche im <code>Datensätze</code> Tab aufgelistet sind, in deinem <code>1_Data</code> Ordner hast.</p></li>
+<li><p>Öffne ein neues RMarkdown Skript und wähle das Template “Flex Dashboard” aus (siehe screenshot unten).</p></li>
+</ol>
+<p align="center" width="100%">
+<img src="image/screenshot_template.PNG" alt="Trulli" style="width:50%">
+</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Speichere das neue Skript unter dem Namen <code>dashboards_I_practical.Rmd</code> im <code>2_Code</code> Ordner.</p></li>
+<li><p>Schreibe als Titel “Dashboards I Practical” hinein.</p></li>
+</ol>
+</div>
+<div id="b---setup" class="section level3">
+<h3>B - Setup</h3>
+<ol style="list-style-type: decimal">
+<li>Lade die Pakete <code>tidyverse</code>, <code>plotly</code>, <code>leaflet</code>, <code>viridis</code>, <code>htmltools</code>, <code>lubridate</code>, <code>patchwork</code> und <code>flexdashboard</code> (letzteres sollte, wenn du das richtige Template ausgewählt hast, bereits als <code>library()</code> Befehl eingefügt sein) im Setup chunk.</li>
+</ol>
+<pre class="r"><code># Lade Pakete
+library(flexdashboard)
+library(tidyverse)
+library(plotly)
+library(leaflet)
+library(viridis)
+library(htmltools)
+library(patchwork)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Lade den <code>airbnb</code> Datensatz mit <code>read_csv()</code> so wie du das in den bisherigen Practicals auch gemacht hast.</li>
+</ol>
+<pre class="r"><code>airbnb &lt;- read_csv(&quot;XXX/XXX&quot;)</code></pre>
+</div>
+<div id="c---layout" class="section level3">
+<h3>C - Layout</h3>
+<p>Beim Erstellen eines Dashboards ist es hilfreich, sich von Beginn an ein Layout zurechtzulegen, welches man dann Schritt für Schritt auffüllt. Eine Skizze oder zumindest eine bildliche/ konzeptuelle Vorstellung ist daher wichtig. Zur Erinnerung, du wirst in diesem Practical <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboards/BerlinDashboard.html">dieses</a> Dashboard erstellen.</p>
+<ol style="list-style-type: decimal">
+<li><p>Öffne den Link am besten in einem separaten Tab in deinem Browser. Wir werden während dieses Practicals immer wieder darauf verweisen.</p></li>
+<li><p>Schau dir das Dashboard genau an, um einen Eindruck zu erhalten, was du genau nachbauen sollst, wie das Layout aussieht, und welche Komponenten verwendet werden. Wenn es dir hilft, mache dir eine Skizze vom Layout, sodass du eine Vorstellung der Ausrichtungen und Elemente erhälst.</p></li>
+<li><p>Setze zunächst das Seitenlayout des Dashboards auf. Nenne die drei Seiten “Übersicht der Airbnbs in Berlin”, “Entwicklung über Zeit” und “Bewertungen der Airbnbs”. Schreibe dazu die Titel in dein Markdown unterhalb des setup R chunks und füge eine Zeile von Gleichheitszeichen <code>========</code> unter jedem Titel ein (dies entspricht Titeln der ersten Stufe, also was du bisher mit einem <code>#</code> gekennzeichnet hast; siehe auch Template unten).</p></li>
+</ol>
+<pre><code>TITEL
+======================================================================</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li><p>In <code>flexdashboards</code> sind Seiten Standardmässig spaltenweise ausgerichtet. Schaue dir das <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboards/BerlinDashboard.html">Dashboard</a> nochmals an. Sind alle drei Seiten spaltenweise ausgerichtet?</p></li>
+<li><p>Genau, nur die zweite Seite ist spaltenweise ausgerichtet. Die erste Seite ist zeilenweise ausgerichtet, und die dritte Seite ist ein Storyboard. In einem Dashboard mit mehreren Seiten, kannst du jeweils nach dem Titel die Seitenausrichtung bestimmen, indem du für eine spalteinweise Ausrichtung <code>{data-orientation=columns}</code>, für eine zeilenweise Ausrichtung <code>{data-orientation=rows}</code> und für ein Storyboard <code>{.storyboard}</code> nach dem Titel (aber auf derselben Zeile) schreibst. Füge die entsprechende Ausrichtung nach den drei Titeln ein.</p></li>
+<li><p>Nun beginnen wir mit dem Layout der einzelnen Seiten. Wir starten mit Seite 1. Du siehst, dass es zwei Zeilen gibt, eine mit den value Boxes, und eine mit der fancy Karte. Die Zeilen (oder Spalten, bei spaltenweisem Layout) werden mit Titel zweiter Ordnung (mit <code>##</code>) definiert. Bei <code>flexdashboar</code> verwenden wir dazu eine Zeile Minuszeichen (<code>-----</code>; siehe Template unten), dies ist jedoch nur eine Konvention. Füge zwei Zeilen, beide mit dem Namen “Zeile” ein (hier müssen keine sinnvollen Titel angegeben werden, da die Titel zweiter Ordnung nicht angezeigt werden).</p></li>
+</ol>
+<pre><code>Zeile
+----------------------------------------------------------------------</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li><p>Wenn du das Dokument so knitten würdest, erhielten die beiden Zeilen gleich viel Platz. Die Karte soll jedoch mehr Platz erhalten. Füge dazu nach dem ersten Titel (<code>Zeile</code>, aber auf derselben Zeile im Code) folgenden Code ein: <code>{data-height = 400}</code>. Damit wird die Zeilenhöhe in Pixeln angegeben; die untere Zeile füllt dann den restlichen Platz aus.</p></li>
+<li><p>Die obere Zeile mit den value Boxes, ist wiederum in drei Spalten unterteilt, eine für jede value Box. Verwende Titel dritter Ordnung um die Spalten mit den Namen “Superhosts”, “Allstar”, und “Preiswert” zu erstellen. Für diese Titel werden keine besonderen Zeichen verwendet, sondern wie gewohnt <code>###</code>.</p></li>
+<li><p>Seite 1 ist vom Layout her fertig. Zeit Seite zwei vorzubereiten. Schaue sie dir dafür nochmals kurz an.</p></li>
+<li><p>Wie du wahrscheinlich gesehen hast, sind es diesmal zwei Spalten. Überlege dir, wie du diese definieren würdest.</p></li>
+<li><p>Genau, du kannst wie bei Aufgabe C6 Titel zweiter Ordnung hinzfügen. Füge die zwei Spalten, diesmal mit den Titeln “Spalte”, unter dem Titel der zweiten Seite hinzu (also nach der Zeile mit den Gleichheitszeichen).</p></li>
+<li><p>Wie auf Seite 1, musst du auch hier noch die Spalten anpassen. Dort hattest du mit <code>{data-height = 400}</code> die Höhe einer Zeile festgelegt. Die Breite eine Spalte kann analog mit <code>{data-width = XXX}</code> festgelegt werden. Definiere, dass die zweite Spalte 200 Pixel breit ist; die Erste wird dann automatisch angepasst.</p></li>
+<li><p>Nun fehlen nur noch die Titel der beiden Spalten. Verwende dazu Titel dritter Ordnung (<code>###</code>) und nenne die linke Spalte “Entwicklung der Berliner Airbnbs seit 2009” und die rechte Spalte “Hintergründe”. Füge diese Titel dritter Ordnung jeweils unter dem Titel zweiter Ordnung, welcher die Spalten definiert, ein.</p></li>
+<li><p>So, nun fehlt nur noch das Layout der letzten Seite. Da es sich um ein Storyboard handelt, musst du keine Spalten oder Zeilen spezifizieren. Du kannst also direkt zu den Titeln dritter Ordnung übergehen.</p></li>
+<li><p>Um die drei Abschnitte des Storyboards zu erstellen, verwende wiederum Titel dritter Ordnung (<code>###</code>). Erstelle drei Abschnitte mit den Namen “Gesamtrating”, “Sauberkeit”, und “Lage”.</p></li>
+<li><p>In den Abschnitten des Storyboards soll es jeweils einen Hauptteil (links), sowie rechts eine schmalere Spalte mit Kommentaren haben. Definiere die Breite der kleineren Kommentarspalte, indem du nach jedem der drei Titel, aber auf derselben Zeile, <code>{data-commentary-width=300}</code> einfügst.</p></li>
+<li><p>Fast geschafft! Nur die Titel der Storyboardabschnitte sind noch etwas klein. Um sie zu vergrössern, musst du etwas HTML Syntax verwenden. Kopiere den untenstehenden Code und ersetze die Titel damit, und füge die Titelnamen von Aufgabe C15 in die <code>XXX</code> des Codes ein.</p></li>
+</ol>
+<pre><code>&lt;span style=&quot;font-size: 20px;&quot;&gt;XXX&lt;/span&gt;</code></pre>
+</div>
+<div id="d---komponenten-ohne-htmlwidgets" class="section level3">
+<h3>D - Komponenten (ohne <code>htmlwidgets</code>)</h3>
+<p>Nun haben wir das Layout fertiggestellt und können die Komponenten einfüllen, also die anzuzeigenden Grafiken und Texte bestimmen.</p>
+<ol style="list-style-type: decimal">
+<li><p>Wir beginnen mit den value Boxes auf Seite 1. Um die erste valueBox zu erstellen, erstelle nach dem “Superhost” Titel einen R chunk.</p></li>
+<li><p>Berechne im erstellten R chunk zuerst die Anzahl im <code>airbnb</code> Datensatz vorhandener Superhosts. Verwende dazu den untenstehenden Code.</p></li>
+</ol>
+<pre class="r"><code># berechne die Anzahl Superhosts im airbnb Datensatz
+n_superhosts &lt;- sum(airbnb$Host_superhost)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Erstelle nun eine value Box mit der <code>valueBox()</code> Funktion und zwar direkt unterhalb des Codes der Aufgabe D2. Gebe dabei als erstes Argument <code>n_superhost</code> ein und setze <code>caption</code> auf <code>&quot;Superhost&quot;</code>.</li>
+</ol>
+<pre class="r"><code># Erstelle valueBox
+valueBox(XXX, caption = &quot;XXX&quot;)</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Funktioniert das schon so?</p></li>
+<li><p>Funktioniert, aber ein paar Dinge fehlen noch. Zunächst stimmt die Farbe nicht. Füge in die <code>valueBox()</code> Funktion ein Argument <code>color</code> ein und setze dieses auf <code>&quot;#008489&quot;</code>.</p></li>
+<li><p>Passt es jetzt?</p></li>
+<li><p>Das Icon ist noch falsch. Füge in die <code>valueBox()</code> Funktion ein weiteres Argument <code>icon</code> ein und setze dieses auf <code>&quot;fa-medal&quot;</code>.</p></li>
+<li><p>Fast geschafft; der Titel ist noch etwas zu klein. Um das zu fixen, ersetze <code>&quot;Superhost&quot;</code> im <code>caption</code> Argument mit <code>&quot;&lt;h3 style='color: white;'&gt;Superhost&lt;/h3&gt;&quot;</code>. Damit passt nun alles. Um die anderen beiden value Boxen kümmern wir uns später.</p></li>
+<li><p>So, das war es für den Moment für diese Seite; die interaktiven Grafiken erstellen wir weiter unten. Gehe im Code zur zweiten Seite. Dort werden wir den Text erstellen.</p></li>
+<li><p>Schaue dir den Text in der rechten Spalte des <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Dashboards/BerlinDashboard.html">Dashboards</a> an. Versuche ihn mit deinen bisher erworbenen RMarkdown Kenntnissen selbst nachzubauen (du darfst copy-pasten um nicht alles abschreiben zu müssen).</p></li>
+<li><p>Du kannst deinen Text mit dem untenstehenden Text, mit dem diese Spalte tatsächlich erstellt wurde, vergleichen. Hast du alles gleich gemacht? Wo hast du andere Lösungen gefunden?</p></li>
+</ol>
+<pre class="text"><code>**Airbnbs in Berlin**
+
+Das erste Airbnb in Berlin öffnete 2009 im Stadtteil
+[Pankow](https://de.wikipedia.org/wiki/Berlin-Pankow) 
+(siehe auch [Übersichtskarte](#page-1)). Von da an war ein 
+rascher Anstieg zu verzeichnen. Bereits 6 Jahre später gab 
+es in Berlin-Pankow alleine `r round(10**2.3)` Airbnbs. 
+Mittlerweile ist diese Zahl auf rund `r round(10**3.2 / 100) * 100` angestiegen.
+
+Das teuerste heute verfügbare Airbnb kostet dabei `r max(airbnb$Preis)` 
+pro Nacht; für die meisten Leute nicht gerade ein Schnäppchen. Dabei
+handelt es sich um ein `r airbnb$Unterkunftsart[max(airbnb$Preis)]` 
+im Stadtteil `r airbnb$Stadtteil[max(airbnb$Preis)]`.
+
+Insgesammt wurden über die Jahre in Berlin `r
+as.integer(sum(airbnb$host_anzahl))` Gäste in Airbnbs 
+empfangen.</code></pre>
+<ol start="12" style="list-style-type: decimal">
+<li><p>Das war es schon für diese Seite. Den Plot erstellen wir wiederum später. Gehe nun in deinem Dokument zur dritten Seite zum Titel “Gesamtrating” (Titel dritter Ordnung).</p></li>
+<li><p>Erstelle unterhalb des Titels einen R chunk und füge den untenstehenden Code ein. Dieser erstellt die erste Grafik. Es fehlt leider die Zeit für genaue Erklärungen, aber der Code ist gut Kommentiert, sodass du einen Eindruck der durchgeführten Aktionen erhalten solltest. Mehr über Plotting mit <code>ggplot2</code> kannst du in unserem Kurs zu explorativer Datenanalyse mit R lernen.</p></li>
+</ol>
+<pre class="r"><code>## Erstelle das Histogramm der Gesamtratings Wähle die
+## Rating_gesamt Variable zum Plotten aus
+ggplot(airbnb, aes(Rating_gesamt)) + # Erstelle ein Histogramm mit Balkenbreite 1
+geom_histogram(binwidth = 1) + # Definiere die Achsenbeschriftungen
+labs(x = &quot;Gesamtrating&quot;, y = &quot;Häufigkeit&quot;) + # Definiere den Range der x-Achse von 0 bis 100
+coord_cartesian(xlim = c(0, 100)) + # Wähle ein Design für den Plot
+theme_light() + # Vergrössere die Achsenbeschriftungen
+theme(axis.title = element_text(size = 16), axis.text = element_text(size = 12))</code></pre>
+<ol start="14" style="list-style-type: decimal">
+<li>Für die rechte Seite (die Kommentarspalte), musst du unterhalb des eben in Aufgabe D13 erstellten Plot Codes, ausserhalb des R chunks, drei Sterne nacheinander einfügen. So wird die Kommentarspalte erstellt (siehe Template).</li>
+</ol>
+<pre><code>INHALT LINKE SPALTE (der eben erstellte Plot)
+
+***
+
+INHALT RECHTE (KOMMENTAR-) SPALTE
+</code></pre>
+<ol start="14" style="list-style-type: decimal">
+<li><p>Füge nun eine fettgedruckten Titel (mit <code>**TITEL**</code>) unterhalb der eben eingefügten drei Sterne ein. Wähle als Titel “Mittlere Gesamtratings”.</p></li>
+<li><p>Um den <code>gauge</code> zu erstellen, berechne zuerst das mittlere Gesamtrating. Erstelle dazu einen neuen R chunk und füge den untenstehenden Code ein.</p></li>
+</ol>
+<pre class="r"><code># Berechne mittleres Gesamtrating und Runde auf eine
+# Kommastelle
+gesamtrating &lt;- airbnb %&gt;% pull(Rating_gesamt) %&gt;% mean(na.rm = TRUE) %&gt;% 
+    round(1)</code></pre>
+<ol start="16" style="list-style-type: decimal">
+<li>Um den <code>gauge</code> zu erstellen, verwende das untenstehende Template und setze <code>gesamtrating</code> als erstes Argument ein.</li>
+</ol>
+<pre class="r"><code># Estelle den gauge mit dem gesamtrating Objekt
+gauge(XXX,
+      # Setze Minimum und Maximum Werte
+      min = 0, max = 100,
+      # Definiere Farbwerte mit gaugeSectors
+      gaugeSectors(
+        # Grün, wenn der Wert zwischen 80 und 100 liegt
+        success = c(80, 100),
+        # Orange, wenn der Wert zwischen 50 un 79 liegt
+        warning = c(50, 79),
+        # Rot, wenn der Wert zwischen 0 und 49 liegt
+        danger = c(0, 49)
+        ))</code></pre>
+<ol start="17" style="list-style-type: decimal">
+<li>Füge nun unterhalb des R chunks, der den <code>gauge</code> definiert, den folgenden Text ein (der Teil <code>&lt;p style=&quot;font-size: 20px;&quot;&gt;</code> ist HTML Syntax, mit der die Textgrösse etwas vergrössert wird; mit <code>&lt;/p&gt;</code> wird die Syntax abgeschlossen):</li>
+</ol>
+<pre class="text"><code>&lt;p style=&quot;font-size: 20px;&quot;&gt;Die Berliner Airbnbs scheinen allgemein in einem
+sehr guten Zustand zu sein. Zumindest lassen die hohen Gesamtratings darauf
+schliessen.&lt;/p&gt;</code></pre>
+<ol start="18" style="list-style-type: decimal">
+<li>Die anderen zwei Seiten des Storyboard kannst du später bei den Challenges selber nachbauen. Zuerst schauen wir uns nun die beiden fancy Plots auf Seite 1 und 2 an.</li>
+</ol>
+</div>
+<div id="e---leaflet" class="section level3">
+<h3>E - <code>leaflet</code></h3>
+<ol style="list-style-type: decimal">
+<li><p>Wir starten mit der Karte auf Seite 1. Gehe in deinem Skript zur Syntax, die zweite Zeile auf der ersten Seite erstellt (die Zeile unterhalb der value Boxen).</p></li>
+<li><p><a href="https://rstudio.github.io/leaflet/">leaflet</a> bietet die Möglichkeit, sehr einfach interaktive Karten zu erstellen. Erstelle einen neuen R chunk mit dem folgenden Code:</p></li>
+</ol>
+<pre class="r"><code># Definiere Datensatz
+airbnb %&gt;% # Erstelle Plot
+leaflet() %&gt;% # Setze Anfangskoordinaten und Zoomwert
+setView(lng = 13.40439, lat = 52.51128, zoom = 12) %&gt;% # Zeichne Karte
+addTiles()</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Damit hast du bereits eine Karte von Berlin erstellt. Einfach oder? Um andere Städte auszuwählen müsste man lediglich die Längen- und Breitengradangaben in <code>setView</code> anpassen. Füge nun den folgenden Code unten hinzu (<strong>Achtung</strong>: ersetze dabei <code>addTiles()</code> in deinem Code mit dem untenstehenden Code), um die Airbnbs einzuzeichnen:</li>
+</ol>
+<pre class="r"><code>addTiles() %&gt;% # Füge Marker hinzu
+addCircleMarkers(lng = ~Längengrad, lat = ~Breitengrad, radius = 4, 
+    stroke = FALSE, fillOpacity = 0.5)</code></pre>
+<ol start="9" style="list-style-type: decimal">
+<li>Nun ist deine Karte wahrscheinlich noch etwas zu klein. Spiele etwas mit den Plotdimensionen (<code>fig.height</code> und <code>fig.width</code> in den Chunkoptionen) herum, bis du etwas passendes gefunden hast.</li>
+</ol>
+</div>
+<div id="f---plotly" class="section level3">
+<h3>F - <code>plotly</code></h3>
+<ol style="list-style-type: decimal">
+<li>Zeit den Plot auf Seite 2 hinzuzufügen. Gehe in deinem Skript zur Zeile, die den Titel “Entwicklung der Berliner Airbnbs seit 2009” in der linken Spalte auf der zweiten Seite erstellt:</li>
+</ol>
+<pre><code>### Entwicklung der Berliner Airbnbs seit 2009
+
+HIER!
+</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Füge einen R chunk mit dem untenstehenden Code ein (Datenvorbereitung und Plotting ist nicht Teil dieses Kurses, aber wenn du Fragen zum Code hast helfen wir gerne weiter!).</li>
+</ol>
+<pre class="r"><code>### Plot zum Verlauf über die Zeit
+
+# Passe den Datensatz an
+Verlauf &lt;- airbnb %&gt;% # Gruppiere über Stadtteile
+group_by(Stadtteil) %&gt;% # Ordne Zeilen Aufsteigend nach Erstellungsdatum
+arrange(Erstellungsdatum) %&gt;% # Erstelle neue Variablen Datum und Kumulativ, letztere als
+# 10er Logarithmus der Anzahl Airbnbs
+mutate(Datum = Erstellungsdatum, Kumulativ = log10(1:n())) %&gt;% 
+    # Gruppiere über Stadtteil, Datum, und Kumulativ Variablen
+group_by(Stadtteil, Datum, Kumulativ) %&gt;% # Berechne deskriptive Statistiken und erstelle Variable mit
+# Text für Popup Felder
+summarise(m_preis = mean(Preis, na.rm = TRUE), superhosts = sum(Host_superhost, 
+    na.rm = TRUE), m_rating = mean(Rating_gesamt, na.rm = TRUE), 
+    hover_text = paste0(&quot;Mittlerer Preis: &lt;b&gt;&quot;, m_preis, &quot;&lt;/b&gt;&lt;br&gt;Superhosts: &lt;b&gt;&quot;, 
+        superhosts, &quot;&lt;/b&gt;&lt;br&gt;Mittleres Gesamtrating: &lt;b&gt;&quot;, m_rating, 
+        &quot;&lt;/b&gt;&quot;)) %&gt;% # Erstelle den Plot mit Datum auf der x- und Kumulativ auf
+# der y-Achse Separate und eingefärbte Linien pro Stadtteil
+ggplot(aes(x = Datum, y = Kumulativ, col = Stadtteil)) + # Zeichne Punkte ein; das text Argument wird später von
+# ggplotly() verwendet
+geom_point(aes(text = hover_text)) + # Zeichne Linien
+geom_line(show.legend = FALSE) + # Definiere Farbwerte; Objekt farben stammt noch von der
+# Karte auf p.1
+scale_color_manual(values = farben) + # Definiere y-Achsenbeschriftung; verwendet HTML wegen plotly
+ylab(&quot;log&lt;sub&gt;10&lt;/sub&gt;(Kumulative Häufigkeit)&quot;) + # Definiere Plot design
+theme_light()</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Der Code von Aufgabe F2 erstellt einen statischen Plot. Dieses <code>ggplot</code> Objekt kann jetzt ganz einfach an <code>ggplotly()</code>, einer <code>plotly</code> Funktion weitergegeben werden, um den Plot interaktiv zu gestalten. Dazu musst du nur <code>ggplotly(Verlauf)</code> am Ende des R chunks hinzufügen. Fertig…</p></li>
+<li><p>Bzw. fast fertig. Passe die Dimensionen des Plots (<code>fig.width</code> und <code>fig.height</code> R chunk Optionen) so an, dass die Spalte möglichst ausgefüllt wird. Dazu musst du ein paar Werte ausprobieren…</p></li>
+</ol>
+</div>
+<div id="g---navigation-bar" class="section level3">
+<h3>G - Navigation Bar</h3>
+<ol style="list-style-type: decimal">
+<li><p>Nur noch wenige Schritte fehlen. Passe das <code>theme</code> des Dashboards an, indem du im YAML code unter <code>vertical_layout: fill</code> und auf der gleichen Ebene <code>theme: lumen</code> spezifizierst.</p></li>
+<li><p>Im vorgegebenen Dashboard kann der Source Code angezeigt werden, wenn man oben rechts draufklickt. Um das zu ermöglichen, musst du lediglich auf der gleichen Ebene wie eben bei G1 <code>source_code: embed</code> im YAML code eingeben.</p></li>
+<li><p>Schliesslich kannst du links zu Social Media Plattformen wie zum Beispiel Twitter und Facebook hinzufügen. Wiederum auf derselben Ebene wie vorhin, füge <code>social: [&quot;twitter&quot;, &quot;facebook&quot;]</code> im YAML hinzu.</p></li>
+</ol>
+</div>
+<div id="x---challenges" class="section level3">
+<h3>X - Challenges</h3>
+<ol style="list-style-type: decimal">
+<li>Bis jetzt ist erst eine value Box definiert. Für die Allstar <code>valueBox</code> musst du zuerst die Anzahl Airbnbs, welche überall Topratings haben berechnen. Verwende dazu den untenstehenden Code in einem R chunk, diesmal unterhalb des “Allstar” Titels. Wiederum ist hier leider nicht genügend Zeit vorhanden, den Code im Detail durchzugehen. Wenn du mehr darüber lernen möchtest, bieten wir im Kurs Explorative Datenanalyse mit R eine Einführung.</li>
+</ol>
+<pre class="r"><code># Berechne die Anzahl allstars, mit ausschliesslich top
+# ratings
+allstar &lt;- airbnb %&gt;% # Rating_gesamt ist von 0 bis 100 -&gt; reskaliere auf 0 bis 10
+mutate(Rating_gesamt = Rating_gesamt/10) %&gt;% # Behalte ausschliessliche Spalten mit Ratings
+select(starts_with(&quot;Rating&quot;)) %&gt;% # Berechne die Mittelwerte jeder Zeile über alle Spalten
+mutate(Ratings_m = rowMeans(.)) %&gt;% # Behalte nur die Zeilen mit Mittelwert 10 (Maximum Rating)
+filter(Ratings_m == 10) %&gt;% # Zähle die Anzahl verbliebener Zeilen
+summarise(n())</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Verwende den <code>valueBox</code> Code den du in Teil D erstellt hast als Template um die value Box der Anzahl Allstars zu erstellen. Ersetze dazu <code>n_superhosts</code> durch <code>allstar</code> und ändere das <code>&quot;Superhost&quot;</code> im caption Argument zu <code>&quot;Allstars&quot;</code>.</p></li>
+<li><p>Diese value Box sieht aber noch nicht ganz gleich aus wie im vorgegebenen Dashboard. Zum Einen ist die Farbe noch grün statt gold, zum Anderen ist das Icon noch falsch. Ändere zunächst die Farbe (das <code>color</code> Argument) von <code>&quot;#008489&quot;</code> zu <code>&quot;#f5d142&quot;</code>.</p></li>
+<li><p>Nun ändere den Input zum <code>icon</code> Argument von <code>&quot;fa-medal&quot;</code> zu <code>&quot;fa-gem&quot;</code>. Dabei spezifiziert das “fa-”, dass das Icon aus der <a href="https://fontawesome.com/icons?d=gallery">Font Awesome</a> Sammlung stammt. “medal” und “gem” geben dann den Namen des Icons an.</p></li>
+<li><p>Nun zur dritten value Box, die die Anzahl preiswerter Airbnbs - definiert als weniger als 100 Euro pro Nacht - angibt. Berechne dazu zunächst die Anzahl mit dem untenstehenden Code in einem R chunk unterhalb des “Preiswert” Titels.</p></li>
+</ol>
+<pre class="r"><code># Berechne die Anzahl preiswerter Airbnbs
+preiswert &lt;- sum(airbnb$Preis &lt; 100)</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Verwende wiederum den <code>valueBox</code> Code von Aufgaben im Teil D als Template um nun die value Box zu erstellen. Ersetze dazu <code>n_superhosts</code> durch <code>preiswert</code> und ersetze das <code>&quot;Superhost&quot;</code> durch <code>&quot;Preiswert&quot;</code>. Ändere ausserdem das <code>icon</code> zu <code>&quot;fa-money-bill-wave&quot;</code> und die Farbe zu <code>&quot;#85a95d&quot;</code>.</p></li>
+<li><p>Auf Seite 3 sind noch zwei Seiten des Storyboards leer. Fülle diese mit Inhalt; du kannst dich dabei and das vorgegebene Dashboard halten (siehe Aufgaben im Abschnitt D für Hilfestellungen), oder eigene Dinge ausprobieren.</p></li>
+</ol>
+</div>
+</div>
+<div id="datensatz" class="section level2">
+<h2>Datensatz</h2>
+<p>Der <a href="https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/master/_materials/case/airbnb.csv">airbnb.csv</a> Datensatz enthält Zahlen zu 9868 Berliner Airbnbs</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Preis</td>
+<td align="left">Preis pro Nacht</td>
+</tr>
+<tr class="even">
+<td align="left">Erstellungsdatum</td>
+<td align="left">Eröffnungsdatum des Airbnbs</td>
+</tr>
+<tr class="odd">
+<td align="left">Unterkunftsart</td>
+<td align="left">Appartement, Loft, House, etc.</td>
+</tr>
+<tr class="even">
+<td align="left">Schlafplätze</td>
+<td align="left">Anzahl Schlafplätze</td>
+</tr>
+<tr class="odd">
+<td align="left">Schlafzimmer</td>
+<td align="left">Anzahl Schlafzimmer</td>
+</tr>
+<tr class="even">
+<td align="left">Badezimmer</td>
+<td align="left">Anzahl Badezimmer</td>
+</tr>
+<tr class="odd">
+<td align="left">Reinigungsgebühr</td>
+<td align="left">Reinigungsgebühr</td>
+</tr>
+<tr class="even">
+<td align="left">Verfügbarkeit_90Tage</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Viertel</td>
+<td align="left">In welchem Viertel befindet sich das Airbnb</td>
+</tr>
+<tr class="even">
+<td align="left">Stadtteil</td>
+<td align="left">In welchem Stadtteil befindet sich das Airbnb</td>
+</tr>
+<tr class="odd">
+<td align="left">Breitengrad</td>
+<td align="left">Breitengrad</td>
+</tr>
+<tr class="even">
+<td align="left">Längengrad</td>
+<td align="left">Längengrad</td>
+</tr>
+<tr class="odd">
+<td align="left">Host_id</td>
+<td align="left">Host id</td>
+</tr>
+<tr class="even">
+<td align="left">Host_seit</td>
+<td align="left">Erfahrung des Hosts</td>
+</tr>
+<tr class="odd">
+<td align="left">Host_antwortzeit</td>
+<td align="left">Host Antwortzeit</td>
+</tr>
+<tr class="even">
+<td align="left">Host_antwortrate</td>
+<td align="left">Host Antwortrate</td>
+</tr>
+<tr class="odd">
+<td align="left">Host_superhost</td>
+<td align="left">Superhost Ja/Nein</td>
+</tr>
+<tr class="even">
+<td align="left">Host_anzahl</td>
+<td align="left">Anzahl Gäste</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_gesamt</td>
+<td align="left">Gesamtrating</td>
+</tr>
+<tr class="even">
+<td align="left">Rating_genauigkeit</td>
+<td align="left">Genauigkeitsrating</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_sauberkeit</td>
+<td align="left">Sauberkeitsrating</td>
+</tr>
+<tr class="even">
+<td align="left">Rating_checkin</td>
+<td align="left">Checkinrating</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_kommunikation</td>
+<td align="left">Kommunikationsrating</td>
+</tr>
+<tr class="even">
+<td align="left">Rating_lage</td>
+<td align="left">Lagerating</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_wertigkeit</td>
+<td align="left">Wertigkeitsrating</td>
+</tr>
+<tr class="even">
+<td align="left">Küche</td>
+<td align="left">Küche vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Wifi</td>
+<td align="left">WLAN vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">TV</td>
+<td align="left">TV vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Kaffeemaschine</td>
+<td align="left">Kaffeemaschine vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">Geschirrspüler</td>
+<td align="left">Geschirrspüler vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Terrasse_Balkon</td>
+<td align="left">Terrasse/Balkon vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">Badewanne</td>
+<td align="left">Badewanne vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Check_in_24h</td>
+<td align="left">24h Check-In vorhanden TRUE/FALSE</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="funktionen" class="section level2">
+<h2>Funktionen</h2>
+<div id="paket" class="section level3">
+<h3>Paket</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Paket</th>
+<th align="left">Installation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>tidyverse</code></td>
+<td align="left"><code>install.packages(&quot;tidyverse&quot;)</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>flexdashboard</code></td>
+<td align="left"><code>install.packages(&quot;flexdashboard&quot;)</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>plotly</code></td>
+<td align="left"><code>install.packages(&quot;plotly&quot;)</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>leaflet</code></td>
+<td align="left"><code>install.packages(&quot;leaflet&quot;)</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>viridis</code></td>
+<td align="left"><code>install.packages(&quot;viridis&quot;)</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>htmltools</code></td>
+<td align="left"><code>install.packages(&quot;htmltools&quot;)</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>patchwork</code></td>
+<td align="left"><code>install.packages(&quot;patchwork&quot;)</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="funktionen-1" class="section level3">
+<h3>Funktionen</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Funktion</th>
+<th align="left">Paket</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>gauge()</code></td>
+<td align="left"><code>flexdashboard</code></td>
+<td align="left">Erstelle einen gauge.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>valueBox()</code></td>
+<td align="left"><code>flexdashboard</code></td>
+<td align="left">Erstelle eine value Box</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>ggplotly()</code></td>
+<td align="left"><code>plotly</code></td>
+<td align="left">Konvertiere <code>ggplot2</code> Objekt in <code>plotly</code> Objekt</td>
+</tr>
+<tr class="even">
+<td align="left"><code>leaflet()</code></td>
+<td align="left"><code>leaflet</code></td>
+<td align="left">Initiiere <code>leaflet</code> Karte</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>setView()</code></td>
+<td align="left"><code>leaflet</code></td>
+<td align="left">Definiere Anfangsfenster</td>
+</tr>
+<tr class="even">
+<td align="left"><code>addTiles()</code></td>
+<td align="left"><code>leaflet</code></td>
+<td align="left">Zeige Karte</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>addCircleMarkers()</code></td>
+<td align="left"><code>leaflet</code></td>
+<td align="left">Füge Kreisförmige Marker auf die Karte</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="materialien" class="section level2">
+<h2>Materialien</h2>
+<ul>
+<li>Eine gutes <a href="https://rmarkdown.rstudio.com/flexdashboard/index.html"><strong>flexdashboard</strong></a> Tutorial.</li>
+<li>R <a href="https://rstudio.github.io/leaflet/"><strong>leaflet</strong></a> Dokumentation und Einführung.</li>
+<li>R <a href="https://plotly.com/r/"><strong>plotly</strong></a> Dokumentation und Einführung.</li>
+<li><a href="https://www.w3schools.com/html/default.asp"><strong>HTML</strong></a> Dokumentation und Einführung.</li>
+</ul>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

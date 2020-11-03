@@ -1,0 +1,80 @@
+---
+title: "Markdown"
+output: html_document
+---
+
+```{r setup, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = F, fig.width = 8, fig.height = 8)
+
+library(tidyverse)
+library(lubridate)
+library(knitr)
+library(kableExtra)
+library(sjPlot)
+
+# load data
+airbnb_1819 <- read_csv('1_Data/airbnb.csv') %>% 
+  filter(Erstellungsdatum > "2018-01-01", 
+         Erstellungsdatum < "2019-12-31")
+
+# Veltor mit Ausstatttungsmerkmalen
+ausstattung_var = c('Küche','Wifi','TV','Kaffeemaschine',
+                    'Geschirrspüler','Terrasse_Balkon',
+                    'Check_in_24h')
+
+# Bestimme Preise als Funktion der Ausstatttungsmerkmale
+ausstattung <- airbnb_1819 %>% 
+  select(all_of(ausstattung_var), Preis) %>%
+  pivot_longer(-Preis,
+             names_to = 'Ausstattung',
+             values_to = 'Ausstattung_vorhanden') %>% 
+  group_by(Ausstattung) %>% 
+  summarize(Nicht_vorhanden = mean(Preis[!Ausstattung_vorhanden]),
+            Vorhanden = mean(Preis[Ausstattung_vorhanden]),
+            Differenz = Vorhanden - Nicht_vorhanden, 
+            Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %>% 
+  arrange(desc(Differenz)) 
+
+# Reduzierter Vektor mit Ausstattungsmerkmalen
+ausstattung_var <- c('Küche','TV','Terrasse_Balkon','Check_in_24h')
+
+# Rechne Regression des Preises auf Austattungsmerkmale und Hotel
+ausstattung <- airbnb_1819 %>% 
+  mutate(Hotel = Unterkunftsart %in% c('Boutique hotel', 'Hotel')) %>% 
+  select(Preis, Hotel, all_of(ausstattung_var)) 
+ausstattung_mod <- ausstattung %>% 
+  lm(formula = Preis ~ .)
+```
+
+
+<style>
+.chunk {
+  color: #333;
+  background-color: "white";
+  border-radius: 0px;
+  margin: 0 0 10px;
+  display: block;
+  font-size: 14px;
+  line-height: 1.42857143;
+  font-family: Monaco;
+  }
+.chunk a{
+  color: #333;
+  text-decoration: none; 
+}
+</style>
+<div class="chunk" width=100%>
+
+## Überschrift
+
+Dies ist ein Block mit Text. Dies ist ein &lsqb;Link&rsqb;(https://therbootcamp.github.io/). Und dies eine Fussnote ^&lsqb;Fussnoten werden automatisch numeriert und unter dem Text angezeigt&rsqb;.
+
+</div>
+
+## Überschrift
+
+Dies ist ein Block mit Text. Dies ist ein [Link](https://therbootcamp.github.io/). Und dies eine Fussnote ^[Fussnoten werden automatisch numeriert und unter dem Text angezeigt].
+
+
+
+

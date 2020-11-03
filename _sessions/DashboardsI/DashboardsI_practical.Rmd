@@ -1,0 +1,510 @@
+---
+title: "Dashboards I"
+author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
+  <tr style='border:none'>
+    <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
+      <font style='font-style:normal'>Reporting mit R</font><br>
+      <a href='https://therbootcamp.github.io/RmR_2020Jun/'>
+        <i class='fas fa-clock' style='font-size:.9em;' ></i>
+      </a>
+      <a href='https://therbootcamp.github.io'>
+        <i class='fas fa-home' style='font-size:.9em;'></i>
+      </a>
+      <a href='mailto:therbootcamp@gmail.com'>
+        <i class='fas fa-envelope' style='font-size: .9em;'></i>
+      </a>
+      <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
+        <i class='fab fa-linkedin' style='font-size: .9em;'></i>
+      </a>
+      <a href='https://therbootcamp.github.io'>
+        <font style='font-style:normal'>The R Bootcamp</font>
+      </a>
+    </td>
+    <td style='width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none'>
+      <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
+    </td>
+  </tr></table>"
+output:
+  html_document:
+    css: practical.css
+    self_contained: no
+---
+
+<style>
+pre code,  .md:not(.use-csslab) pre code {
+  white-space: pre-wrap;
+  }
+</style>
+
+```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(comment = NA, 
+                      fig.width = 6, 
+                      fig.height = 6,
+                      fig.align = 'center',
+                      echo = TRUE, 
+                      eval = FALSE, 
+                      warning = FALSE,
+                      tidy.opts=list(width.cutoff=40))
+
+options(digits = 3)
+
+# Load packages
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+
+```
+
+<p align="center" width="100%">
+  <img src="image/dashboard_comic2.png" alt="Trulli" style="width:100%">
+  <br>
+  <font style="font-size:10px">from <a href="https://dilbert.com/">https://dilbert.com/</a></font>
+</p>
+
+
+# {.tabset}
+
+## Überblick
+
+In diesem Practical übst du, dynamische Dashboards in Markdown zu erstellen. Ziel ist es [**dieses Dashboard**](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html) zu erstellen.
+
+Am Ende des Practicals wirst du wissen wie man:
+
+1. Dashboard-Layouts bestimmt.
+2. Die einzelnen Komponenten mit Inhalt füllt.
+3. Ein Storyboard erstellt.
+4. Karten mit `leaflet` plottet.
+5. Grafiken mit `plotly` aufpeppt.
+
+## Aufgaben
+
+### A - Setup
+
+1. Öffne dein `TheRBootcamp` R Projekt. Es sollte die Ordner `1_Data`, `2_Assets` und `3_Markdown` enthalten. 
+
+2. Öffne ein neues RMarkdown Skript und wähle das Template "Flex Dashboard" aus (siehe screenshot unten).
+
+<p align="center" width="100%">
+  <img src="image/screenshot_template.PNG" alt="Trulli" style="height:200px">
+</p>
+
+
+3. Speichere das neue Skript unter dem Namen `dashboards_I_practical.Rmd` im `3_Markdown` Ordner.
+
+4. Schreibe als Titel `Dashboards I Practical` hinein.
+
+5. Lösche alles unterhalb des `setup` R chunks.
+
+### B - Setup
+
+1. Lade die Pakete `tidyverse`, `plotly`, `leaflet`, `viridis`, `htmltools`, `lubridate`, `patchwork` und `flexdashboard` (letzteres sollte, wenn du das richtige Template ausgewählt hast, bereits im `setup` Chunk als `library()` Befehl eingefügt sein).
+
+```{r, echo = T, eval = T, message = F}
+# Lade Pakete
+library(flexdashboard)
+library(tidyverse)
+library(plotly)
+library(leaflet)
+library(viridis)
+library(htmltools)
+```
+
+
+2. Lade ebenfalls im `setup` chunk den `airbnb` Datensatz mit `read_csv()`, so wie du das in den bisherigen Practicals auch gemacht hast.
+
+### C - Layout
+
+Beim Erstellen eines Dashboards ist es hilfreich, sich von Beginn an ein Layout zurechtzulegen, welches man dann Schritt für Schritt auffüllt. Eine Skizze oder zumindest eine bildliche/ konzeptuelle Vorstellung ist daher wichtig. 
+
+1. Öffne das [**Ziel-Dashboard**](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html) Link in einem separaten Tab in deinem Browser. Wir werden während dieses Practicals immer wieder darauf verweisen.
+
+2. Schau dir das Dashboard genau an, um einen Eindruck zu erhalten, was du nachbauen sollst, wie das Layout aussieht und welche Komponenten verwendet werden. 
+
+3. Setze zunächst das Seitenlayout des Dashboards auf. Füge drei Seiten hinzu: `Übersicht der Airbnbs in Berlin`, `Entwicklung über Zeit` und `Bewertungen der Airbnbs`. Schreibe dazu die Titel in dein Markdown, unterhalb des R Setup chunks und füge eine Zeile von Gleichheitszeichen `========` unter jedem Titel ein.  
+
+````markdown
+TITEL
+======================================================================
+````
+
+4. In `flexdashboards` sind Seiten standardmässig spaltenweise ausgerichtet. Schaue dir das [Dashboard](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html) nochmals an. Sind alle drei Seiten spaltenweise ausgerichtet?
+
+5. Nur die zweite Seite ist spaltenweise ausgerichtet! Die erste Seite ist zeilenweise ausgerichtet, und die dritte Seite ist ein Storyboard. In einem Dashboard mit mehreren Seiten, kannst du jeweils nach dem Titel die Seitenausrichtung bestimmen. Schreibe für spaltenweise Ausrichtung `{data-orientation=columns}`, für zeilenweise Ausrichtung `{data-orientation=rows}` und für ein Storyboard `{.storyboard}` jeweils nach dem Titel (aber auf derselben Zeile). Füge die entsprechende Ausrichtung nach den drei Titeln ein.
+
+6. Nun beginne Seite 1 zu layoutieren. Du siehst, dass es zwei Zeilen gibt, eine mit den `valueBoxes`, und eine mit der Karte. Die Zeilen werden mit Titel zweiter Ordnung (mit `----`) definiert. Füge zwei Zeilen, mit dem Namen `Zeile 1` und `Zeile 2` ein. Hier müssen keine sinnvollen Titel angegeben werden, da die Titel zweiter Ordnung nicht angezeigt werden. 
+
+````markdown
+Zeile X
+----------------------------------------------------------------------
+````
+
+7. Wenn du das Dokument so knittest erhalten die beiden Zeilen gleich viel Platz. Die Karte soll jedoch mehr Platz erhalten. Füge dazu nach dem ersten Titel in derselben Zeile den folgenden Code ein: `{data-height = 400}`. Damit wird die Zeilenhöhe in Pixeln angegeben; Zeile 2 füllt dann den restlichen Platz aus. Hinweis: Die Platzverteilung erfolgt erst, wenn die Komponenten gefüllt werden; wenn du das Dokument jetzt knittest, wird also Zeile 1 im Moment noch gleich hoch sein, wie Zeile 2.
+
+8. Zeile 1 mit den `valueBoxes`, ist wiederum in drei Spalten unterteilt, eine für jede `valueBox`. Verwende Titel dritter Ordnung um die Spalten mit den Namen `Superhosts`, `Allstar`, und `Preiswert` zu erstellen. Für diese Titel werden keine besonderen Zeichen verwendet, sondern wie gewohnt `###`.
+
+9. In Zeile 2 (also unterhalb des nächsten Titels zweiter Ordnung) musst du nur einen Titel einfügen, ohne Titel dritter Ordnung klappt die automatische Grössenanpassung nicht. Gib "Karte" als Titel an, und füge direkt dahinter `{.no-title}` ein; damit wird die Präsentation des Titels auf dem Dashboard unterdrückt.
+
+10. Seite 1 ist vom Layout her fertig. Zeit, Seite zwei vorzubereiten. Schaue sie dir dafür nochmals kurz an.
+
+11. Wie du wahrscheinlich gesehen hast, sind es diesmal zwei Spalten. Überlege dir, wie du diese definieren würdest.
+
+12. Du kannst wie bei Aufgabe C6 Titel zweiter Ordnung hinzfügen. Füge die zwei Spalten, diesmal mit den Titeln `Spalte 1` und `Spalte 2`, unter dem Titel der zweiten Seite hinzu (also nach der Zeile mit den Gleichheitszeichen).
+
+13. Wie auf Seite 1, musst du auch hier noch die Spalten anpassen. Dort hattest du mit `{data-height = 400}` die Höhe einer Zeile festgelegt. Die Breite einer Spalte kann analog mit `{data-width = XXX}` festgelegt werden. Definiere, dass Spalte 2 200 Pixel breit ist; die Erste wird dann automatisch angepasst.
+
+14. Nun fehlen nur noch die Titel der beiden Spalten. Verwende dazu Titel dritter Ordnung (`###`) und nenne die linke Spalte `Entwicklung der Berliner Airbnbs seit 2009` und die rechte Spalte `Hintergründe?`. Füge diese Titel dritter Ordnung jeweils unter dem Titel zweiter Ordnung (`Spalte 1` bzw. `Spalte 2`), welcher die Spalten definiert, ein.
+
+15. So, nun fehlt nur noch das Layout der letzten Seite. Da es sich um ein Storyboard handelt, musst du keine Spalten oder Zeilen spezifizieren. Du kannst also direkt zu den Titeln dritter Ordnung übergehen.
+
+16. Um die drei Abschnitte des Storyboards zu erstellen, verwende wiederum Titel dritter Ordnung (`###`). Erstelle drei Abschnitte mit den Namen `Gesamtrating`, `Sauberkeit`, und `Lage`.
+
+17. In den Abschnitten des Storyboards soll es jeweils einen Hauptteil (links), sowie rechts eine schmalere Spalte mit Kommentaren haben. Definiere die Breite der kleineren Kommentarspalte, indem du nach jedem der drei Titel, aber auf derselben Zeile, `{data-commentary-width=300}` einfügst.
+
+18. Fast geschafft! Die Titel der Storyboardabschnitte sind noch etwas klein. Um sie zu vergrössern, musst du etwas HTML Syntax verwenden. Kopiere den untenstehenden Code und ersetze die Titel damit, und füge die Titelnamen von Aufgabe C16 in die `XXX` des Codes ein.
+
+````markdown
+<span style="font-size: 20px;">XXX</span>
+````
+
+### D - Komponenten
+
+1. Das Layout ist fertig. Nun geht es an den Inhalt. Beginne mit den `valueBoxes` auf Seite 1. Um die erste `valueBox` einzufügen, erstelle nach dem `Superhost` Titel einen Code Chunk.
+
+2. Berechne im erstellten R chunk zuerst die Anzahl im `airbnb` Datensatz vorhandener Superhosts. Verwende dazu den untenstehenden Code.
+
+```{r}
+# berechne die Anzahl Superhosts im airbnb Datensatz
+n_superhosts <- sum(airbnb$Host_superhost)
+```
+
+3. Erstelle nun eine value Box mit der `valueBox()` Funktion und zwar direkt unterhalb des Codes der Aufgabe D2. Gebe dabei als erstes Argument `n_superhosts` ein und setze `caption` auf `"Superhost"`.
+
+```{r}
+
+# Erstelle valueBox
+valueBox(XXX, caption = "XXX")
+
+```
+
+4. Funktioniert das schon so?
+
+5. Funktioniert, aber ein paar Dinge fehlen noch. Zunächst stimmt die Farbe nicht. Füge in die `valueBox()` Funktion ein Argument `color` ein und setze dieses auf `"#6BB7B9"`.
+
+6. Passt es jetzt?
+
+7. Bisher ist noch kein Icon vorhanden. Füge in die `valueBox()` Funktion ein weiteres Argument `icon` ein und setze dieses auf `"fa-medal"`. 
+
+8. Fast geschafft; der Titel ist noch etwas zu klein. Um das zu fixen, ersetze `"Superhost"` im `caption` Argument mit `"<h3 style='color: white;'>Superhost</h3>"`. Damit passt nun alles. Um die anderen beiden value Boxen kümmern wir uns später.
+
+9. So, das war es für den Moment für diese Seite; die interaktiven Grafiken erstellen wir weiter unten. Gehe im Code zur zweiten Seite. Dort wirst du den Text erstellen.
+
+10. Schaue dir den Text in der rechten Spalte des [Dashboards](https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html) an. Versuche ihn mit deinen bisher erworbenen RMarkdown Kenntnissen selbst nachzubauen.
+
+11. Du kannst deinen Text mit dem untenstehenden Code, mit dem diese Spalte tatsächlich erstellt wurde, vergleichen. Hast du alles gleich gemacht? Wo hast du andere Lösungen gefunden?
+
+````wrap
+**Airbnbs in Berlin**
+
+Das erste Airbnb in Berlin öffnete 2009 im Stadtteil [Pankow](https://de.wikipedia.org/wiki/Berlin-Pankow)  (siehe auch [Übersichtskarte](#page-1)). Von da an war ein  rascher Anstieg zu verzeichnen. Bereits 6 Jahre später gab  es in Berlin-Pankow alleine `r knitr::inline_expr("round(10**2.3)")` Airbnbs.  Mittlerweile ist diese Zahl auf rund `r knitr::inline_expr("round(10**3.2 / 100) * 100")` angestiegen.
+
+Das teuerste heute verfügbare Airbnb kostet dabei `r knitr::inline_expr("max(airbnb$Preis)")` pro Nacht; für die meisten Leute nicht gerade ein Schnäppchen. Dabei handelt es sich um ein `r knitr::inline_expr("airbnb$Unterkunftsart[max(airbnb$Preis)]")` im Stadtteil `r knitr::inline_expr("airbnb$Stadtteil[max(airbnb$Preis)]")`.
+
+Insgesamt wurden über die Jahre in Berlin `r knitr::inline_expr("as.integer(sum(airbnb$Host_anzahl))")` Gäste in Airbnbs empfangen.
+
+````
+
+12. Das war es schon für diese Seite. Den Plot erstellen wir wiederum später. Gehe nun in deinem Dokument zur dritten Seite zum Titel `Gesamtrating` (Titel dritter Ordnung).
+
+13. Erstelle unterhalb des Titels einen R chunk und füge den untenstehenden Code ein. Dieser erstellt die erste Grafik. 
+
+```{r}
+## Erstelle das Histogramm der Gesamtratings
+# Wähle die Rating_gesamt Variable zum Plotten aus
+ggplot(airbnb, aes(Rating_gesamt)) +
+  # Erstelle ein Histogramm mit Balkenbreite 1
+  geom_histogram(binwidth = 1) +
+  # Definiere die Achsenbeschriftungen
+  labs(x = "Gesamtrating",
+       y = "Häufigkeit") +
+  # Definiere den Range der x-Achse von 0 bis 100
+  coord_cartesian(xlim = c(0, 100)) +
+  # Wähle ein Design für den Plot
+  theme_light() +
+  # Vergrössere die Achsenbeschriftungen
+  theme(
+    axis.title = element_text(size = 16),
+    axis.text = element_text(size = 12)
+  ) 
+```
+
+14. Für die rechte Seite (die Kommentarspalte), musst du unterhalb des eben in Aufgabe D13 erstellten Plot Codes, ausserhalb des R chunks, drei Sterne nacheinander einfügen. So wird die Kommentarspalte erstellt (siehe Template). 
+
+````mardown
+INHALT LINKE SPALTE (der eben erstellte Plot)
+
+***
+
+INHALT RECHTE (KOMMENTAR-) SPALTE
+
+````
+15. Füge nun einen fettgedruckten Titel (mit `**TITEL**`) unterhalb der eben eingefügten drei Sterne ein. Wähle als Titel `Mittlere Gesamtratings`.
+
+16. Um den `gauge` zu erstellen, berechne zuerst das mittlere Gesamtrating. Erstelle dazu einen neuen Code Chunk und füge den untenstehenden Code ein. 
+
+```{r}
+# Berechne mittleres Gesamtrating und Runde auf eine Kommastelle
+gesamtrating <- airbnb %>%
+    pull(Rating_gesamt) %>% mean(na.rm = TRUE) %>%  round(1)
+```
+
+17. Mit diesem Objekt kannst du jetzt den `gauge` erstellen. Verwende das untenstehende Template und setze das `gesamtrating` Objekt als erstes Argument ein.
+
+```{r}
+
+# Estelle den gauge mit dem gesamtrating Objekt
+gauge(XXX,
+      # Setze Minimum und Maximum Werte
+      min = 0, max = 100,
+      # Definiere Farbwerte mit gaugeSectors
+      gaugeSectors(
+        # Grün, wenn der Wert zwischen 80 und 100 liegt
+        success = c(80, 100),
+        # Orange, wenn der Wert zwischen 50 un 79 liegt
+        warning = c(50, 79),
+        # Rot, wenn der Wert zwischen 0 und 49 liegt
+        danger = c(0, 49)
+        ))
+```
+
+18. Wenn du das Dokument jetzt knittest, siehst du, dass die Dimensionen in der Kommentarspalte noch falsch sind. Das ist, weil der `gauge` noch zu gross ist. Um das zu beheben, kannst du `fig.width=3, fig.height=1.5, fig.align="center"` in den Code Chunk Optionen erstellt.
+
+19. Füge nun unterhalb des Code Chunks, der den `gauge` definiert, den folgenden Text ein:
+
+````markdown
+<p style="font-size: 20px;">Die Berliner Airbnbs scheinen allgemein in einem
+sehr guten Zustand zu sein. Zumindest lassen die hohen Gesamtratings darauf
+schliessen.</p>
+````
+
+20. Die anderen zwei Seiten des Storyboard kannst du später bei den Challenges selber nachbauen. Zuerst schauen wir uns nun die beiden fancy Plots auf Seite 1 und 2 an.
+
+### E - `leaflet`
+
+1. Nun geht es an die Karte auf Seite 1. Gehe in deinem Skript zur Syntax, welche die Zeile 2 auf der ersten Seite erstellt (die Zeile unterhalb der `valueBox`en).
+
+2. [leaflet](https://rstudio.github.io/leaflet/) bietet die Möglichkeit, sehr einfach interaktive Karten zu erstellen. Erstelle einen neuen Code chunk mit dem folgenden Code unterhalb des `Karte` Titel:
+
+```{r}
+# Definiere Datensatz
+airbnb %>% 
+  # Erstelle Plot
+  leaflet() %>% 
+  # Setze Anfangskoordinaten und Zoomwert
+  setView(lng = 13.40439, lat = 52.51128, zoom = 12) %>% 
+  # Zeichne Karte
+  addTiles()
+```
+
+3. Damit hast du bereits eine Karte von Berlin erstellt. Einfach oder? Um andere Städte auszuwählen müsste man lediglich die Längen- und Breitengradangaben in `setView` anpassen. Ersetze nun `addTiles()` in deinem Code mit dem untenstehenden Code, um die Airbnbs einzuzeichnen:
+
+```{r}
+  addTiles() %>%
+  # Füge Marker hinzu
+  addCircleMarkers(
+    lng = ~Längengrad,
+    lat = ~Breitengrad,
+    radius = 4,
+    stroke = FALSE, fillOpacity = 0.5,
+    color = "#6BB7B9"
+  )
+```
+
+### F - `plotly`
+
+1. Zeit den Plot auf Seite 2 hinzuzufügen. Gehe in deinem Skript zur Zeile, die den Titel `Entwicklung der Berliner Airbnbs seit 2009` in der linken Spalte auf der zweiten Seite erstellt:
+
+````mardown
+### Entwicklung der Berliner Airbnbs seit 2009
+
+HIER!
+
+````
+
+2. Füge einen Code chunk mit dem untenstehenden Code ein. Datenvorbereitung und Plotting ist nicht Teil dieses Kurses, aber wenn du Fragen zum Code hast helfen wir gerne weiter!. 
+
+```{r}
+### Plot zum Verlauf über die Zeit
+
+# Anzahl Stadtteile
+n_stadtteile <- length(unique(airbnb$Stadtteil))
+# Definiere n_stadtteile verschiedene Farben aus der viridis palette
+farben <- viridis(n_stadtteile)
+
+# Passe den Datensatz an
+Verlauf <- airbnb %>%
+  # Gruppiere über Stadtteile
+  group_by(Stadtteil) %>%
+  # Ordne Zeilen Aufsteigend nach Erstellungsdatum 
+  arrange(Erstellungsdatum) %>%
+  # Erstelle neue Variablen Datum und Kumulativ,
+  # letztere als 10er Logarithmus der Anzahl Airbnbs
+  mutate(Datum = Erstellungsdatum,
+         Kumulativ = log10(1:n())) %>%
+  # Gruppiere über Stadtteil, Datum, und Kumulativ Variablen
+  group_by(Stadtteil, Datum, Kumulativ) %>% 
+  # Berechne deskriptive Statistiken und erstelle Variable mit 
+  # Text für Popup Felder
+  summarise(
+    m_preis = mean(Preis, na.rm = TRUE),
+    superhosts = sum(Host_superhost, na.rm = TRUE),
+    m_rating = mean(Rating_gesamt, na.rm = TRUE),
+    hover_text = paste0("Mittlerer Preis: <b>", m_preis,
+                        "</b><br>Superhosts: <b>", superhosts,
+                        "</b><br>Mittleres Gesamtrating: <b>",
+                        m_rating, "</b>")
+  ) %>% 
+  # Erstelle den Plot mit Datum auf der x- und Kumulativ auf der y-Achse
+  # Separate und eingefärbte Linien pro Stadtteil
+  ggplot(aes(x = Datum, y = Kumulativ, col = Stadtteil)) +
+  # Zeichne Punkte ein; das text Argument wird später von ggplotly() verwendet
+  geom_point(aes(text = hover_text)) +
+  # Zeichne Linien
+  geom_line(show.legend = FALSE) +
+  # Definiere Farbwerte; Objekt farben stammt noch von der Karte auf p.1
+  scale_color_manual(values = farben) +
+  # Definiere y-Achsenbeschriftung; verwendet HTML wegen plotly
+  ylab("log<sub>10</sub>(Kumulative Häufigkeit)") +
+  # Definiere Plot design
+  theme_light()
+
+# Erstelle Plot
+Verlauf
+```
+
+3. Der Code von Aufgabe F2 erstellt einen statischen Plot. Dieses `ggplot` Objekt kann jetzt ganz einfach an `ggplotly()`, einer `plotly` Funktion weitergegeben werden, um den Plot interaktiv zu gestalten. Dazu musst du nur das `Verlauf` am Ende des R chunks in `ggplotly(Verlauf)` umwandeln. Fertig!
+
+4. Bzw. fast fertig. Passe die Dimensionen des Plots (`fig.width` und `fig.height` in den R Chunk Optionen) so an, dass die Spalte möglichst ausgefüllt wird. Dazu musst du evtl. ein paar Werte ausprobieren...
+
+### G - Navigation Bar
+
+1. Nur noch wenige Schritte fehlen. Passe das `theme` des Dashboards an, indem du im YAML code unter `vertical_layout: fill` und auf der gleichen Ebene `theme: lumen` spezifizierst.
+
+2. Im vorgegebenen Dashboard kann der Source Code angezeigt werden, wenn man oben rechts draufklickt. Um das zu ermöglichen, musst du lediglich auf der gleichen Ebene wie eben bei G1 `source_code: embed` im YAML code eingeben. Knitte das Dokument und schaue dir den Source Code an. Cool oder?
+
+3. Schliesslich kannst du links zu Social Media Plattformen wie zum Beispiel Twitter und Facebook hinzufügen. Wiederum auf derselben Ebene wie vorhin, füge `social: ["twitter", "facebook"]` im YAML hinzu.
+
+### X - Challenges
+
+1. Bis jetzt ist erst eine value Box definiert. Für die Allstar `valueBox` musst du zuerst die Anzahl Airbnbs, welche überall Topratings haben berechnen. Verwende dazu den untenstehenden Code in einem R chunk, diesmal unterhalb des "Allstar" Titels.
+
+```{r}
+# Berechne die Anzahl allstars, mit ausschliesslich top ratings
+allstar <- airbnb %>% 
+  # Rating_gesamt ist von 0 bis 100 -> reskaliere auf 0 bis 10
+  mutate(Rating_gesamt = Rating_gesamt / 10) %>% 
+  # Behalte ausschliessliche Spalten mit Ratings
+  select(starts_with("Rating")) %>% 
+  # Berechne die Mittelwerte jeder Zeile über alle Spalten
+  mutate(Ratings_m = rowMeans(.)) %>% 
+  # Behalte nur die Zeilen mit Mittelwert 10 (Maximum Rating)
+  filter(Ratings_m == 10) %>% 
+  # Zähle die Anzahl verbliebener Zeilen
+  summarise(n())
+```
+
+2. Verwende den `valueBox` Code den du in Teil D erstellt hast als Template um die value Box der Anzahl Allstars zu erstellen. Ersetze dazu `n_superhosts` durch `allstar` und ändere das `"Superhost"` im caption Argument zu `"Allstars"`.
+
+3. Diese value Box sieht aber noch nicht ganz gleich aus wie im vorgegebenen Dashboard. Zum Einen ist die Farbe noch grün statt gold, zum Anderen ist das Icon noch falsch. Ändere zunächst die Farbe (das `color` Argument) von `"#6BB7B9"` zu `"#f5d142"`.
+
+4. Nun ändere den Input zum `icon` Argument von `"fa-medal"` zu `"fa-gem"`. Dabei spezifiziert das "fa-", dass das Icon aus der [Font Awesome](https://fontawesome.com/icons?d=gallery) Sammlung stammt. "medal" und "gem" geben dann den Namen des Icons an.
+
+5. Nun zur dritten value Box, die die Anzahl preiswerter Airbnbs - definiert als weniger als 100 Euro pro Nacht - angibt. Berechne dazu zunächst die Anzahl mit dem untenstehenden Code in einem R chunk unterhalb des "Preiswert" Titels.
+
+```{r}
+# Berechne die Anzahl preiswerter Airbnbs
+preiswert <- sum(airbnb$Preis < 100)
+```
+
+6. Verwende wiederum den `valueBox` Code von Aufgaben im Teil D als Template um nun die value Box zu erstellen. Ersetze dazu `n_superhosts` durch `preiswert` und ersetze das `"Superhost"` durch `"Preiswert"`. Ändere ausserdem das `icon` zu `"fa-money-bill-wave"` und die Farbe zu `"#85a95d"`.
+
+7. Auf Seite 3 sind noch zwei Seiten des Storyboards leer. Fülle diese mit Inhalt; du kannst dich dabei and das vorgegebene Dashboard halten (siehe Aufgaben im Abschnitt D für Hilfestellungen), oder eigene Dinge ausprobieren.
+
+
+
+## Datensatz
+
+Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/master/_materials/case/airbnb.csv) Datensatz enthält Zahlen zu 9868 Berliner Airbnbs 
+
+
+|Variable | Beschreibung |
+|:-------------|:-------------------------------------|
+|Preis| Preis pro Nacht|
+ |Erstellungsdatum| Eröffnungsdatum des Airbnbs |
+ |Unterkunftsart| Appartement, Loft, House, etc.|
+ |Schlafplätze| Anzahl Schlafplätze |
+ |Schlafzimmer| Anzahl Schlafzimmer |
+ |Badezimmer| Anzahl Badezimmer |
+ |Reinigungsgebühr| Reinigungsgebühr |
+ |Verfügbarkeit_90Tage| |
+ |Viertel| In welchem Viertel befindet sich das Airbnb |
+ |Stadtteil| In welchem Stadtteil befindet sich das Airbnb |
+ |Breitengrad| Breitengrad|
+ |Längengrad| Längengrad |
+ |Host_id| Host id |
+ |Host_seit| Erfahrung des Hosts |
+ |Host_antwortzeit| Host Antwortzeit|
+ |Host_antwortrate| Host Antwortrate |
+ |Host_superhost| Superhost Ja/Nein |
+ |Host_anzahl| Anzahl Gäste |
+ |Rating_gesamt| Gesamtrating |
+ |Rating_genauigkeit| Genauigkeitsrating |
+ |Rating_sauberkeit| Sauberkeitsrating |
+ |Rating_checkin| Checkinrating |
+ |Rating_kommunikation| Kommunikationsrating |
+ |Rating_lage| Lagerating |
+ |Rating_wertigkeit| Wertigkeitsrating |
+ |Küche| Küche vorhanden TRUE/FALSE |
+ |Wifi| WLAN vorhanden TRUE/FALSE |
+ |TV| TV vorhanden TRUE/FALSE |
+ |Kaffeemaschine| Kaffeemaschine vorhanden TRUE/FALSE|
+ |Geschirrspüler| Geschirrspüler vorhanden TRUE/FALSE|
+ |Terrasse_Balkon| Terrasse/Balkon vorhanden TRUE/FALSE|
+ |Badewanne| Badewanne vorhanden TRUE/FALSE|
+ |Check_in_24h| 24h Check-In vorhanden TRUE/FALSE|
+
+
+
+## Funktionen
+
+### Paket
+
+|Paket| Installation|
+|:------|:------|
+|`tidyverse`|`install.packages("tidyverse")`|
+|`flexdashboard`|`install.packages("flexdashboard")`|
+|`plotly`|`install.packages("plotly")`|
+|`leaflet`|`install.packages("leaflet")`|
+|`viridis`|`install.packages("viridis")`|
+|`htmltools`|`install.packages("htmltools")`|
+|`patchwork`|`install.packages("patchwork")`|
+
+### Funktionen
+
+
+| Funktion| Paket | Beschreibung |
+|:---|:------|:---------------------------------------------|
+| `gauge()`|`flexdashboard`| Erstelle einen gauge. | 
+| `valueBox()`|`flexdashboard`| Erstelle eine value Box | 
+| `ggplotly()`|`plotly`| Konvertiere `ggplot2` Objekt in `plotly` Objekt | 
+| `leaflet()`|`leaflet`| Initiiere `leaflet` Karte | 
+| `setView()`|`leaflet`| Definiere Anfangsfenster | 
+| `addTiles()`|`leaflet`| Zeige Karte | 
+| `addCircleMarkers()`|`leaflet`| Füge Kreisförmige Marker auf die Karte | 
+
+
+## Materialien
+
+- Eine gutes [**flexdashboard**](https://rmarkdown.rstudio.com/flexdashboard/index.html) Tutorial.
+- R [**leaflet**](https://rstudio.github.io/leaflet/) Dokumentation und Einführung.
+- R [**plotly**](https://plotly.com/r/) Dokumentation und Einführung.
+- [**HTML**](https://www.w3schools.com/html/default.asp) Dokumentation und Einführung.

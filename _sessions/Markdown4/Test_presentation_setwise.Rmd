@@ -1,0 +1,12 @@
+---
+title: "Berlin"
+subtitle: "Bericht 18/19"
+output: 
+  ioslides_presentation:
+    logo: ../2_Assets/airbnb.png
+    css: ../2_Assets/airbnb_presentation.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```

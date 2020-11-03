@@ -1,0 +1,66 @@
+---
+title: "Markdown"
+output: html_document
+---
+
+```{r setup, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = F, fig.width = 8, fig.height = 8)
+
+
+```
+
+
+<style>
+.chunk {
+  color: #333;
+  background-color: "white";
+  border-radius: 0px;
+  margin: 0 0 10px;
+  display: block;
+  font-size: 14px;
+  line-height: 1.42857143;
+  font-family: Monaco;
+  }
+.chunk a{
+  color: #333;
+  text-decoration: none; 
+}
+</style>
+<div class="chunk" width=100%>
+
+&num;&num; Überschrift 2
+
+&lt;table style="background-color: lightblue;"&gt;<br>
+&nbsp;&nbsp;&lt;col width=50%&gt;<br>
+&nbsp;&nbsp;&lt;col width=50%&gt;<br>
+&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Dieses &ast;&ast;Wort&ast;&ast; ist fett durch Markdown.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td style="vertical-align: top"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Dieses &lt;b&gt;Wort&lt;/b&gt; durch HTML.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;<br>
+&nbsp;&nbsp;&lt;/tr&gt;<br>
+&lt;/table&gt;
+
+</div>
+
+## Überschrift 2
+
+<table style="background-color: lightblue;">
+<col width=50%>
+<col width=50%>
+<tr>
+<td>
+Dieses **Wort** ist fett durch Markdown.
+</td>
+<td style="vertical-align: top">
+ Dieses **Wort** durch HTML. 
+</td>
+</tr>
+</table>
+
+
+
+
+

@@ -1,0 +1,12 @@
+name: berlindashboard2
+title:
+username:
+account: therbootcamp
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2402997
+bundleId: 3235801
+url: https://therbootcamp.shinyapps.io/berlindashboard2/
+when: 1591446925.32862
+asMultiple: FALSE
+asStatic: FALSE

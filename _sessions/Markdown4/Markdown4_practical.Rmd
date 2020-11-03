@@ -1,0 +1,289 @@
+---
+title: "Slides"
+author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
+  <tr style='border:none'>
+    <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
+      <font style='font-style:normal'>Reporting mit R</font><br>
+      <a href='https://therbootcamp.github.io/RmR_2020Jun/'>
+        <i class='fas fa-clock' style='font-size:.9em;' ></i>
+      </a>
+      <a href='https://therbootcamp.github.io'>
+        <i class='fas fa-home' style='font-size:.9em;'></i>
+      </a>
+      <a href='mailto:therbootcamp@gmail.com'>
+        <i class='fas fa-envelope' style='font-size: .9em;'></i>
+      </a>
+      <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
+        <i class='fab fa-linkedin' style='font-size: .9em;'></i>
+      </a>
+      <a href='https://therbootcamp.github.io'>
+        <font style='font-style:normal'>The R Bootcamp</font>
+      </a>
+    </td>
+    <td style='width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none'>
+      <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
+    </td>
+  </tr></table>"
+output:
+  html_document:
+    css: practical.css
+    self_contained: no
+---
+
+
+```{r setup, include  = FALSE}
+knitr::opts_chunk$set(comment = NA, 
+                      fig.width = 6, 
+                      fig.height = 6,
+                      fig.align = 'center',
+                      echo = FALSE, 
+                      eval = FALSE, 
+                      warning = FALSE)
+
+options(digits = 3)
+
+# Load packages
+library(tidyverse)
+```
+
+<p align="center" width="100%">
+  <img src="image/pp.png" alt="Style" style="width:100%">
+  <br>
+  <font style="font-size:10px">from <a href="https://dvisiondesign.net/2019/09/25/what-does-design-mean/">dvisiondesign.net</a></font>
+</p>
+
+
+# {.tabset}
+
+## Überblick
+
+In diesem Practical wirst aus deinem fertigen HTML RMarkdown Dokument eine Präsentation erstellen. 
+
+Am Ende des Practicals kann du: 
+
+1. Eine HTML Präsentation mit `ioslides` erstellen und Inhalte mit RMarkdown Code einfügen.
+2. Ein Logo einfügen und das Layout der Präsentation anpassen.
+3. HTML Tags und CSS für die Feinjustierung der Slides verwenden.
+
+## Aufgaben
+
+### A - Setup
+
+1. Öffne dein `TheRBootcamp` R Projekt. Es sollte die Ordner `1_Data`, `2_Assets`, und `3_Markdown` enthalten. 
+
+2. Öffne ein neues RMarkdown Skript und wähle das Presentation - Template "HTML" aus (siehe screenshot unten).
+
+<p align="center">
+  <img src="image/markdown_presentation_menu.png" alt="Trulli" style="height:200px">
+</p>
+
+3. Trage als Titel `Berlin` ein und drücke OK.
+
+4. Lösche alles unterhalb des `setup` Chunks.
+
+5. Speichere das neue Markdown Skript unter dem Namen `presentation_practical.Rmd` im `3_Markdown` Ordner ab.
+
+### B - YAML
+
+1. Entferne die `author:` und `date:` Angaben aus dem YAML header (sofern diese vorliegen). 
+
+2. Bearbeite nun den YAML Header um das Dokument allgemein anzupassen. Füge zunächst unter `title: Berlin`, in einer neuen Zeile, einen Untertitel ein. Knitte das Dokument. Siehst du den Untertitel?
+
+```R
+subtitle: "Bericht: 18/19"
+```
+
+3. Damit das Logo automatisch auf der Titelslide und in der Fusszeile jedes Slides angezeigt wird, ergänze zunächst einen Doppelpunkt hinter `ioslides` und dann darunter, eine Ebene weiter eingerückt, die Zeile unten, welche den Pfad zum Logo dem YAML Header bereitstellt. Knitte das Dokument und schaue wie R das Logo einbindet.
+
+```R
+logo: ../2_Assets/airbnb.png
+```
+
+4. Abschliessend füge auf der selben Ebene wie das Logo die Zeile unten hinzu, welche dem YAML header den Pfad zu einer CSS Datei bereitstellt um weitere Details der Darstellung (Schrift, genaue Position der Komponenten, etc.) zu bestimmen. Einige der Änderungen betreffen Bestandteile der Slides, die erst in späteren Abschnitten erstellt werden.
+
+```R
+css: ../2_Assets/airbnb_presentation.css
+```
+
+5. Achte darafu, dass die Einrückungen korrekt sind. Der YAML Header sollte so aussehen:
+
+```R
+---
+title: "Berlin"
+subtitle: "Bericht 18/19"
+output: 
+  ioslides_presentation:
+    logo: ../2_Assets/airbnb.png
+    css: ../2_Assets/airbnb_presentation.css
+---
+```
+
+5. Knitte das Dokument. Es sollte ein in den AirBnB Farben gestalteter Titelslide mit rotem AirBnB Logo angezeigt werden. 
+
+### C - Setup-Chunk
+
+1. Lade im `setup` Chunk die notwendigen Pakete `tidyverse`, `lubridate`, `sjPlot`, `knitr` und `kableExtra`.
+
+2. Inkludiere im `setup` Chunk den folgenden Code um die AirBnB Daten zu laden und auf den Zeitraum 2018-2019 zu limitieren.
+
+```R
+# Lade Daten
+airbnb_1819 <- read_csv('../1_Data/airbnb.csv') %>% 
+  filter(Erstellungsdatum > "2018-01-01", 
+         Erstellungsdatum < "2019-12-31")
+```
+
+3. Ergänze weiterhin folgenden Code um die Grafikeinstellungen hinsichtlich `ggplot`, wie im gestrigen Dokument, anzupassen.
+
+```R
+# Ändere Thema zu minimal
+theme_set(theme_minimal())
+theme_update(panel.background = element_rect(fill = "transparent", colour = NA),
+             plot.background = element_rect(fill = "transparent", colour = NA),
+             axis.title.x = element_text(size = 16), 
+             text = element_text(size=19))
+             
+# Setze defaults in ggplot
+ggplot <- function(...) ggplot2::ggplot(...) + 
+  scale_fill_gradientn(colors = c('#555555','#6BB7B9')) + 
+  scale_colour_gradientn(colors = c('#555555','#6BB7B9'))
+```
+
+### D - Slides erstellen
+
+1. Füge nach dem `setup` Chunk in einer neuen Zeile "# Neueinstellungen" ein. Damit definierst du den ersten Abschnitt mit grauem Hintergrund.
+
+2. Knitte das Dokument. Nach dem Titelslide sollte es jetzt einen 2. Slide mit dem Titel "Neueinstellungen" geben. 
+
+3. In die nächste Zeile füge "## Entwicklung" ein, was einen ersten Slide mit Inhalt beginnt.
+
+### E - Inhalte mit Bullet Points einbinden
+
+1. Öffne das R Markdown Dokument, das wir gestern erstellt haben (`3_Markdown/airbnb_final.Rmd`), verwende das Dokument als Quelle für Code Chunks und Text in den folgenden Abschnitten.
+
+2. Erstelle eine Bullet Point Liste in dem du `-` vor den jeweiligen Text setzt. Übertrage aus dem Abschnitt "Entwicklung" die Anzahl der eingestellten Wohnungen als Inhalt des ersten Bullet Points. Bie Listen ist darauf zu achten, dass der erste Bullet mindestens eine Zeile Abstand zum darüberliegenden Text hat. 
+
+4. Erstelle einen weiteren Bullet Point mit den Wohnungseinstellungen für das Jahr 2018 sowie das Jahr 2019.
+
+5. Dokumentiere im dritten Bullet Point die durchschnittliche Verfügbarkeit in den nächsten 3 Monaten. 
+
+6. Knitte das Dokument. Sind die Bullets nun gestaffelt?
+
+### F - Grafiken einbinden
+
+1. Füge einen neuen Slide ebenfalls mit dem Titel "Entwicklung" ein. Verwende zwei `#`.
+
+2. Füge den chunk für die Abbildung 1 (Neueinstellungen pro Monat) aus dem R Markdown Dokument ein so dass die Abbildung in den Slides angezeigt wird. 
+
+3. Vergiss nicht in den Chunk Optionen `fig.cap = cap` anzugeben, damit die Bildunterschrift angezeigt wird!
+
+4. `Knitte` das Dokument. Enthält der Slide die Abbildung 1?
+
+### G - Zwei Slides zu den Stadtteilen
+
+1. Füge einen neuen Slide mit dem Titel "Stadtteile" ein (zwei `#`).
+
+2. Mit Hilfe einer HTML Tabelle (oder alternativer Methoden) erstelle ein Layout mit 2 Spalten. Liste in der linken Spalte die Stadtteile auf (mit `inline` Code) und in der rechten Spalten die prozentuellen Veränderungen. 
+
+3. Stelle auf dem nächste Slide (gleicher Titel wie zuvor) die Abbildung 2 (Neueinstellungen pro Bezirk) als Grafik dar. Achte darauf, dass alle R Chunks (auch jene mit Berechnungen) vorhanden sind.
+
+4. `Knitte` das Dokument. Werden die 2. Grafiken, die Bullets und die Tabelle korrekt angezeigt?
+
+### H - Deskriptive Tabelle
+
+1. Erstelle einen neuen Abschnitt "Preis" und einen neuen Slide "Einfluss der Ausstattung".
+
+2. Füge einen Chunk mit dem Code zur Berechnung der Ausstattungsmerkmale ein.
+
+3. Auf diesem Slide inkludiere die Tabelle mit Austattungsmerkmalen. 
+
+4. Auf dem gleichen Slide, unter der Tabelle, füge den letzten Satz des Abschnittes "Der Einfluss der Ausstattung" zum stark negativen Effekt der Küche ein. Füge HTML Code ein, der diesen die Schrift fett formatiert.
+
+5. Knitte das Dokument. Wird die Tabelle korrekt angezeigt?
+
+6. Optional: Verändere die Tabelle so, dass die Schriftgrösse in allen Zellen gleich gross ist und dass Zellen mit einer Zahl > 100 rot angezeigt werden (Hinweis: `color = ifelse(x > 100, "red", "black")`)
+
+### I - Regressionsergebnisse
+
+1. Füge eine neuen Slide mit dem Titel "Regressionsmodell" ein.
+
+2. Kopiere den Code Chunk mit der Liste der Ausstattungsmermale und berechne damit eine Regression in der Preis, mit diesen Ausstattungsmermalen und Hotel, vorhergesagt wird.
+
+3. Stelle die Ergebnisse der Regression, mit Hilfe der Funktion `tab_model` auf dem Slide dar. 
+
+4. Inkludiere den R Chunk in dem der Anteil Hotels an allen Objekten berechnet wird. 
+
+5. Ergänze in fetter Schriftart den Abschlusssatz ("Der Anteil ...") unter der Regressionstabelle.
+
+4. Optional: Mit dem Attribut `col.order` kannst du die Reihenfolge und Art der Ergebnisse in der Regressionstabelle festlegen. Verändere die Reihenfolge der Spalten, sodass zuerst Konfidenzintervalle (`ci`) und dann die Koeffizienten (`est`) angezeigt werden.
+
+5. Optional: Füge Sterne (anstatt der p-Werte) für signifikante Estimates ein (Tip: `p.style`).
+
+### J - Export
+
+1. Slides können je nach Inhalt mehr oder weniger gut über einen Browser als PDF ausgegeben werden. Öffne hierzu die durch das Knitten erzeugte `.html` Datei in einem Browser (z.B., Chrome). 
+
+2. Dann drücke `Cmd + P` oder `Ctrl + P` um das Druckmenu zu öffnen wo du PDF als Output auswählen musst. 
+
+3. Speichere das PDF auf deine Festplatte und schaue ob alles angemessen ausgegeben wurde.
+
+## Datensatz
+
+Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/master/_materials/case/airbnb.csv) Datensatz enthält Zahlen zu 9868 Berliner Airbnbs 
+
+
+|Variable | Beschreibung |
+|:-------------|:-------------------------------------|
+|Preis| Preis pro Nacht|
+ |Erstellungsdatum| Eröffnungsdatum des Airbnbs |
+ |Unterkunftsart| Appartement, Loft, House, etc.|
+ |Schlafplätze| Anzahl Schlafplätze |
+ |Schlafzimmer| Anzahl Schlafzimmer |
+ |Badezimmer| Anzahl Badezimmer |
+ |Reinigungsgebühr| Reinigungsgebühr |
+ |Verfügbarkeit_90Tage| |
+ |Viertel| In welchem Viertel befindet sich das Airbnb |
+ |Stadtteil| In welchem Stadtteil befindet sich das Airbnb |
+ |Breitengrad| Breitengrad|
+ |Längengrad| Längengrad |
+ |Host_id| Host id |
+ |Host_seit| Erfahrung des Hosts |
+ |Host_antwortzeit| Host Antwortzeit|
+ |Host_antwortrate| Host Antwortrate |
+ |Host_superhost| Superhost Ja/Nein |
+ |Host_anzahl| Anzahl Gäste |
+ |Rating_gesamt| Gesamtrating |
+ |Rating_genauigkeit| Genauigkeitsrating |
+ |Rating_sauberkeit| Sauberkeitsrating |
+ |Rating_checkin| Checkinrating |
+ |Rating_kommunikation| Kommunikationsrating |
+ |Rating_lage| Lagerating |
+ |Rating_wertigkeit| Wertigkeitsrating |
+ |Küche| Küche vorhanden TRUE/FALSE |
+ |Wifi| WLAN vorhanden TRUE/FALSE |
+ |TV| TV vorhanden TRUE/FALSE |
+ |Kaffeemaschine| Kaffeemaschine vorhanden TRUE/FALSE|
+ |Geschirrspüler| Geschirrspüler vorhanden TRUE/FALSE|
+ |Terrasse_Balkon| Terrasse/Balkon vorhanden TRUE/FALSE|
+ |Badewanne| Badewanne vorhanden TRUE/FALSE|
+ |Check_in_24h| 24h Check-In vorhanden TRUE/FALSE|
+
+
+
+## Funktionen
+
+### Pakete
+
+|Paket| Installation|
+|:------|:------|
+|`tidyverse`|`install.packages("tidyverse")`|
+|`lubridate`|`install.packages("tidyverse")`|
+|`knitr`|`install.packages("knitr")`|
+|`sjPlot`|`install.packages("sjPlot")`|
+|`kabelExtra`|`install.packages("kableExtra")`|
+
+## Materialien
+- [**HTML**](https://www.w3schools.com/html/default.asp) Referenz 
+- [**CSS**](https://www.w3schools.com/css/default.asp) Referenz 
+- [**DIE Referenz**](https://bookdown.org/yihui/rmarkdown/) für RMarkdown bis ins letzte Detail.
+- [**Rmarkdown**](https://cran.r-project.org/web/packages/rmarkdown/index.html) Dokumentation und Befehlsreferenz.
