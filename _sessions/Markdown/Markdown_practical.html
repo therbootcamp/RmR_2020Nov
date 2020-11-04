@@ -23,6 +23,15 @@
 <link href="Markdown_practical_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="Markdown_practical_files/highlightjs-9.12.0/highlight.js"></script>
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      </style>
+
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
   pre:not([class]) {
@@ -183,7 +192,7 @@ summary {
 <col width='10%'>
 <tr style="border:none">
 <td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
-<font style='font-style:normal'>Reporting mit R</font><br> <a href='https://therbootcamp.github.io/RmR_2020Jun/'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>
+<font style='font-style:normal'>Reporting mit R</font><br> <a href='https://therbootcamp.github.io/RmR_2020Nov/'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>
 </td>
 <td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
 <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
@@ -209,9 +218,9 @@ pre code,  .md:not(.use-csslab) pre code {
 <p>In diesem Practical machst du deine ersten Schritte mit R Markdown.</p>
 <p>Am Ende des Practicals wirst du wissen wie man:</p>
 <ol style="list-style-type: decimal">
-<li>Text ins Dokument einfügt.</li>
+<li>Text in das Dokument einfügt.</li>
 <li>Inline Code im Text verwendet.</li>
-<li>Chunks erstellen und einstellen.</li>
+<li>Chunks erstellt und einstellt.</li>
 </ol>
 </div>
 <div id="aufgaben" class="section level2">
@@ -220,7 +229,7 @@ pre code,  .md:not(.use-csslab) pre code {
 <h3>A - Setup</h3>
 <ol style="list-style-type: decimal">
 <li><p>Öffne dein <code>TheRBootcamp</code> R Projekt. Es sollte die Ordner <code>1_Data</code>, <code>2_Assets</code>, und <code>3_Markdown</code> enthalten.</p></li>
-<li><p>Öffne ein neues RMarkdown Skript und wähle das Template “HTML” aus (siehe screenshot unten).</p></li>
+<li><p>Öffne ein neues RMarkdown Skript und wähle das Template “HTML” aus (siehe screenshot).</p></li>
 </ol>
 <p align="center" width="100%">
 <img src="image/markdown_menu.png" alt="Trulli" style="height:200px">
@@ -228,19 +237,19 @@ pre code,  .md:not(.use-csslab) pre code {
 <ol start="3" style="list-style-type: decimal">
 <li><p>Trage als Titel <code>Bericht Berlin 2018/2019</code> ein.</p></li>
 <li><p>Speichere das neue Markdown Skript unter dem Namen <code>markdown_practical.Rmd</code> im <code>3_Markdown</code> Ordner ab.</p></li>
-<li><p>Lösche alles unterhalb des <code>setup</code> Code chunks.</p></li>
-<li><p>Lade die Pakete <code>tidyverse</code> und <code>lubridate</code> im <code>setup</code> chunk.</p></li>
+<li><p>Lösche alles unterhalb des <code>setup</code> Code Chunks.</p></li>
+<li><p>Lade die Pakete <code>tidyverse</code> und <code>lubridate</code> im <code>setup</code> Chunk.</p></li>
 </ol>
 <pre class="r"><code># Lade Pakete
 library(tidyverse)
 library(lubridate)</code></pre>
 <ol start="6" style="list-style-type: decimal">
-<li>Lade den <code>airbnb</code> Datensatz mit <code>read_csv()</code> ebenfalls im <code>setup</code> chunk mit dem Code unten.</li>
+<li>Lade den <code>airbnb</code> Datensatz mit <code>read_csv()</code> ebenfalls im <code>setup</code> Chunk mit dem Code unten.</li>
 </ol>
 <pre class="r"><code># Lade airbnb Datensatz
 airbnb &lt;- read_csv(&quot;../1_Data/airbnb.csv&quot;)</code></pre>
 <ol start="7" style="list-style-type: decimal">
-<li>Verwende den Code unten um nur die beiden Jahre <code>2018</code> und <code>2019</code> aus den Daten auszuwählen und ein neues Objekt mit Namen <code>airbnb_1819</code> zu erstellen.</li>
+<li>Verwende den Code unten um nur die beiden Jahre <code>2018</code> und <code>2019</code> aus den Daten auszuwählen und ein neues Objekt <code>airbnb_1819</code> zu erstellen.</li>
 </ol>
 <pre class="r"><code># Wähle Jahre 2018 und 2019 aus
 airbnb_1819 &lt;- airbnb %&gt;% 
@@ -250,7 +259,7 @@ airbnb_1819 &lt;- airbnb %&gt;%
 <div id="b---präambel" class="section level3">
 <h3>B - Präambel</h3>
 <ol style="list-style-type: decimal">
-<li>Unter den <code>setup</code> chunk, setze eine Überschrift auf drittem level (<code>###</code>) mit Titel <code>Präambel</code>.</li>
+<li>Unter den <code>setup</code> Chunk, setze eine Überschrift auf drittem Level (<code>###</code>) mit Titel <code>Präambel</code>.</li>
 </ol>
 <pre class="markdown"><code>### Präambel</code></pre>
 <ol start="2" style="list-style-type: decimal">
@@ -274,7 +283,7 @@ airbnb_1819 &lt;- airbnb %&gt;%
 
 Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Jahr 2019 wurden insgesamt 3274 neue Wohnungen eingestellt wohingegend im Jahr 2018 nur 1733 Wohnungen eingestellt wurden. Dies entspricht einem Zuwachs von 89%.</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>Tausche zunächst das Datum an zweiter Stelle im Text durch den folgenen inline Code aus. Nicht vergessen, der Code muss zwischen zwei Gravis (`r Code`) gesetzt werden. Knitte das Dokument.</li>
+<li>Tausche zunächst das Datum an zweiter Stelle im Text durch den folgenden inline Code aus. Nicht vergessen, der Code muss zwischen zwei Gravis (`r Code`) gesetzt werden. Knitte das Dokument.</li>
 </ol>
 <pre class="text"><code>r min(airbnb_1819$Erstellungsdatum)</code></pre>
 <ol start="4" style="list-style-type: decimal">
@@ -348,7 +357,7 @@ stadtteile &lt;- airbnb_1819 %&gt;%
   arrange(desc(Jahr), Wohnungen) %&gt;% 
   mutate(Stadtteil = as_factor(Stadtteil))</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li><p>Erstze nun die die zwei im ersten Paragraph erwähnten Stadtteile durch <code>stadtteile %&gt;% filter(Jahr == 2019) %&gt;% pull(Stadtteil) %&gt;% last()</code> und <code>stadtteile %&gt;% filter(Jahr == 2019) %&gt;% pull(Stadtteil) %&gt;% first()</code>. Knitte das Dokument und schaue, ob die richtigen Namen eingesetzt wurden.</p></li>
+<li><p>Ersetze nun die die zwei im ersten Paragraph erwähnten Stadtteile durch <code>stadtteile %&gt;% filter(Jahr == 2019) %&gt;% pull(Stadtteil) %&gt;% last()</code> und <code>stadtteile %&gt;% filter(Jahr == 2019) %&gt;% pull(Stadtteil) %&gt;% first()</code>. Knitte das Dokument und schaue, ob die richtigen Namen eingesetzt wurden.</p></li>
 <li><p>Kreiere einen neuen Chunk zwischen den beiden Absatz mit dem folgenden Code, welcher einige Objekte erstellt, die die inline Ergänzungen im darauf folgenden Absatz erleichtern werden.</p></li>
 </ol>
 <pre><code># Veränderung über die Stadtteile
@@ -579,7 +588,7 @@ ggplot(stadtteile,
 <tr class="odd">
 <td align="left"><code>strftime</code></td>
 <td align="left"><code>lubridate</code></td>
-<td align="left">Formartierung von Daten</td>
+<td align="left">Formatierung von Daten</td>
 </tr>
 </tbody>
 </table>

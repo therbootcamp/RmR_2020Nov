@@ -5,7 +5,7 @@ author: "Reporting mit R<br>
     The R Bootcamp
   </a>
   <br>
-  <a href='https://therbootcamp.github.io/RmR_2020Jun/'>
+  <a href='https://therbootcamp.github.io/RmR_2020Nov/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -17,7 +17,7 @@ author: "Reporting mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "Juni 2020"
+date: "November 2020"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -45,7 +45,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Reporting mit R | Juni 2020
+       Reporting mit R | November 2020
       </font>
     </a>
     </span>
@@ -114,7 +114,7 @@ basel <- read.csv("1_Data/basel.csv")
 .pull-left4[
 
 <ul>
-  <li class="m1"><span>Verwendet Markdown zum <high>Gestalten dynamischer Dokumente</high> mit eingebetteten...</span></li><br> 
+  <li class="m1"><span>Verwendet Markdown zum <high>Gestalten dynamischer Dokumente</high> mit eingebetteten ...</span></li><br> 
   <ul>
     <li><span>R code chunks</span></li>
     <li><span>R inline code</span></li>   
@@ -143,7 +143,7 @@ basel <- read.csv("1_Data/basel.csv")
 # Arten des Berichts
 
 <ul>
-  <li class="m1"><span>RMarkdown ermöglicht Erstellung und Gestaltung unterschiedlicher <high>Berichttypen</high>.</span></li><br>
+  <li class="m1"><span>RMarkdown ermöglicht die Erstellung und Gestaltung unterschiedlicher <high>Berichttypen</high>.</span></li><br>
   <ul>
     <li><span>Dokumente</span></li>
     <li><span>Präsentationen</span></li>   
@@ -191,7 +191,7 @@ basel <- read.csv("1_Data/basel.csv")
   <mono>YAML</mono>
   </td>
   <td bgcolor="white">
-  <b>Y</b>AML <b>A</b>in't <b>M</b>arkup <b>L</b>anguage<br><br>
+  <b>Y</b>AML <b>A</b>in't <b>M</b>arkup <b>L</b>anguage<br>
   <high>Dokumenteinstellungen</high>
   </td> 
 </tr>
@@ -249,7 +249,7 @@ basel <- read.csv("1_Data/basel.csv")
     <li><span>Word</span></li>
     <li><span>PowerPoint</span></li>
   </ul><br>
-  <li class="m2"><span>Für die Übersetzung wird <high>RMarkdown mehrfach übersetzt</high>, was gewisse Einschränkungen mit sich bringt.</span></li><br>
+  <li class="m2"><span>In diesem Prozess wird <high>RMarkdown mehrfach übersetzt</high>, was gewisse Einschränkungen mit sich bringt.</span></li><br>
 </ul>
 
 ]
@@ -291,8 +291,8 @@ basel <- read.csv("1_Data/basel.csv")
 
 <ul>
   <li class="m1"><span><b>H</b>yper<b>T</b>ext <b>M</b>arkup <b>L</b>anguage.</span></li>
-  <li class="m2"><span>Das Format des <high>World Wide Webs</high>.</span></li>
-  <li class="m3"><span>Kann komfortabel durch <high>CSS</high> (Cascading Style Sheets) formartiert werden.</span></li>
+  <li class="m2"><span>Das Format des <high>World Wide Web</high>s.</span></li>
+  <li class="m3"><span>Kann komfortabel durch <high>CSS</high> (Cascading Style Sheets) formatiert werden.</span></li>
 </ul>
 
 ]
@@ -714,8 +714,8 @@ basel <- read.csv("1_Data/basel.csv")
 .pull-left3[
 
 <ul>
-  <li class="m1"><span><high>Zahlen und Wörter</high> im Text können durch inline Code parametrisiert werden.</span></li>
-  <li class="m2"><span>inline Code kann wie ein <high>Code <mono>chunks</mono></high> beliebigen R Code enthalten.</span></li>
+  <li class="m1"><span>Ein <high>code <mono>chunk</mono></high> enthält beliebigen R Code.</span></li>
+  <li class="m2"><span>Code chunks werden mit <high>zusätzlichen Argumenten</high> definiert.</span></li>
 </ul>
 
 ]
@@ -955,7 +955,7 @@ basel <- read.csv("1_Data/basel.csv")
 .pull-left3[
 
 <ul>
-  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high> definiert werden vorgenommen werden.</span></li>
+  <li class="m1"><span>Im Setup-Chunk können <high>Settings für alle Chunks</high> vorgenommen werden.</span></li>
   <li class="m2"><span>Weiterführende Funktionen verfügbar.</span></li>
 </ul>
 
@@ -1069,7 +1069,7 @@ basel <- read.csv("1_Data/basel.csv")
 
 <ul>
   <li class="m1"><span>Markdown Dokumente greifen nicht auf das übliche <high>working directory</high> zu.</span></li><br>
-  <li class="m2"><span>Pfade in RMarkdown müssen <high>relativ zur Position des .Rmd</high> Datei definiert werden.</span></li>
+  <li class="m2"><span>Pfade in RMarkdown müssen <high>relativ zur Position der .Rmd</high> Datei definiert werden.</span></li>
 </ul>
 
 <br>
@@ -1099,10 +1099,10 @@ css: "../2_Assets/styling.csv")
 # Ziel
 
 <ul>
-  <li class="m1"><span><high>Airbnb-Bericht</high> für Berlin in 2018 und 2019.</span></li>
+  <li class="m1"><span>Erstellt einen <high>Airbnb-Bericht</high> für Berlin für die Jahre 2018 und 2019.</span></li>
   <li class="m2"><span>Evaluiert</span></li>
   <ul>
-    <li><span>Wohnungs-<high>Neuinstellungen</high> über die Zeit und Stadtteile.</span></li>
+    <li><span>Wohnungs-<high>Neueinstellungen</high> über die Zeit und Stadtteile.</span></li>
     <li><span>Entwicklung der <high>Preise</high>.</span></li>
     <li><span>Einfluss von <high>Ausstattungsmerkmalen</high> auf den Preis.</span></li>
   </ul>
@@ -1128,5 +1128,5 @@ class: middle, center
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Markdown/Markdown_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/RmR_2020Nov/_sessions/Markdown/Markdown_practical.html">Practical</a></h1>
 

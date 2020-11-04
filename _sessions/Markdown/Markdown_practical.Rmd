@@ -4,7 +4,7 @@ author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
       <font style='font-style:normal'>Reporting mit R</font><br>
-      <a href='https://therbootcamp.github.io/RmR_2020Jun/'>
+      <a href='https://therbootcamp.github.io/RmR_2020Nov/'>
         <i class='fas fa-clock' style='font-size:.9em;' ></i>
       </a>
       <a href='https://therbootcamp.github.io'>
@@ -73,9 +73,9 @@ In diesem Practical machst du deine ersten Schritte mit R Markdown.
 
 Am Ende des Practicals wirst du wissen wie man:
 
-1. Text ins Dokument einfügt.
+1. Text in das Dokument einfügt.
 2. Inline Code im Text verwendet. 
-3. Chunks erstellen und einstellen. 
+3. Chunks erstellt und einstellt. 
 
 ## Aufgaben
 
@@ -83,7 +83,7 @@ Am Ende des Practicals wirst du wissen wie man:
 
 1. Öffne dein `TheRBootcamp` R Projekt. Es sollte die Ordner `1_Data`, `2_Assets`, und `3_Markdown` enthalten. 
 
-2. Öffne ein neues RMarkdown Skript und wähle das Template "HTML" aus (siehe screenshot unten).
+2. Öffne ein neues RMarkdown Skript und wähle das Template "HTML" aus (siehe screenshot).
 
 <p align="center" width="100%">
   <img src="image/markdown_menu.png" alt="Trulli" style="height:200px">
@@ -93,9 +93,9 @@ Am Ende des Practicals wirst du wissen wie man:
 
 3. Speichere das neue Markdown Skript unter dem Namen `markdown_practical.Rmd` im `3_Markdown` Ordner ab.
 
-4. Lösche alles unterhalb des `setup` Code chunks.
+4. Lösche alles unterhalb des `setup` Code Chunks.
 
-5. Lade die Pakete `tidyverse` und `lubridate` im `setup` chunk.
+5. Lade die Pakete `tidyverse` und `lubridate` im `setup` Chunk.
 
 ```{r, echo = T, eval = T}
 # Lade Pakete
@@ -103,14 +103,14 @@ library(tidyverse)
 library(lubridate)
 ```
 
-6. Lade den `airbnb` Datensatz mit `read_csv()` ebenfalls im `setup` chunk mit dem Code unten.
+6. Lade den `airbnb` Datensatz mit `read_csv()` ebenfalls im `setup` Chunk mit dem Code unten.
 
 ```{r echo = TRUE}
 # Lade airbnb Datensatz
 airbnb <- read_csv("../1_Data/airbnb.csv")
 ```
 
-7. Verwende den Code unten um nur die beiden Jahre `2018` und `2019` aus den Daten auszuwählen und ein neues Objekt mit Namen `airbnb_1819` zu erstellen.
+7. Verwende den Code unten um nur die beiden Jahre `2018` und `2019` aus den Daten auszuwählen und ein neues Objekt `airbnb_1819` zu erstellen.
 
 ```{r echo = TRUE}
 # Wähle Jahre 2018 und 2019 aus
@@ -119,11 +119,9 @@ airbnb_1819 <- airbnb %>%
          Erstellungsdatum < "2019-12-31")
 ```
 
-
 ### B - Präambel
 
-1. Unter den `setup` chunk, setze eine Überschrift auf drittem level (`###`) mit Titel `Präambel`. 
-
+1. Unter den `setup` Chunk, setze eine Überschrift auf drittem Level (`###`) mit Titel `Präambel`. 
 ````markdown
 ### Präambel
 ````
@@ -152,7 +150,7 @@ Seit 02.01.2018 wurden in Berlin 5007 Airbnb Wohnungen eingestellt. Von diesen W
 Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Jahr 2019 wurden insgesamt 3274 neue Wohnungen eingestellt wohingegend im Jahr 2018 nur 1733 Wohnungen eingestellt wurden. Dies entspricht einem Zuwachs von 89%.
 ````
 
-3. Tausche zunächst das Datum an zweiter Stelle im Text durch den folgenen inline Code aus. Nicht vergessen, der Code muss zwischen zwei Gravis (&grave;r Code&grave;) gesetzt werden. Knitte das Dokument.  
+3. Tausche zunächst das Datum an zweiter Stelle im Text durch den folgenden inline Code aus. Nicht vergessen, der Code muss zwischen zwei Gravis (&grave;r Code&grave;) gesetzt werden. Knitte das Dokument.  
 
 ````text
 r min(airbnb_1819$Erstellungsdatum)
@@ -235,7 +233,7 @@ stadtteile <- airbnb_1819 %>%
   arrange(desc(Jahr), Wohnungen) %>% 
   mutate(Stadtteil = as_factor(Stadtteil))
 ```
-4. Erstze nun die die zwei im ersten Paragraph erwähnten Stadtteile durch `stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% last()` und `stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% first()`. Knitte das Dokument und schaue, ob die richtigen Namen eingesetzt wurden. 
+4. Ersetze nun die die zwei im ersten Paragraph erwähnten Stadtteile durch `stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% last()` und `stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% first()`. Knitte das Dokument und schaue, ob die richtigen Namen eingesetzt wurden. 
 
 5. Kreiere einen neuen Chunk zwischen den beiden Absatz mit dem folgenden Code, welcher einige Objekte erstellt, die die inline Ergänzungen im darauf folgenden Absatz erleichtern werden.  
 
@@ -296,7 +294,7 @@ Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/mast
 |:-------------|:-------------------------------------|
 |Preis| Preis pro Nacht|
  |Erstellungsdatum| Eröffnungsdatum des Airbnbs |
- |Unterkunftsart| Appartement, Loft, House, etc.|
+ |Unterkunftsart| Appartement, Loft, Haus, etc.|
  |Schlafplätze| Anzahl Schlafplätze |
  |Schlafzimmer| Anzahl Schlafzimmer |
  |Badezimmer| Anzahl Badezimmer |
@@ -345,7 +343,7 @@ Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/mast
 
 | Funktion| Paket | Beschreibung |
 |:---|:------|:---------------------------------------------|
-| `strftime`|`lubridate`| Formartierung von Daten | 
+| `strftime`|`lubridate`| Formatierung von Daten | 
 
 
 
@@ -353,6 +351,6 @@ Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/mast
 
 - Allgemeiner Einstieg in [**RMarkdown**](https://rmarkdown.rstudio.com/lesson-1.html).
 - [**DIE Referenz**](https://bookdown.org/yihui/rmarkdown/) für RMarkdown bis ins letzte Detail.
-- [**Rmarkdowb**](https://cran.r-project.org/web/packages/rmarkdown/index.html) Dokumentation und Befehlsreferenz.
+- [**Rmarkdown**](https://cran.r-project.org/web/packages/rmarkdown/index.html) Dokumentation und Befehlsreferenz.
 
 
