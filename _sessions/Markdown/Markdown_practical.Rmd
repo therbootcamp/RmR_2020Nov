@@ -86,12 +86,12 @@ Am Ende des Practicals wirst du wissen wie man:
 2. Öffne ein neues RMarkdown Skript und wähle das Template "HTML" aus (siehe screenshot).
 
 <p align="center" width="100%">
-  <img src="image/markdown_menu.png" alt="Trulli" style="height:200px">
+  <img src="image/markdown_menu.png" alt="Trulli" style="height:250px">
 </p>
 
 3. Trage als Titel `Bericht Berlin 2018/2019` ein.
 
-3. Speichere das neue Markdown Skript unter dem Namen `markdown_practical.Rmd` im `3_Markdown` Ordner ab.
+3. Speichere das neue Markdown Skript unter dem Namen `airbnb_level_one.Rmd` im `3_Markdown` Ordner ab.
 
 4. Lösche alles unterhalb des `setup` Code Chunks.
 
@@ -134,12 +134,14 @@ Dieser Bericht analysiert Veränderungen in den Neueinstellungen und den Preisen
 
 3. `Knitte` das Dokument. Sieht alles in Ordnung aus?  
 
-### C - Neueinstellungen: Text pt. 1
+### C - Neueinstellungen: Text Teil 1
 
 1. Setze eine weitere Überschrift auf dritter Ebene (`###`) mit Titel `Neueinstellungen` und darunter eine Überschrift auf vierter Ebene (`####`) mit dem Titel `Entwicklung`.
 
 ````markdown
-### Präambel
+### Neueinstellungen
+
+#### Entwicklung
 ````
 
 2. Füge nun diesen Text ein. Er enthält einige Werte, die du gleich durch inline Code ersetzen wirst.
@@ -161,7 +163,7 @@ r min(airbnb_1819$Erstellungsdatum)
 ````text
 r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")
 ````
-5. Als nächstes ersetze die Anzahl der Wohnungen durch `nrow(airbnb_1819)`. Nicht das `r` am Anfang vergessen. 
+5. Als nächstes ersetze die Anzahl der Wohnungen durch `nrow(airbnb_1819)`. Nicht das `r` am Anfang vergessen! 
 
 6. Ersetze nun Prozentsatz der Wohnungen durch `round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)` und die durchschnittliche Verfügbarkeit durch `round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)`. Jetzt sollten alle Zahlen des ersten Absatz durch Code ersetzt worden sein. Überprüfe ob alles stimmt. 
 
@@ -171,26 +173,25 @@ r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")
 
 9. Zuletzt verwende &ast;&ast; um den gesamten zweiten Absatz fett zu setzen. Setze hierfür einmal die zwei Asteriske vor das erste und nach dem letzten Wort des Absatzes. Nun alles wie im Zieldokument?
 
-### D - Neueinstellungen: Grafik pt. 1
+### D - Neueinstellungen: Grafik Teil 1
 
-1. Erstelle einen neuen Code Chunk. Einen Chunk erstellst du mit zunächst Gravis &grave;&grave;&grave;, dann direkt danach in der selben Zeile `{r}` und anschliessend nocheinmal drei Ticks in einer Zeile darunter. Wie in der Abbildung unten sollte sich der Hintergrund automatisch grau einfärben. 
+1. Erstelle einen neuen Code Chunk. Einen Chunk erstellst du mit zunächst drei Gravis &grave;&grave;&grave;, dann direkt danach in der selben Zeile `{r}` und anschliessend nocheinmal drei Ticks in einer Zeile darunter. Wie in der Abbildung unten sollte sich der Hintergrund automatisch grau einfärben. 
 
 <p align="center"><img src="image/chunk.png" height=60px></img></p>
 
-2. Kopiere in den Chunk, d.h., zwischen die zwei Zeilen mit den drei Ticks, den Code unten, welcher eine erste Version der ersten Grafik im Bericht generiert. 
+2. Kopiere in den Chunk, d.h., zwischen die zwei Zeilen mit den drei Gravis/Ticks, den Code unten, welcher eine erste Version der ersten Grafik im Bericht generiert. 
 
 ```R
 # Plotte Häufigkeiten
 ggplot(airbnb_1819 %>% 
-         group_by(Jahr = year(Erstellungsdatum), 
-                  Monat_tmp = month(Erstellungsdatum)) %>% 
-         summarize(
-           Monat = as_factor(paste(first(Jahr), first(Monat_tmp), sep = '-')),
-           Wohnungen = n()), 
-       aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
-  geom_bar(stat = 'identity', position = 'dodge') + 
-  theme(legend.position = 'none',
-        axis.text.x = element_text(angle = 45, hjust = 1)) 
+      group_by(Jahr = year(Erstellungsdatum), 
+               Monat_tmp = month(Erstellungsdatum)) %>% 
+      summarize(Monat = as_factor(paste(first(Jahr), first(Monat_tmp), sep = '-')),
+                Wohnungen = n()), 
+      aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
+      geom_bar(stat = 'identity', position = 'dodge') + 
+      theme(legend.position = 'none',
+      axis.text.x = element_text(angle = 45, hjust = 1)) 
 ```
 
 ### E - Chunk-Optionen 
@@ -199,9 +200,9 @@ ggplot(airbnb_1819 %>%
 
 <p align="center"><img src="image/chunk2.png" height=60px></img></p>
 
-2. Das Dokument sollte nun den Code in dem Chunk nicht mehr zeigen. Mache nun dieses Setting rückgängig, d.h., lösche `echo = FALSE`, es gibt nämlich einen zweiten Weg diesen und alle zukünftigen Code Chunks zu verstecken. Knitte das Dokument nachdem du das `echo = FALSE` entfernt hast. 
+2. Das Dokument sollte nun den Code im Chunk nicht mehr anzeigen. Mache nun dieses Setting rückgängig, d.h., lösche `echo = FALSE`, es gibt nämlich einen zweiten Weg diesen und alle zukünftigen Code Chunks zu verstecken. Knitte das Dokument nachdem du das `echo = FALSE` entfernt hast. 
 
-3. Gehe nun zum Setup-Chunk ganz am Anfang es Dokuments (unter dem YAML head). Dort siehst du folgende Code Zeile `knitr::opts_chunk$set(echo = TRUE)`, die aktuell impliziert, dass alle Code Chunks per default angezeigt werden. Setze nun hier `echo = FALSE` und knitte das Dokument. Der Code Chunk sollte nun wieder versteckt sein. Behalte diese Einstellung auch für die weiteren Sessions bei.
+3. Gehe nun zum Setup-Chunk ganz am Anfang es Dokuments (unter dem YAML header). Dort siehst du folgende Code Zeile `knitr::opts_chunk$set(echo = TRUE)`, die aktuell impliziert, dass alle Code Chunks per default angezeigt werden. Setze nun hier `echo = FALSE` und knitte das Dokument. Der Code Chunk sollte nun wieder versteckt sein. Behalte diese Einstellung auch für die weiteren Sessions bei.
 
 4. Ergänze nun zusätzlich in den allgemeinen Chunk-Optionen `message = FALSE` und `warning = FALSE`, was vollständig verhindert, dass Messages oder Warnings im Bericht auftauchen. Die finalen Settings sollten nun so aussehen. 
 
@@ -209,7 +210,7 @@ ggplot(airbnb_1819 %>%
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 ```
 
-### F - Neueinstellungen: Text pt. 2
+### F - Neueinstellungen: Text Teil 2
 
 1. Setze unten im Script eine weitere Überschrift auf vierter Ebene (`####`) mit dem Titel `Stadtteile`.
 
@@ -226,16 +227,17 @@ Die grössten Veränderungen gab es in Marzahn - Hellersdorf und Treptow - Köpe
 ```R
 # Berechne Häufigkeiten über die Bezirke
 stadtteile <- airbnb_1819 %>% 
-         group_by(Stadtteil, 
-                  Jahr = year(Erstellungsdatum)) %>% 
-         summarize(Wohnungen = n()) %>% 
-  ungroup() %>% 
-  arrange(desc(Jahr), Wohnungen) %>% 
-  mutate(Stadtteil = as_factor(Stadtteil))
+              group_by(Stadtteil, 
+                       Jahr = year(Erstellungsdatum)) %>% 
+              summarize(Wohnungen = n()) %>% 
+              ungroup() %>% 
+              arrange(desc(Jahr), Wohnungen) %>% 
+              mutate(Stadtteil = as_factor(Stadtteil))
 ```
-4. Ersetze nun die die zwei im ersten Paragraph erwähnten Stadtteile durch `stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% last()` und `stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% first()`. Knitte das Dokument und schaue, ob die richtigen Namen eingesetzt wurden. 
+4. Ersetze nun die die zwei im ersten Paragraph erwähnten Stadtteile durch `stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% last()` und `stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% first()`. 
+Knitte das Dokument und schaue, ob die richtigen Namen eingesetzt wurden. 
 
-5. Kreiere einen neuen Chunk zwischen den beiden Absatz mit dem folgenden Code, welcher einige Objekte erstellt, die die inline Ergänzungen im darauf folgenden Absatz erleichtern werden.  
+5. Kreiere einen neuen Chunk zwischen den beiden Absätzen mit dem folgenden Code, welcher einige Objekte erstellt, die die inline Ergänzungen im darauf folgenden Absatz erleichtern werden.  
 
 ```
 # Veränderung über die Stadtteile
@@ -268,9 +270,10 @@ max_stadtteil = veränderung %>%
 
 7. Ersetze nun `schrumpften` und `wuchsen` durch `ifelse(min_veränderung > 0, "wuchsen", "schrumpften")` und `ifelse(max_veränderung > 0, "wuchsen", "schrumpften")`. Die beiden Codestücke können dann selbst entscheiden, ob die Veränderung eine positive oder negative ist und das jeweils richtige Wort einsetzen. 
 
-8. Abschliessend ersetze die beiden numerischen Werte durch `min_veränderung` und `max_veränderung`. Knitte das Dokument und überprüfe, ob alles in Ordnung ist.
+8. Abschliessend ersetze die beiden numerischen Werte durch `min_veränderung` und `max_veränderung`. 
+Knitte das Dokument und überprüfe, ob alles in Ordnung ist.
 
-### G - Neueinstellungen: Grafik pt. 2
+### G - Neueinstellungen: Grafik Teil 2
 
 1. Erstelle einen neuen Chunk mit dem folgenden Code für die zweite Grafik.
 
@@ -278,8 +281,9 @@ max_stadtteil = veränderung %>%
 # Plotte Häufigkeieten der Stadtteile
 ggplot(stadtteile, 
        aes(y = Stadtteil, x = Wohnungen, group = Jahr, fill = Jahr)) + 
-  geom_bar(stat = 'identity', position = 'dodge') + 
-  theme(legend.position = 'none') + labs(y='')
+       geom_bar(stat = 'identity', position = 'dodge') + 
+       theme(legend.position = 'none') + 
+       labs(y = '')
 ```
 
 2. Knitte das Dokument. Der erste Teil ist hiermit abgeschlossen. 

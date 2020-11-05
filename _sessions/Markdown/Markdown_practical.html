@@ -232,11 +232,11 @@ pre code,  .md:not(.use-csslab) pre code {
 <li><p>Öffne ein neues RMarkdown Skript und wähle das Template “HTML” aus (siehe screenshot).</p></li>
 </ol>
 <p align="center" width="100%">
-<img src="image/markdown_menu.png" alt="Trulli" style="height:200px">
+<img src="image/markdown_menu.png" alt="Trulli" style="height:250px">
 </p>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Trage als Titel <code>Bericht Berlin 2018/2019</code> ein.</p></li>
-<li><p>Speichere das neue Markdown Skript unter dem Namen <code>markdown_practical.Rmd</code> im <code>3_Markdown</code> Ordner ab.</p></li>
+<li><p>Speichere das neue Markdown Skript unter dem Namen <code>airbnb_level_one.Rmd</code> im <code>3_Markdown</code> Ordner ab.</p></li>
 <li><p>Lösche alles unterhalb des <code>setup</code> Code Chunks.</p></li>
 <li><p>Lade die Pakete <code>tidyverse</code> und <code>lubridate</code> im <code>setup</code> Chunk.</p></li>
 </ol>
@@ -270,12 +270,14 @@ airbnb_1819 &lt;- airbnb %&gt;%
 <li><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</li>
 </ol>
 </div>
-<div id="c---neueinstellungen-text-pt.-1" class="section level3">
-<h3>C - Neueinstellungen: Text pt. 1</h3>
+<div id="c---neueinstellungen-text-teil-1" class="section level3">
+<h3>C - Neueinstellungen: Text Teil 1</h3>
 <ol style="list-style-type: decimal">
 <li>Setze eine weitere Überschrift auf dritter Ebene (<code>###</code>) mit Titel <code>Neueinstellungen</code> und darunter eine Überschrift auf vierter Ebene (<code>####</code>) mit dem Titel <code>Entwicklung</code>.</li>
 </ol>
-<pre class="markdown"><code>### Präambel</code></pre>
+<pre class="markdown"><code>### Neueinstellungen
+
+#### Entwicklung</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Füge nun diesen Text ein. Er enthält einige Werte, die du gleich durch inline Code ersetzen wirst.</li>
 </ol>
@@ -291,35 +293,34 @@ Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Ja
 </ol>
 <pre class="text"><code>r strftime(min(airbnb_1819$Erstellungsdatum), &quot;%d.%m.%Y&quot;)</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li><p>Als nächstes ersetze die Anzahl der Wohnungen durch <code>nrow(airbnb_1819)</code>. Nicht das <code>r</code> am Anfang vergessen.</p></li>
+<li><p>Als nächstes ersetze die Anzahl der Wohnungen durch <code>nrow(airbnb_1819)</code>. Nicht das <code>r</code> am Anfang vergessen!</p></li>
 <li><p>Ersetze nun Prozentsatz der Wohnungen durch <code>round(mean(airbnb_1819$Verfügbarkeit_90Tage &gt; 0) * 100)</code> und die durchschnittliche Verfügbarkeit durch <code>round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage&gt;0]),1)</code>. Jetzt sollten alle Zahlen des ersten Absatz durch Code ersetzt worden sein. Überprüfe ob alles stimmt.</p></li>
 <li><p>Im nächsten Absatz ersetze die ersten beiden Zahlen durch <code>n_2019 &lt;- sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019</code> und <code>n_2018 &lt;- sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018</code>. In diesen beiden Fällen siehst du, dass auch Zuweisungen in inline Code möglich sind.</p></li>
 <li><p>Ersetze nun den wert des Zuwachses am Ende des Absatzes durch <code>(round(n_2019/n_2018, 2) - 1)*100</code>, was, wie du siehst, auf die beiden zuvor im inline Code definierten Objekte zurückgreift. Knitte das Dokument und überprüfe, ob nun alle Zahlen einwandfrei wiedergegeben werden.</p></li>
 <li><p>Zuletzt verwende ** um den gesamten zweiten Absatz fett zu setzen. Setze hierfür einmal die zwei Asteriske vor das erste und nach dem letzten Wort des Absatzes. Nun alles wie im Zieldokument?</p></li>
 </ol>
 </div>
-<div id="d---neueinstellungen-grafik-pt.-1" class="section level3">
-<h3>D - Neueinstellungen: Grafik pt. 1</h3>
+<div id="d---neueinstellungen-grafik-teil-1" class="section level3">
+<h3>D - Neueinstellungen: Grafik Teil 1</h3>
 <ol style="list-style-type: decimal">
-<li>Erstelle einen neuen Code Chunk. Einen Chunk erstellst du mit zunächst Gravis ```, dann direkt danach in der selben Zeile <code>{r}</code> und anschliessend nocheinmal drei Ticks in einer Zeile darunter. Wie in der Abbildung unten sollte sich der Hintergrund automatisch grau einfärben.</li>
+<li>Erstelle einen neuen Code Chunk. Einen Chunk erstellst du mit zunächst drei Gravis ```, dann direkt danach in der selben Zeile <code>{r}</code> und anschliessend nocheinmal drei Ticks in einer Zeile darunter. Wie in der Abbildung unten sollte sich der Hintergrund automatisch grau einfärben.</li>
 </ol>
 <p align="center">
 <img src="image/chunk.png" height=60px></img>
 </p>
 <ol start="2" style="list-style-type: decimal">
-<li>Kopiere in den Chunk, d.h., zwischen die zwei Zeilen mit den drei Ticks, den Code unten, welcher eine erste Version der ersten Grafik im Bericht generiert.</li>
+<li>Kopiere in den Chunk, d.h., zwischen die zwei Zeilen mit den drei Gravis/Ticks, den Code unten, welcher eine erste Version der ersten Grafik im Bericht generiert.</li>
 </ol>
 <pre class="r"><code># Plotte Häufigkeiten
 ggplot(airbnb_1819 %&gt;% 
-         group_by(Jahr = year(Erstellungsdatum), 
-                  Monat_tmp = month(Erstellungsdatum)) %&gt;% 
-         summarize(
-           Monat = as_factor(paste(first(Jahr), first(Monat_tmp), sep = &#39;-&#39;)),
-           Wohnungen = n()), 
-       aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
-  geom_bar(stat = &#39;identity&#39;, position = &#39;dodge&#39;) + 
-  theme(legend.position = &#39;none&#39;,
-        axis.text.x = element_text(angle = 45, hjust = 1)) </code></pre>
+      group_by(Jahr = year(Erstellungsdatum), 
+               Monat_tmp = month(Erstellungsdatum)) %&gt;% 
+      summarize(Monat = as_factor(paste(first(Jahr), first(Monat_tmp), sep = &#39;-&#39;)),
+                Wohnungen = n()), 
+      aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
+      geom_bar(stat = &#39;identity&#39;, position = &#39;dodge&#39;) + 
+      theme(legend.position = &#39;none&#39;,
+      axis.text.x = element_text(angle = 45, hjust = 1)) </code></pre>
 </div>
 <div id="e---chunk-optionen" class="section level3">
 <h3>E - Chunk-Optionen</h3>
@@ -330,14 +331,14 @@ ggplot(airbnb_1819 %&gt;%
 <img src="image/chunk2.png" height=60px></img>
 </p>
 <ol start="2" style="list-style-type: decimal">
-<li><p>Das Dokument sollte nun den Code in dem Chunk nicht mehr zeigen. Mache nun dieses Setting rückgängig, d.h., lösche <code>echo = FALSE</code>, es gibt nämlich einen zweiten Weg diesen und alle zukünftigen Code Chunks zu verstecken. Knitte das Dokument nachdem du das <code>echo = FALSE</code> entfernt hast.</p></li>
-<li><p>Gehe nun zum Setup-Chunk ganz am Anfang es Dokuments (unter dem YAML head). Dort siehst du folgende Code Zeile <code>knitr::opts_chunk$set(echo = TRUE)</code>, die aktuell impliziert, dass alle Code Chunks per default angezeigt werden. Setze nun hier <code>echo = FALSE</code> und knitte das Dokument. Der Code Chunk sollte nun wieder versteckt sein. Behalte diese Einstellung auch für die weiteren Sessions bei.</p></li>
+<li><p>Das Dokument sollte nun den Code im Chunk nicht mehr anzeigen. Mache nun dieses Setting rückgängig, d.h., lösche <code>echo = FALSE</code>, es gibt nämlich einen zweiten Weg diesen und alle zukünftigen Code Chunks zu verstecken. Knitte das Dokument nachdem du das <code>echo = FALSE</code> entfernt hast.</p></li>
+<li><p>Gehe nun zum Setup-Chunk ganz am Anfang es Dokuments (unter dem YAML header). Dort siehst du folgende Code Zeile <code>knitr::opts_chunk$set(echo = TRUE)</code>, die aktuell impliziert, dass alle Code Chunks per default angezeigt werden. Setze nun hier <code>echo = FALSE</code> und knitte das Dokument. Der Code Chunk sollte nun wieder versteckt sein. Behalte diese Einstellung auch für die weiteren Sessions bei.</p></li>
 <li><p>Ergänze nun zusätzlich in den allgemeinen Chunk-Optionen <code>message = FALSE</code> und <code>warning = FALSE</code>, was vollständig verhindert, dass Messages oder Warnings im Bericht auftauchen. Die finalen Settings sollten nun so aussehen.</p></li>
 </ol>
 <pre class="r"><code>knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)</code></pre>
 </div>
-<div id="f---neueinstellungen-text-pt.-2" class="section level3">
-<h3>F - Neueinstellungen: Text pt. 2</h3>
+<div id="f---neueinstellungen-text-teil-2" class="section level3">
+<h3>F - Neueinstellungen: Text Teil 2</h3>
 <ol style="list-style-type: decimal">
 <li><p>Setze unten im Script eine weitere Überschrift auf vierter Ebene (<code>####</code>) mit dem Titel <code>Stadtteile</code>.</p></li>
 <li><p>Unter die Überschrift setze den folgenden Text.</p></li>
@@ -350,15 +351,15 @@ Die grössten Veränderungen gab es in Marzahn - Hellersdorf und Treptow - Köpe
 </ol>
 <pre class="r"><code># Berechne Häufigkeiten über die Bezirke
 stadtteile &lt;- airbnb_1819 %&gt;% 
-         group_by(Stadtteil, 
-                  Jahr = year(Erstellungsdatum)) %&gt;% 
-         summarize(Wohnungen = n()) %&gt;% 
-  ungroup() %&gt;% 
-  arrange(desc(Jahr), Wohnungen) %&gt;% 
-  mutate(Stadtteil = as_factor(Stadtteil))</code></pre>
+              group_by(Stadtteil, 
+                       Jahr = year(Erstellungsdatum)) %&gt;% 
+              summarize(Wohnungen = n()) %&gt;% 
+              ungroup() %&gt;% 
+              arrange(desc(Jahr), Wohnungen) %&gt;% 
+              mutate(Stadtteil = as_factor(Stadtteil))</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li><p>Ersetze nun die die zwei im ersten Paragraph erwähnten Stadtteile durch <code>stadtteile %&gt;% filter(Jahr == 2019) %&gt;% pull(Stadtteil) %&gt;% last()</code> und <code>stadtteile %&gt;% filter(Jahr == 2019) %&gt;% pull(Stadtteil) %&gt;% first()</code>. Knitte das Dokument und schaue, ob die richtigen Namen eingesetzt wurden.</p></li>
-<li><p>Kreiere einen neuen Chunk zwischen den beiden Absatz mit dem folgenden Code, welcher einige Objekte erstellt, die die inline Ergänzungen im darauf folgenden Absatz erleichtern werden.</p></li>
+<li><p>Kreiere einen neuen Chunk zwischen den beiden Absätzen mit dem folgenden Code, welcher einige Objekte erstellt, die die inline Ergänzungen im darauf folgenden Absatz erleichtern werden.</p></li>
 </ol>
 <pre><code># Veränderung über die Stadtteile
 veränderung = stadtteile %&gt;% 
@@ -390,8 +391,8 @@ max_stadtteil = veränderung %&gt;%
 <li><p>Abschliessend ersetze die beiden numerischen Werte durch <code>min_veränderung</code> und <code>max_veränderung</code>. Knitte das Dokument und überprüfe, ob alles in Ordnung ist.</p></li>
 </ol>
 </div>
-<div id="g---neueinstellungen-grafik-pt.-2" class="section level3">
-<h3>G - Neueinstellungen: Grafik pt. 2</h3>
+<div id="g---neueinstellungen-grafik-teil-2" class="section level3">
+<h3>G - Neueinstellungen: Grafik Teil 2</h3>
 <ol style="list-style-type: decimal">
 <li>Erstelle einen neuen Chunk mit dem folgenden Code für die zweite Grafik.</li>
 </ol>
@@ -426,7 +427,7 @@ ggplot(stadtteile,
 </tr>
 <tr class="odd">
 <td align="left">Unterkunftsart</td>
-<td align="left">Appartement, Loft, House, etc.</td>
+<td align="left">Appartement, Loft, Haus, etc.</td>
 </tr>
 <tr class="even">
 <td align="left">Schlafplätze</td>
@@ -599,7 +600,7 @@ ggplot(stadtteile,
 <ul>
 <li>Allgemeiner Einstieg in <a href="https://rmarkdown.rstudio.com/lesson-1.html"><strong>RMarkdown</strong></a>.</li>
 <li><a href="https://bookdown.org/yihui/rmarkdown/"><strong>DIE Referenz</strong></a> für RMarkdown bis ins letzte Detail.</li>
-<li><a href="https://cran.r-project.org/web/packages/rmarkdown/index.html"><strong>Rmarkdowb</strong></a> Dokumentation und Befehlsreferenz.</li>
+<li><a href="https://cran.r-project.org/web/packages/rmarkdown/index.html"><strong>Rmarkdown</strong></a> Dokumentation und Befehlsreferenz.</li>
 </ul>
 </div>
 </div>

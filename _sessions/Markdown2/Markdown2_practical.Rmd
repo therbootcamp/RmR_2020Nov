@@ -4,7 +4,7 @@ author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
       <font style='font-style:normal'>Reporting mit R</font><br>
-      <a href='https://therbootcamp.github.io/RmR_2020Jun/'>
+      <a href='https://therbootcamp.github.io/RmR_2020Nov/'>
         <i class='fas fa-clock' style='font-size:.9em;' ></i>
       </a>
       <a href='https://therbootcamp.github.io'>
@@ -69,9 +69,11 @@ library(sjPlot)
 In diesem Practical wirst du nun die Grafiken in deinem Dokument gestalten 
 und Bausteine, Text und Tabellen, einfügen.
 
-1. Grafiken formatieren.
-3. Datentabellen einfügen und im Detail gestalten.
-4. Ergebnisse eines Regressionsmodells einbinden.
+Am Ende des Practicals wirst du wissen wie man:
+
+1. Grafiken formatiert.
+3. Datentabellen einfügt und im Detail gestaltet.
+4. Ergebnisse eines Regressionsmodells einbindet.
 
 ## Aufgaben
 
@@ -81,7 +83,9 @@ und Bausteine, Text und Tabellen, einfügen.
 
 2. Lade die `airbnb_level_one.Rmd` Datei, das fertige Produkt am Ende des ersten Markdown Practicals. 
 
-3. Zusätzlich lade die Pakete `knitr`, `kableExtra` `sjPlot` im `setup` chunk. 
+3. Speichere die Datei und dem neuen Namen: `airbnb_level_two.Rmd` ab.
+
+4. Zusätzlich lade die Pakete `knitr`, `kableExtra` `sjPlot` im `setup` chunk. 
 
 ### B - Präambel: Fussnote einfügen
 
@@ -135,22 +139,23 @@ m <- mean(airbnb_1819 %>% filter(year(Erstellungsdatum) == 2019) %>% pull(Preis)
 
 ```R
 # Vektor mit Ausstattungsmerkmalen
-ausstattung_var = c('Küche','Wifi','TV','Kaffeemaschine',
-                    'Geschirrspüler','Terrasse_Balkon',
-                    'Check_in_24h')
+ausstattung_var <- c('Küche','Wifi','TV','Kaffeemaschine',
+                     'Geschirrspüler','Terrasse_Balkon',
+                     'Check_in_24h')
 
 # Bestimme Preise als Funktion der Ausstattungsmerkmale
-ausstattung <- airbnb_1819 %>% 
-               select(all_of(ausstattung_var), Preis) %>%
-               pivot_longer(-Preis,
-               names_to = 'Ausstattung',
-               values_to = 'Ausstattung_vorhanden') %>% 
-              group_by(Ausstattung) %>% 
-  summarize(Nicht_vorhanden = mean(Preis[!Ausstattung_vorhanden]),
-            Vorhanden = mean(Preis[Ausstattung_vorhanden]),
-            Differenz = Vorhanden - Nicht_vorhanden, 
-            Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %>% 
-  arrange(desc(Differenz)) 
+ausstattung <- 
+  airbnb_1819 %>% 
+    select(all_of(ausstattung_var), Preis) %>%
+    pivot_longer(-Preis,
+    names_to = 'Ausstattung',
+    values_to = 'Ausstattung_vorhanden') %>% 
+    group_by(Ausstattung) %>% 
+    summarize(Nicht_vorhanden = mean(Preis[!Ausstattung_vorhanden]),
+              Vorhanden = mean(Preis[Ausstattung_vorhanden]),
+              Differenz = Vorhanden - Nicht_vorhanden, 
+              Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %>% 
+    arrange(desc(Differenz)) 
 ```
 
 3. Füge einen neuen Textteil ein.
@@ -194,7 +199,7 @@ ausstattung %>% kable(format = 'html')
 
 3. Füge eine Tabellenüberschrift mit `caption = 'Tabelle 1. Austattung und Einfluss auf den Preis'` ein.
 
-4. Passe die Namen der Spalten an, inklusive neuer Zeilenumbrüche mit `<br>`: `col.names = c('', 'Preis<br>Nicht-vorh.', 'Preis<br>vorh.','Differenz','Prozent<br>vorh.')`
+4. Passe die Namen der Spalten an, inklusive neuer Zeilenumbrüche mit `<br>`: `col.names = c('', 'Preis<br>Nicht-vorh.', 'Preis<br>vorh.', 'Differenz', 'Prozent<br>vorh.')`
 
 5. `Knitte` das Dokument. Du wirst bemerken, dass die Spaltenbeschriftung nicht korrekt übersetzt wird. Verwende als weiteres Argument `escape = FALSE` um dieses Problem zu korrigieren. 
 
@@ -203,17 +208,20 @@ ausstattung %>% kable(format = 'html')
 7. Nun vergrössere die Breite der Spalten in dem du `column_spec()` hinter der `kable()` Funktion verwendest. 
 
 ```R
-airbnb_18_19 %>% kable(...) %>% column_spec(c(2,3,4,5), width = "1.2in")
+airbnb_18_19 %>% 
+  kable(...) %>% 
+  column_spec(c(2,3,4,5), width = "1.2in")
 ```
 
 8. Abschliessend, gestalte die Schrifgrösse der Zellen in Abhängigkeit der Grösse der abgebildeten Zahl. Füge dafür vor der `kable()` Funktion folgenden Code ein und verbinde die beiden Teile mit einer Pipe `%>%`.
 
 ```R
 airbnb_1819 %>% 
-mutate_if(is.numeric, function(x) {
-    cell_spec(round(x,1), bold = T, 
-              font_size = spec_font_size(x, begin=10, end=16))}) %>% 
-kable(...) %>% column_spec(...)
+  mutate_if(is.numeric, function(x) {
+            cell_spec(round(x,1), bold = T, 
+            font_size = spec_font_size(x, begin=10, end=16))}) %>% 
+  kable(...) %>% 
+  column_spec(...)
 ```
 
 9. `Knitte` das Dokument. Sieht alles in Ordnung aus?  
@@ -229,18 +237,21 @@ kable(...) %>% column_spec(...)
 ausstattung_var <- c('Küche','TV','Terrasse_Balkon','Check_in_24h')
 
 # Bereit den Datensatz für die Regression vor
-ausstattung <- airbnb_1819 %>% 
-  mutate(Hotel = Unterkunftsart %in% c('Boutique hotel', 'Hotel')) %>% 
-  select(Preis, Hotel, all_of(ausstattung_var)) 
+ausstattung <- 
+  airbnb_1819 %>% 
+    mutate(Hotel = Unterkunftsart %in% c('Boutique hotel', 'Hotel')) %>% 
+    select(Preis, Hotel, all_of(ausstattung_var)) 
 
 # Rechne Regression des Preises auf Austattungsmerkmale und Hotel
-ausstattung_mod <-  ausstattung%>% 
-  lm(formula = Preis ~ .)
+ausstattung_mod <- 
+  ausstattung %>% 
+    lm(formula = Preis ~ .)
   
 # Bestimme Anteil Hotels in 2018 und 2019
-hotel <- airbnb_1819 %>% 
-  group_by(year(Erstellungsdatum)) %>% 
-  summarize(Anteil = mean(Unterkunftsart %in% c('Boutique hotel', 'Hotel')))   
+hotel <- 
+  airbnb_1819 %>% 
+    group_by(year(Erstellungsdatum)) %>% 
+    summarize(Anteil = mean(Unterkunftsart %in% c('Boutique hotel', 'Hotel')))   
 ```
 
 3. Füge nun folgenden Textblock ein.
@@ -284,7 +295,7 @@ tab_model(ausstattung_mod)
 
 ## Datensatz
 
-Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Jun/master/_materials/case/1_Data/airbnb.csv) Datensatz enthält Zahlen zu 9868 Berliner Airbnbs 
+Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Nov/master/_materials/case/1_Data/airbnb.csv) Datensatz enthält Zahlen zu 9868 Berliner Airbnbs 
 
 
 |Variable | Beschreibung |

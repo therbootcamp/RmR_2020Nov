@@ -5,7 +5,7 @@ author: "Reporting mit R<br>
     The R Bootcamp
   </a>
   <br>
-  <a href='https://therbootcamp.github.io/RmR_2020Jun/'>
+  <a href='https://therbootcamp.github.io/RmR_2020Nov/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -17,7 +17,7 @@ author: "Reporting mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "Juni 2020"
+date: "November 2020"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -45,7 +45,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Reporting mit R | Juni 2020
+       Reporting mit R | November 2020
       </font>
     </a>
     </span>
@@ -481,7 +481,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <td bgcolor="white">
   <mono>format</mono>
   </td>
-  <td bgcolor="white">
+  <td bgcolor="white"><high>Ausgabeformat</high>: 
   <mono>"html"</mon>, <mono>"latex"</mono>, etc.
   </td> 
 </tr>
@@ -490,7 +490,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>digit</mono>
   </td>
   <td bgcolor="white">
-   Anzahl Nachkommastellen.   
+   Anzahl <high>Nachkommastellen</high>.   
   </td> 
 </tr>
 <tr>
@@ -498,7 +498,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>col.names</mono>
   </td>
   <td bgcolor="white">
-  Spaltennamen.
+  <high>Spaltennamen</high>.
   </td> 
 </tr>
 <tr>
@@ -506,7 +506,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>escape</mono> 
   </td>
   <td bgcolor="white">
-  Spaltennamen <b>nicht</b> als HTML interpretieren.
+  Spaltennamen <high>nicht</high> als HTML <high>interpretieren</high>.
   </td> 
 </tr>
 <tr>
@@ -514,7 +514,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>align</mono> 
   </td>
   <td bgcolor="white">
-  Ausrichtung der Spalten: <mono><b>l</b>eft</mono>, <mono><b>c</b>enter</mono>, <mono><b>r</b>ight</mono>.
+  <high>Ausrichtung</high> der Spalten: <mono><b>l</b>eft</mono>, <mono><b>c</b>enter</mono>, <mono><b>r</b>ight</mono>.
   </td> 
 </tr>
 <tr>
@@ -522,7 +522,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>caption</mono> 
   </td>
   <td bgcolor="white">
-  Tabellenüberschrift. 
+  <high>Tabellenüberschrift</high>. 
   </td> 
 </tr>
 </table>
@@ -563,7 +563,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <td bgcolor="white">
   <mono>format</mono>
   </td>
-  <td bgcolor="white">
+  <td bgcolor="white"><high>Ausgabeformat</high>: 
   <mono>"html"</mon>, <mono>"latex"</mono>, etc.
   </td> 
 </tr>
@@ -572,7 +572,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>digit</mono>
   </td>
   <td bgcolor="white">
-   Anzahl Nachkommastellen.   
+   Anzahl <high>Nachkommastellen</high>.   
   </td> 
 </tr>
 <tr>
@@ -580,7 +580,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>col.names</mono>
   </td>
   <td bgcolor="white">
-  Spaltennamen.
+  <high>Spaltennamen</high>.
   </td> 
 </tr>
 <tr>
@@ -588,7 +588,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>escape</mono> 
   </td>
   <td bgcolor="white">
-  Spaltnenamen <b>nicht</b> als HTML interpretieren.
+  Spaltennamen <high>nicht</high> als HTML <high>interpretieren</high>.
   </td> 
 </tr>
 <tr>
@@ -596,7 +596,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>align</mono> 
   </td>
   <td bgcolor="white">
-  Ausrichtung der Spalten: <mono><b>l</b>eft</mono>, <mono><b>c</b>enter</mono>, <mono><b>r</b>ight</mono>.
+  <high>Ausrichtung</high> der Spalten: <mono><b>l</b>eft</mono>, <mono><b>c</b>enter</mono>, <mono><b>r</b>ight</mono>.
   </td> 
 </tr>
 <tr>
@@ -604,7 +604,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>caption</mono> 
   </td>
   <td bgcolor="white">
-  Tabellenüberschrift. 
+  <high>Tabellenüberschrift</high>. 
   </td> 
 </tr>
 </table>
@@ -645,7 +645,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <td bgcolor="white">
   <mono>format</mono>
   </td>
-  <td bgcolor="white">
+  <td bgcolor="white"><high>Ausgabeformat</high>: 
   <mono>"html"</mon>, <mono>"latex"</mono>, etc.
   </td> 
 </tr>
@@ -654,7 +654,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>digit</mono>
   </td>
   <td bgcolor="white">
-   Anzahl Nachkommastellen.   
+   Anzahl <high>Nachkommastellen</high>.   
   </td> 
 </tr>
 <tr>
@@ -662,7 +662,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>col.names</mono>
   </td>
   <td bgcolor="white">
-  Spaltennamen.
+  <high>Spaltennamen</high>.
   </td> 
 </tr>
 <tr>
@@ -670,7 +670,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>escape</mono> 
   </td>
   <td bgcolor="white">
-  Spaltennamen <b>nicht</b> als HTML interpretieren.
+  Spaltennamen <high>nicht</high> als HTML <high>interpretieren</high>.
   </td> 
 </tr>
 <tr>
@@ -678,7 +678,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>align</mono> 
   </td>
   <td bgcolor="white">
-  Ausrichtung der Spalten: <mono><b>l</b>eft</mono>, <mono><b>c</b>enter</mono>, <mono><b>r</b>ight</mono>.
+  <high>Ausrichtung</high> der Spalten: <mono><b>l</b>eft</mono>, <mono><b>c</b>enter</mono>, <mono><b>r</b>ight</mono>.
   </td> 
 </tr>
 <tr>
@@ -686,7 +686,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>caption</mono> 
   </td>
   <td bgcolor="white">
-  Tabellenüberschrift. 
+  <high>Tabellenüberschrift</high>. 
   </td> 
 </tr>
 </table>
@@ -727,7 +727,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <td bgcolor="white">
   <mono>format</mono>
   </td>
-  <td bgcolor="white">
+  <td bgcolor="white"><high>Ausgabeformat</high>: 
   <mono>"html"</mon>, <mono>"latex"</mono>, etc.
   </td> 
 </tr>
@@ -736,7 +736,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>digit</mono>
   </td>
   <td bgcolor="white">
-   Anzahl Nachkommastellen.   
+   Anzahl <high>Nachkommastellen</high>.   
   </td> 
 </tr>
 <tr>
@@ -744,7 +744,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>col.names</mono>
   </td>
   <td bgcolor="white">
-  Spaltennamen.
+  <high>Spaltennamen</high>.
   </td> 
 </tr>
 <tr>
@@ -752,7 +752,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>escape</mono> 
   </td>
   <td bgcolor="white">
-  Spaltennamen <b>nicht</b> als HTML interpretieren.
+  Spaltennamen <high>nicht</high> als HTML <high>interpretieren</high>.
   </td> 
 </tr>
 <tr>
@@ -760,7 +760,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>align</mono> 
   </td>
   <td bgcolor="white">
-  Ausrichtung der Spalten: <mono><b>l</b>eft</mono>, <mono><b>c</b>enter</mono>, <mono><b>r</b>ight</mono>.
+  <high>Ausrichtung</high> der Spalten: <mono><b>l</b>eft</mono>, <mono><b>c</b>enter</mono>, <mono><b>r</b>ight</mono>.
   </td> 
 </tr>
 <tr>
@@ -768,7 +768,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>caption</mono> 
   </td>
   <td bgcolor="white">
-  Tabellenüberschrift. 
+  <high>Tabellenüberschrift</high>. 
   </td> 
 </tr>
 </table>
@@ -809,7 +809,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <td bgcolor="white">
   <mono>format</mono>
   </td>
-  <td bgcolor="white">
+  <td bgcolor="white"><high>Ausgabeformat</high>: 
   <mono>"html"</mon>, <mono>"latex"</mono>, etc.
   </td> 
 </tr>
@@ -818,7 +818,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>digit</mono>
   </td>
   <td bgcolor="white">
-   Anzahl Nachkommastellen.   
+   Anzahl <high>Nachkommastellen</high>.   
   </td> 
 </tr>
 <tr>
@@ -826,7 +826,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>col.names</mono>
   </td>
   <td bgcolor="white">
-  Spaltennamen.
+  <high>Spaltennamen</high>.
   </td> 
 </tr>
 <tr>
@@ -834,7 +834,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>escape</mono> 
   </td>
   <td bgcolor="white">
-  Spaltennamen <b>nicht</b> als HTML interpretieren.
+  Spaltennamen <high>nicht</high> als HTML <high>interpretieren</high>.
   </td> 
 </tr>
 <tr>
@@ -842,7 +842,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>align</mono> 
   </td>
   <td bgcolor="white">
-  Ausrichtung der Spalten: <mono><b>l</b>eft</mono>, <mono><b>c</b>enter</mono>, <mono><b>r</b>ight</mono>.
+  <high>Ausrichtung</high> der Spalten: <mono><b>l</b>eft</mono>, <mono><b>c</b>enter</mono>, <mono><b>r</b>ight</mono>.
   </td> 
 </tr>
 <tr>
@@ -850,7 +850,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>caption</mono> 
   </td>
   <td bgcolor="white">
-  Tabellenüberschrift. 
+  <high>Tabellenüberschrift</high>. 
   </td> 
 </tr>
 </table>
@@ -892,7 +892,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>column_spec</mono>
   </td>
   <td bgcolor="white">
-  Formatierung der Spalten, e.g., <mono>width</mono>.
+  Formatierungder <high>Spalten</high>, e.g., <mono>width</mono>.
   </td> 
 </tr>
 <tr>
@@ -900,7 +900,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>cell_spec</mono>
   </td>
   <td bgcolor="white">
-  Formatierung der Zellen, e.g., <mono>bold</mono> und <mono>font_size</mono>.
+  Formatierung der <high>Zellen</high>, e.g., <mono>bold</mono> und <mono>font_size</mono>.
   </td> 
 </tr>
 <tr>
@@ -908,7 +908,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>spec_font_size</mono>
   </td>
   <td bgcolor="white">
-  Helferfunktion für <mono>font_size</mono>.
+  <high>Helferfunktion</high> für <mono>font_size</mono>.
   </td> 
 </tr>
 </table>
@@ -950,7 +950,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>column_spec</mono>
   </td>
   <td bgcolor="white">
-  Formatierung der Spalten, e.g., <mono>width</mono>.
+  Formatierungder <high>Spalten</high>, e.g., <mono>width</mono>.
   </td> 
 </tr>
 <tr>
@@ -958,7 +958,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>cell_spec</mono>
   </td>
   <td bgcolor="white">
-  Formatierung der Zellen, e.g., <mono>bold</mono> und <mono>font_size</mono>.
+  Formatierung der <high>Zellen</high>, e.g., <mono>bold</mono> und <mono>font_size</mono>.
   </td> 
 </tr>
 <tr>
@@ -966,10 +966,11 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>spec_font_size</mono>
   </td>
   <td bgcolor="white">
-  Helferfunktion für <mono>font_size</mono>.
+  <high>Helferfunktion</high> für <mono>font_size</mono>.
   </td> 
 </tr>
 </table>
+
 
 
 ]
@@ -1008,7 +1009,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>column_spec</mono>
   </td>
   <td bgcolor="white">
-  Formatierung der Spalten, e.g., <mono>width</mono>.
+  Formatierungder <high>Spalten</high>, e.g., <mono>width</mono>.
   </td> 
 </tr>
 <tr>
@@ -1016,7 +1017,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>cell_spec</mono>
   </td>
   <td bgcolor="white">
-  Formatierung der Zellen, e.g., <mono>bold</mono> und <mono>font_size</mono>.
+  Formatierung der <high>Zellen</high>, e.g., <mono>bold</mono> und <mono>font_size</mono>.
   </td> 
 </tr>
 <tr>
@@ -1024,10 +1025,11 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>spec_font_size</mono>
   </td>
   <td bgcolor="white">
-  Helferfunktion für <mono>font_size</mono>.
+  <high>Helferfunktion</high> für <mono>font_size</mono>.
   </td> 
 </tr>
 </table>
+
 
 
 ]
@@ -1231,7 +1233,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>&lsqb;Name&rsqb;(URL)</mono>
   </td>
   <td bgcolor="white">
-  Link. Name erscheint im Text, URL nicht.
+  <high>Link</high>. Name erscheint im Text, URL nicht.
   </td> 
 </tr>
 <tr>
@@ -1239,7 +1241,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>^&lsqb;Text&rsqb;</mono>
   </td>
   <td bgcolor="white">
-   Fussnoten werden unten am Text angehängt.    
+   <high>Fussnoten</high> werden unten am Text angehängt.    
   </td> 
 </tr>
 <tr>
@@ -1272,5 +1274,5 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Markdown2/Markdown2_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/RmR_2020Nov/_sessions/Markdown2/Markdown2_practical.html">Practical</a></h1>
 

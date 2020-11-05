@@ -23,6 +23,15 @@
 <link href="Markdown2_practical_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="Markdown2_practical_files/highlightjs-9.12.0/highlight.js"></script>
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      </style>
+
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
   pre:not([class]) {
@@ -183,7 +192,7 @@ summary {
 <col width='10%'>
 <tr style="border:none">
 <td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
-<font style='font-style:normal'>Reporting mit R</font><br> <a href='https://therbootcamp.github.io/RmR_2020Jun/'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>
+<font style='font-style:normal'>Reporting mit R</font><br> <a href='https://therbootcamp.github.io/RmR_2020Nov/'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>
 </td>
 <td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
 <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
@@ -207,10 +216,11 @@ pre code,  .md:not(.use-csslab) pre code {
 <div id="überblick" class="section level2">
 <h2>Überblick</h2>
 <p>In diesem Practical wirst du nun die Grafiken in deinem Dokument gestalten und Bausteine, Text und Tabellen, einfügen.</p>
+<p>Am Ende des Practicals wirst du wissen wie man:</p>
 <ol style="list-style-type: decimal">
-<li>Grafiken formatieren.</li>
-<li>Datentabellen einfügen und im Detail gestalten.</li>
-<li>Ergebnisse eines Regressionsmodells einbinden.</li>
+<li>Grafiken formatiert.</li>
+<li>Datentabellen einfügt und im Detail gestaltet.</li>
+<li>Ergebnisse eines Regressionsmodells einbindet.</li>
 </ol>
 </div>
 <div id="aufgaben" class="section level2">
@@ -220,6 +230,7 @@ pre code,  .md:not(.use-csslab) pre code {
 <ol style="list-style-type: decimal">
 <li><p>Öffne dein <code>TheRBootcamp</code> R Projekt. Es sollte die Ordner <code>1_Data</code>, <code>2_Assets</code>, und <code>3_Markdown</code> enthalten.</p></li>
 <li><p>Lade die <code>airbnb_level_one.Rmd</code> Datei, das fertige Produkt am Ende des ersten Markdown Practicals.</p></li>
+<li><p>Speichere die Datei und dem neuen Namen: <code>airbnb_level_two.Rmd</code> ab.</p></li>
 <li><p>Zusätzlich lade die Pakete <code>knitr</code>, <code>kableExtra</code> <code>sjPlot</code> im <code>setup</code> chunk.</p></li>
 </ol>
 </div>
@@ -267,22 +278,23 @@ pre code,  .md:not(.use-csslab) pre code {
 <li><p>Berechne als ersten Schritt in einem eigenem Code Chunk wie sich die verschiedenen Ausstattungsmerkmale (Küche, Wifi, …) auf die durchschnittlichen Preise auswirken.</p></li>
 </ol>
 <pre class="r"><code># Vektor mit Ausstattungsmerkmalen
-ausstattung_var = c(&#39;Küche&#39;,&#39;Wifi&#39;,&#39;TV&#39;,&#39;Kaffeemaschine&#39;,
-                    &#39;Geschirrspüler&#39;,&#39;Terrasse_Balkon&#39;,
-                    &#39;Check_in_24h&#39;)
+ausstattung_var &lt;- c(&#39;Küche&#39;,&#39;Wifi&#39;,&#39;TV&#39;,&#39;Kaffeemaschine&#39;,
+                     &#39;Geschirrspüler&#39;,&#39;Terrasse_Balkon&#39;,
+                     &#39;Check_in_24h&#39;)
 
 # Bestimme Preise als Funktion der Ausstattungsmerkmale
-ausstattung &lt;- airbnb_1819 %&gt;% 
-               select(all_of(ausstattung_var), Preis) %&gt;%
-               pivot_longer(-Preis,
-               names_to = &#39;Ausstattung&#39;,
-               values_to = &#39;Ausstattung_vorhanden&#39;) %&gt;% 
-              group_by(Ausstattung) %&gt;% 
-  summarize(Nicht_vorhanden = mean(Preis[!Ausstattung_vorhanden]),
-            Vorhanden = mean(Preis[Ausstattung_vorhanden]),
-            Differenz = Vorhanden - Nicht_vorhanden, 
-            Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %&gt;% 
-  arrange(desc(Differenz)) </code></pre>
+ausstattung &lt;- 
+  airbnb_1819 %&gt;% 
+    select(all_of(ausstattung_var), Preis) %&gt;%
+    pivot_longer(-Preis,
+    names_to = &#39;Ausstattung&#39;,
+    values_to = &#39;Ausstattung_vorhanden&#39;) %&gt;% 
+    group_by(Ausstattung) %&gt;% 
+    summarize(Nicht_vorhanden = mean(Preis[!Ausstattung_vorhanden]),
+              Vorhanden = mean(Preis[Ausstattung_vorhanden]),
+              Differenz = Vorhanden - Nicht_vorhanden, 
+              Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %&gt;% 
+    arrange(desc(Differenz)) </code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Füge einen neuen Textteil ein.</li>
 </ol>
@@ -315,20 +327,23 @@ ausstattung %&gt;% kable(format = &#39;html&#39;)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Beschränke die Anzahl Nachkommastellen mit <code>digits = 2</code> auf zwei.</p></li>
 <li><p>Füge eine Tabellenüberschrift mit <code>caption = 'Tabelle 1. Austattung und Einfluss auf den Preis'</code> ein.</p></li>
-<li><p>Passe die Namen der Spalten an, inklusive neuer Zeilenumbrüche mit <code>&lt;br&gt;</code>: <code>col.names = c('', 'Preis&lt;br&gt;Nicht-vorh.', 'Preis&lt;br&gt;vorh.','Differenz','Prozent&lt;br&gt;vorh.')</code></p></li>
+<li><p>Passe die Namen der Spalten an, inklusive neuer Zeilenumbrüche mit <code>&lt;br&gt;</code>: <code>col.names = c('', 'Preis&lt;br&gt;Nicht-vorh.', 'Preis&lt;br&gt;vorh.', 'Differenz', 'Prozent&lt;br&gt;vorh.')</code></p></li>
 <li><p><code>Knitte</code> das Dokument. Du wirst bemerken, dass die Spaltenbeschriftung nicht korrekt übersetzt wird. Verwende als weiteres Argument <code>escape = FALSE</code> um dieses Problem zu korrigieren.</p></li>
 <li><p>Lege die Ausrichtung der Zellen mit <code>align = "lcccc"</code> fest. Jeder Buchstabe legt die Ausrichtung für eine Spalte fest. <code>l</code> bedeutet left und <code>c</code> center.</p></li>
 <li><p>Nun vergrössere die Breite der Spalten in dem du <code>column_spec()</code> hinter der <code>kable()</code> Funktion verwendest.</p></li>
 </ol>
-<pre class="r"><code>airbnb_18_19 %&gt;% kable(...) %&gt;% column_spec(c(2,3,4,5), width = &quot;1.2in&quot;)</code></pre>
+<pre class="r"><code>airbnb_18_19 %&gt;% 
+  kable(...) %&gt;% 
+  column_spec(c(2,3,4,5), width = &quot;1.2in&quot;)</code></pre>
 <ol start="8" style="list-style-type: decimal">
 <li>Abschliessend, gestalte die Schrifgrösse der Zellen in Abhängigkeit der Grösse der abgebildeten Zahl. Füge dafür vor der <code>kable()</code> Funktion folgenden Code ein und verbinde die beiden Teile mit einer Pipe <code>%&gt;%</code>.</li>
 </ol>
 <pre class="r"><code>airbnb_1819 %&gt;% 
-mutate_if(is.numeric, function(x) {
-    cell_spec(round(x,1), bold = T, 
-              font_size = spec_font_size(x, begin=10, end=16))}) %&gt;% 
-kable(...) %&gt;% column_spec(...)</code></pre>
+  mutate_if(is.numeric, function(x) {
+            cell_spec(round(x,1), bold = T, 
+            font_size = spec_font_size(x, begin=10, end=16))}) %&gt;% 
+  kable(...) %&gt;% 
+  column_spec(...)</code></pre>
 <ol start="9" style="list-style-type: decimal">
 <li><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</li>
 </ol>
@@ -343,18 +358,21 @@ kable(...) %&gt;% column_spec(...)</code></pre>
 ausstattung_var &lt;- c(&#39;Küche&#39;,&#39;TV&#39;,&#39;Terrasse_Balkon&#39;,&#39;Check_in_24h&#39;)
 
 # Bereit den Datensatz für die Regression vor
-ausstattung &lt;- airbnb_1819 %&gt;% 
-  mutate(Hotel = Unterkunftsart %in% c(&#39;Boutique hotel&#39;, &#39;Hotel&#39;)) %&gt;% 
-  select(Preis, Hotel, all_of(ausstattung_var)) 
+ausstattung &lt;- 
+  airbnb_1819 %&gt;% 
+    mutate(Hotel = Unterkunftsart %in% c(&#39;Boutique hotel&#39;, &#39;Hotel&#39;)) %&gt;% 
+    select(Preis, Hotel, all_of(ausstattung_var)) 
 
 # Rechne Regression des Preises auf Austattungsmerkmale und Hotel
-ausstattung_mod &lt;-  ausstattung%&gt;% 
-  lm(formula = Preis ~ .)
+ausstattung_mod &lt;- 
+  ausstattung %&gt;% 
+    lm(formula = Preis ~ .)
   
 # Bestimme Anteil Hotels in 2018 und 2019
-hotel &lt;- airbnb_1819 %&gt;% 
-  group_by(year(Erstellungsdatum)) %&gt;% 
-  summarize(Anteil = mean(Unterkunftsart %in% c(&#39;Boutique hotel&#39;, &#39;Hotel&#39;)))   </code></pre>
+hotel &lt;- 
+  airbnb_1819 %&gt;% 
+    group_by(year(Erstellungsdatum)) %&gt;% 
+    summarize(Anteil = mean(Unterkunftsart %in% c(&#39;Boutique hotel&#39;, &#39;Hotel&#39;)))   </code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Füge nun folgenden Textblock ein.</li>
 </ol>
@@ -392,7 +410,7 @@ tab_model(ausstattung_mod)</code></pre>
 </div>
 <div id="datensatz" class="section level2">
 <h2>Datensatz</h2>
-<p>Der <a href="https://raw.githubusercontent.com/therbootcamp/RmR_2020Jun/master/_materials/case/1_Data/airbnb.csv">airbnb.csv</a> Datensatz enthält Zahlen zu 9868 Berliner Airbnbs</p>
+<p>Der <a href="https://raw.githubusercontent.com/therbootcamp/RmR_2020Nov/master/_materials/case/1_Data/airbnb.csv">airbnb.csv</a> Datensatz enthält Zahlen zu 9868 Berliner Airbnbs</p>
 <table>
 <thead>
 <tr class="header">
