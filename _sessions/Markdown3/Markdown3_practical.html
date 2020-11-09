@@ -238,15 +238,15 @@ summary {
 <li><p>Füge in einer neuen Zeile: <code>includes:</code> hinzu und dann darunter eingrückt <code>in_header: ../2_Assets/header.Rhtml</code> ein. Damit lädst du eine kleine HTML Vorlage für den Kopf des Berichts.</p></li>
 <li><p>Knitte das Dokument. Hat sich die Anzeige des Titels und Untertitels verändert? Ist das AirBnB Logo zu sehen?</p></li>
 <li><p>Entferne nun die Zeile mit <code>title:</code> aus dem YAML Header, da jetzt kein zweiter Titel benötigt wird.</p></li>
-<li><p>Als letztes Gestaltungselement ergänze <code>theme: lumen</code> auf der selben Ebene wie <code>toc: true</code> oberhalb von <code>includes:</code>, womit verschiedene Eigenschaften des Schriftbildes angepasst werden (<a href = 'https://www.datadreaming.org/post/r-markdown-theme-gallery/'>hier</a> findest du einen Übersicht über weitere Themes)</p></li>
+<li><p>Als letztes Gestaltungselement ergänze <code>theme: lumen</code> auf der selben Ebene wie <code>toc: true</code> oberhalb von <code>includes:</code>, womit verschiedene Eigenschaften des Schriftbildes angepasst werden (<a href = 'https://www.datadreaming.org/post/r-markdown-theme-gallery/'>hier</a> findest du eine Übersicht über weitere Themes)</p></li>
 <li><p>Knitte das Dokument. Sieht alles in Ordnung aus?</p></li>
 </ol>
 </div>
 <div id="c---grafiken" class="section level3">
 <h3>C - Grafiken</h3>
 <ol style="list-style-type: decimal">
-<li><p>Als ersten Schritt um die Grafiken weiter anzupassen, ergänze in den allgemeinen Chunk-Optionen (<code>knitr::opts_chunk$set()</code>) im <code>setup</code> Chunk das zusätzliche Argument <code>dev.args = list(bg = "transparent")</code>.</p></li>
-<li><p>Nun ergänze im <code>setup</code> Chunk folgenden Code, welcher das <code>theme</code> der <code>ggplot</code> Grafiken auf <code>theme_minimal</code> setzt. Knitte das Dokument. Hat sich was getan?</p></li>
+<li><p>Als ersten Schritt um die Grafiken weiter anzupassen, ergänze in den allgemeinen Chunk-Optionen (<code>knitr::opts_chunk$set()</code>) im <code>setup</code> Chunk das Argument <code>dev.args = list(bg = "transparent")</code>.</p></li>
+<li><p>Nun ergänze im <code>setup</code> Chunk folgenden Code, welcher das <code>theme</code> der <code>ggplot</code> Grafiken auf <code>theme_minimal</code> setzt. Knitte das Dokument. Hat sich etwas verändert?</p></li>
 </ol>
 <pre class="r"><code>theme_set(theme_minimal())</code></pre>
 <ol start="3" style="list-style-type: decimal">

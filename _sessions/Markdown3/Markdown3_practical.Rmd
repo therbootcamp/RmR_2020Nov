@@ -90,15 +90,15 @@ Am Ende des Practicals wirst du wissen wie man:
 
 7. Entferne nun die Zeile mit `title:` aus dem YAML Header, da jetzt kein zweiter Titel benötigt wird.
 
-8. Als letztes Gestaltungselement ergänze `theme: lumen` auf der selben Ebene wie `toc: true` oberhalb von `includes:`, womit verschiedene Eigenschaften des Schriftbildes angepasst werden (<a href = 'https://www.datadreaming.org/post/r-markdown-theme-gallery/'>hier</a> findest du einen Übersicht über weitere Themes)
+8. Als letztes Gestaltungselement ergänze `theme: lumen` auf der selben Ebene wie `toc: true` oberhalb von `includes:`, womit verschiedene Eigenschaften des Schriftbildes angepasst werden (<a href = 'https://www.datadreaming.org/post/r-markdown-theme-gallery/'>hier</a> findest du eine Übersicht über weitere Themes)
 
 9. Knitte das Dokument. Sieht alles in Ordnung aus?  
 
 ### C - Grafiken
 
-1. Als ersten Schritt um die Grafiken weiter anzupassen, ergänze in den allgemeinen Chunk-Optionen (`knitr::opts_chunk$set()`) im `setup` Chunk das zusätzliche Argument `dev.args = list(bg = "transparent")`.
+1. Als ersten Schritt um die Grafiken weiter anzupassen, ergänze in den allgemeinen Chunk-Optionen (`knitr::opts_chunk$set()`) im `setup` Chunk das Argument `dev.args = list(bg = "transparent")`.
 
-2. Nun ergänze im `setup` Chunk folgenden Code, welcher das `theme` der `ggplot` Grafiken auf `theme_minimal` setzt. Knitte das Dokument. Hat sich was getan?
+2. Nun ergänze im `setup` Chunk folgenden Code, welcher das `theme` der `ggplot` Grafiken auf `theme_minimal` setzt. Knitte das Dokument. Hat sich etwas verändert?
 
 ```R
 theme_set(theme_minimal())
