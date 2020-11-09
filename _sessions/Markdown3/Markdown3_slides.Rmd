@@ -5,7 +5,7 @@ author: "Reporting mit R<br>
     The R Bootcamp
   </a>
   <br>
-  <a href='https://therbootcamp.github.io/RmR_2020Jun/'>
+  <a href='https://therbootcamp.github.io/RmR_2020Nov/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -17,7 +17,7 @@ author: "Reporting mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "Juni 2020"
+date: "November 2020"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -45,7 +45,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Reporting mit R | Juni 2020
+       Reporting mit R | November 2020
       </font>
     </a>
     </span>
@@ -145,7 +145,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>toc_depth</mono> 
   </td>
   <td bgcolor="white">
-  Tiefe des <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  <high>Tiefe</high> des <b>T</b>able <b>O</b>f <b>C</b>ontents.
   </td> 
 </tr>
 <tr>
@@ -153,7 +153,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>theme</mono> 
   </td>
   <td bgcolor="white">
-  Eigenschaften des Textbilds.
+  <high>Eigenschaften</high> des Textbilds.
   </td> 
 </tr>
 <tr>
@@ -161,7 +161,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>includes</mono> 
   </td>
   <td bgcolor="white">
-  Ergänzungen vor (<mono>before_body</mono>), nach (<mono>after_body</mono>) <mono>body</mono>, oder <mono>in_header</mono>.
+  <high>Ergänzungen</high> vor (<mono>before_body</mono>), nach (<mono>after_body</mono>) <mono>body</mono>, oder <mono>in_header</mono>.
   </td> 
 </tr>
 </table>
@@ -213,7 +213,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>toc_depth</mono> 
   </td>
   <td bgcolor="white">
-  Tiefe des <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  <high>Tiefe</high> des <b>T</b>able <b>O</b>f <b>C</b>ontents.
   </td> 
 </tr>
 <tr>
@@ -221,7 +221,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>theme</mono> 
   </td>
   <td bgcolor="white">
-  Eigenschaften des Textbilds.
+  <high>Eigenschaften</high> des Textbilds.
   </td> 
 </tr>
 <tr>
@@ -229,7 +229,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>includes</mono> 
   </td>
   <td bgcolor="white">
-  Ergänzungen vor (<mono>before_body</mono>), nach (<mono>after_body</mono>) <mono>body</mono>, oder <mono>in_header</mono>.
+  <high>Ergänzungen</high> vor (<mono>before_body</mono>), nach (<mono>after_body</mono>) <mono>body</mono>, oder <mono>in_header</mono>.
   </td> 
 </tr>
 </table>
@@ -280,7 +280,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>toc_depth</mono> 
   </td>
   <td bgcolor="white">
-  Tiefe des <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  <high>Tiefe</high> des <b>T</b>able <b>O</b>f <b>C</b>ontents.
   </td> 
 </tr>
 <tr>
@@ -288,7 +288,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>theme</mono> 
   </td>
   <td bgcolor="white">
-  Eigenschaften des Textbilds.
+  <high>Eigenschaften</high> des Textbilds.
   </td> 
 </tr>
 <tr>
@@ -296,7 +296,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>includes</mono> 
   </td>
   <td bgcolor="white">
-  Ergänzungen vor (<mono>before_body</mono>), nach (<mono>after_body</mono>) <mono>body</mono>, oder <mono>in_header</mono>.
+  <high>Ergänzungen</high> vor (<mono>before_body</mono>), nach (<mono>after_body</mono>) <mono>body</mono>, oder <mono>in_header</mono>.
   </td> 
 </tr>
 </table>
@@ -347,7 +347,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>toc_depth</mono> 
   </td>
   <td bgcolor="white">
-  Tiefe des <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  <high>Tiefe</high> des <b>T</b>able <b>O</b>f <b>C</b>ontents.
   </td> 
 </tr>
 <tr>
@@ -355,7 +355,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>theme</mono> 
   </td>
   <td bgcolor="white">
-  Eigenschaften des Textbilds.
+  <high>Eigenschaften</high> des Textbilds.
   </td> 
 </tr>
 <tr>
@@ -363,7 +363,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>includes</mono> 
   </td>
   <td bgcolor="white">
-  Ergänzungen vor (<mono>before_body</mono>), nach (<mono>after_body</mono>) <mono>body</mono>, oder <mono>in_header</mono>.
+  <high>Ergänzungen</high> vor (<mono>before_body</mono>), nach (<mono>after_body</mono>) <mono>body</mono>, oder <mono>in_header</mono>.
   </td> 
 </tr>
 </table>
@@ -414,7 +414,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>toc_depth</mono> 
   </td>
   <td bgcolor="white">
-  Tiefe des <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  <high>Tiefe</high> des <b>T</b>able <b>O</b>f <b>C</b>ontents.
   </td> 
 </tr>
 <tr>
@@ -422,7 +422,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>theme</mono> 
   </td>
   <td bgcolor="white">
-  Eigenschaften des Textbilds.
+  <high>Eigenschaften</high> des Textbilds.
   </td> 
 </tr>
 <tr>
@@ -430,7 +430,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>includes</mono> 
   </td>
   <td bgcolor="white">
-  Ergänzungen vor (<mono>before_body</mono>), nach (<mono>after_body</mono>) <mono>body</mono>, oder <mono>in_header</mono>.
+  <high>Ergänzungen</high> vor (<mono>before_body</mono>), nach (<mono>after_body</mono>) <mono>body</mono>, oder <mono>in_header</mono>.
   </td> 
 </tr>
 </table>
@@ -481,7 +481,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>toc_depth</mono> 
   </td>
   <td bgcolor="white">
-  Tiefe des <b>T</b>able <b>O</b>f <b>C</b>ontents.
+  <high>Tiefe</high> des <b>T</b>able <b>O</b>f <b>C</b>ontents.
   </td> 
 </tr>
 <tr>
@@ -489,7 +489,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>theme</mono> 
   </td>
   <td bgcolor="white">
-  Eigenschaften des Textbilds.
+  <high>Eigenschaften</high> des Textbilds.
   </td> 
 </tr>
 <tr>
@@ -497,7 +497,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>includes</mono> 
   </td>
   <td bgcolor="white">
-  Ergänzungen vor (<mono>before_body</mono>), nach (<mono>after_body</mono>) <mono>body</mono>, oder <mono>in_header</mono>.
+  <high>Ergänzungen</high> vor (<mono>before_body</mono>), nach (<mono>after_body</mono>) <mono>body</mono>, oder <mono>in_header</mono>.
   </td> 
 </tr>
 </table>
@@ -539,7 +539,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <td bgcolor="white">
   <mono>&lt;h1&gt;, &lt;h2&gt,...</mono> </td>
   <td bgcolor="white">
-  Überschrift Level 1, 2,...
+  <high>Überschrift</high> Level 1, 2,...
   </td> 
 </tr>
 <tr>
@@ -547,7 +547,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;br&gt;</mono>
   </td>
   <td bgcolor="white">
-   Neue Zeile.
+   Neue <high>Zeile</high>.
   </td> 
 </tr>
 <tr>
@@ -555,7 +555,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;b&gt;, &lt;i&gt;, &lt;u&gt;</mono>
   </td>
   <td bgcolor="white">
-  Fett, Kursiv, Unterstrichen.
+  <high>Fett, Kursiv, Unterstrichen.</high>
   </td> 
 </tr>
 <tr>
@@ -563,7 +563,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;div&gt;, &lt;p&gt;</mono> 
   </td>
   <td bgcolor="white">
-  Abschnitt, Textabschnitt
+  <high>Abschnitt, Textabschnitt.</high>
   </td> 
 </tr>
 <tr>
@@ -571,7 +571,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;table&gt;</mono> 
   </td>
   <td bgcolor="white">
-  Tabelle, Spalten
+  <high>Tabelle, Spalten.</high>
   </td> 
 </tr>
 </table>
@@ -613,7 +613,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <td bgcolor="white">
   <mono>&lt;h1&gt;, &lt;h2&gt,...</mono> </td>
   <td bgcolor="white">
-  Überschrift Level 1, 2,...
+  <high>Überschrift</high> Level 1, 2,...
   </td> 
 </tr>
 <tr>
@@ -621,7 +621,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;br&gt;</mono>
   </td>
   <td bgcolor="white">
-   Neue Zeile.
+   Neue <high>Zeile</high>.
   </td> 
 </tr>
 <tr>
@@ -629,7 +629,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;b&gt;, &lt;i&gt;, &lt;u&gt;</mono>
   </td>
   <td bgcolor="white">
-  Fett, Kursiv, Unterstrichen.
+  <high>Fett, Kursiv, Unterstrichen.</high>
   </td> 
 </tr>
 <tr>
@@ -637,7 +637,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;div&gt;, &lt;p&gt;</mono> 
   </td>
   <td bgcolor="white">
-  Abschnitt, Textabschnitt
+  <high>Abschnitt, Textabschnitt.</high>
   </td> 
 </tr>
 <tr>
@@ -645,7 +645,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;table&gt;</mono> 
   </td>
   <td bgcolor="white">
-  Tabelle, Spalten
+  <high>Tabelle, Spalten.</high>
   </td> 
 </tr>
 </table>
@@ -688,7 +688,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <td bgcolor="white">
   <mono>&lt;h1&gt;, &lt;h2&gt,...</mono> </td>
   <td bgcolor="white">
-  Überschrift Level 1, 2,...
+  <high>Überschrift</high> Level 1, 2,...
   </td> 
 </tr>
 <tr>
@@ -696,7 +696,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;br&gt;</mono>
   </td>
   <td bgcolor="white">
-   Neue Zeile.
+   Neue <high>Zeile</high>.
   </td> 
 </tr>
 <tr>
@@ -704,7 +704,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;b&gt;, &lt;i&gt;, &lt;u&gt;</mono>
   </td>
   <td bgcolor="white">
-  Fett, Kursiv, Unterstrichen.
+  <high>Fett, Kursiv, Unterstrichen.</high>
   </td> 
 </tr>
 <tr>
@@ -712,7 +712,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;div&gt;, &lt;p&gt;</mono> 
   </td>
   <td bgcolor="white">
-  Abschnitt, Textabschnitt
+  <high>Abschnitt, Textabschnitt.</high>
   </td> 
 </tr>
 <tr>
@@ -720,7 +720,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;table&gt;</mono> 
   </td>
   <td bgcolor="white">
-  Tabelle, Spalten
+  <high>Tabelle, Spalten.</high>
   </td> 
 </tr>
 </table>
@@ -763,7 +763,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <td bgcolor="white">
   <mono>&lt;h1&gt;, &lt;h2&gt,...</mono> </td>
   <td bgcolor="white">
-  Überschrift Level 1, 2,...
+  <high>Überschrift</high> Level 1, 2,...
   </td> 
 </tr>
 <tr>
@@ -771,7 +771,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;br&gt;</mono>
   </td>
   <td bgcolor="white">
-   Neue Zeile.
+   Neue <high>Zeile</high>.
   </td> 
 </tr>
 <tr>
@@ -779,7 +779,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;b&gt;, &lt;i&gt;, &lt;u&gt;</mono>
   </td>
   <td bgcolor="white">
-  Fett, Kursiv, Unterstrichen.
+  <high>Fett, Kursiv, Unterstrichen.</high>
   </td> 
 </tr>
 <tr>
@@ -787,7 +787,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;div&gt;, &lt;p&gt;</mono> 
   </td>
   <td bgcolor="white">
-  Abschnitt, Textabschnitt
+  <high>Abschnitt, Textabschnitt.</high>
   </td> 
 </tr>
 <tr>
@@ -795,7 +795,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;table&gt;</mono> 
   </td>
   <td bgcolor="white">
-  Tabelle, Spalten
+  <high>Tabelle, Spalten.</high>
   </td> 
 </tr>
 </table>
@@ -837,7 +837,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <td bgcolor="white">
   <mono>&lt;h1&gt;, &lt;h2&gt,...</mono> </td>
   <td bgcolor="white">
-  Überschrift Level 1, 2,...
+  <high>Überschrift</high> Level 1, 2,...
   </td> 
 </tr>
 <tr>
@@ -845,7 +845,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;br&gt;</mono>
   </td>
   <td bgcolor="white">
-   Neue Zeile.
+   Neue <high>Zeile</high>.
   </td> 
 </tr>
 <tr>
@@ -853,7 +853,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;b&gt;, &lt;i&gt;, &lt;u&gt;</mono>
   </td>
   <td bgcolor="white">
-  Fett, Kursiv, Unterstrichen.
+  <high>Fett, Kursiv, Unterstrichen.</high>
   </td> 
 </tr>
 <tr>
@@ -861,7 +861,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;div&gt;, &lt;p&gt;</mono> 
   </td>
   <td bgcolor="white">
-  Abschnitt, Textabschnitt
+  <high>Abschnitt, Textabschnitt.</high>
   </td> 
 </tr>
 <tr>
@@ -869,7 +869,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>&lt;table&gt;</mono> 
   </td>
   <td bgcolor="white">
-  Tabelle, Spalten
+  <high>Tabelle, Spalten.</high>
   </td> 
 </tr>
 </table>
@@ -892,7 +892,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 # CSS
 
 <ul>
-  <li class="m1"><span>Mit <b>C</b>ascading <b>S</b>tyle <b>S</b>sheets können alle <high>asthetischen Charakteristika von HTML</high> Dokumenten über eine externe Datei bestimmt werden.</span></li>
+  <li class="m1"><span>Mit <b>C</b>ascading <b>S</b>tyle <b>S</b>sheets können alle <high>ästhetischen Charakteristika</high> von <high>HTML</high> Dokumenten über eine externe Datei bestimmt werden.</span></li>
   <li class="m2"><span>CSS erlaubt komplexe <high>Vererbungen des Stils</high> zwischen HTML Tags.</span></li> 
 </ul>
 
@@ -922,7 +922,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 ]
 
-.pull-right6[
+.pull-right65[
 
 ```{r include =F}
 # Lade Pakete
@@ -944,19 +944,17 @@ airbnb_1819 <- read_csv('1_Data/airbnb.csv') %>%
 # Ändere Thema zu minimal
 theme_set(theme_minimal())
 theme_update(panel.background = 
-               element_rect(fill = "transparent",
-                            colour = NA),
+             element_rect(fill = "transparent",
+                          colour = NA),
              plot.background = 
-               element_rect(fill = "transparent",
-                            colour = NA))
+             element_rect(fill = "transparent",
+                          colour = NA))
 
 # Setze defaults in ggplot
 ggplot <- function(...) {
-  ggplot2::ggplot(...) + 
-    scale_fill_gradientn(colors = c('#555555',
-                                    '#6BB7B9')) + 
-    scale_colour_gradientn(colors = c('#555555',
-                                      '#6BB7B9'))
+ ggplot2::ggplot(...) + 
+  scale_fill_gradientn(colors = c('#555555', '#6BB7B9')) + 
+  scale_colour_gradientn(colors = c('#555555', '#6BB7B9'))
   }
 
 ```
@@ -1007,5 +1005,5 @@ airbnb_plot
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Markdown3/Markdown3_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/RmR_2020Nov/_sessions/Markdown3/Markdown3_practical.html">Practical</a></h1>
 

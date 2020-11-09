@@ -85,7 +85,7 @@ Am Ende des Practicals wirst du wissen wie man:
 
 3. Speichere die Datei und dem neuen Namen: `airbnb_level_two.Rmd` ab.
 
-4. Zusätzlich lade die Pakete `knitr`, `kableExtra` `sjPlot` im `setup` chunk. 
+4. Zusätzlich lade die Pakete `knitr`, `kableExtra` und `sjPlot` im `setup` chunk. 
 
 ### B - Präambel: Fussnote einfügen
 
