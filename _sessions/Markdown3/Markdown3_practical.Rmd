@@ -56,13 +56,13 @@ library(tidyverse)
 
 ## Überblick
 
-In diesem Practical wirst du die ästhetische Gestaltung deines Berichts angehen. 
+In diesem Practical wirst du an der ästhetischen Gestaltung deines Berichts arbeiten 
 
 Am Ende des Practicals wirst du wissen wie man:
 
-1. Den YAML header mit einem Inhaltsverzeichnis und einem neuen `Theme` ergänzen.
-2. Ein zwei Spalten Layout erstellen, dass den Text in der linken und die Grafiken/Tabellen in der rechten Spalte anzeigt.
-3. Eine CSS Datei erstellen und in deinen Bericht einbinden.
+1. Den YAML header mit einem Inhaltsverzeichnis und einem neuen `Theme` ergänzt.
+2. Ein zwei Spalten Layout erstellt, dass den Text in der linken und die Grafiken/Tabellen in der rechten Spalte anzeigt.
+3. Eine CSS Datei erstellt und in deinen Bericht einbindet.
 
 ## Aufgaben
 
@@ -72,11 +72,13 @@ Am Ende des Practicals wirst du wissen wie man:
 
 2. Lade die `airbnb_level_two.Rmd` Datei, das fertige Produkt am Ende des zweiten Markdown Practicals. 
 
+3. Speichere die Datei und dem neuen Namen: `airbnb_level_three.Rmd` ab.
+
 ### B - YAML erweitern
 
 1. Um Einstellungen des Dokuments vornehmen zu können füge zunächst hinter `html_document` im YAML Header einen Doppelpunkt hinzu. 
 
-2. Füge nun in einer Zeiel darunter `toc: true` hinzu um ein Inhaltsverzeichnis zu ergänzen. Stelle sicher, dass `toc: true` gegenüber `html_document:` eingerückt ist. Knitte das Dokument. Siehst du alle Überschriften im Inhaltsverzeichnis?
+2. Füge nun in einer Zeile darunter `toc: true` hinzu um ein Inhaltsverzeichnis zu ergänzen. Stelle sicher, dass `toc: true` gegenüber `html_document:` eingerückt ist. Knitte das Dokument. Siehst du alle Überschriften im Inhaltsverzeichnis?
 
 3. Damit alle Überschriften Levels angezeigt werden ergänze in einer weiteren Zeile (selbe Ebene wie `toc: true`) den Befehl `toc_depth: 5`. 
 
@@ -86,9 +88,9 @@ Am Ende des Practicals wirst du wissen wie man:
 
 6. Knitte das Dokument. Hat sich die Anzeige des Titels und Untertitels verändert? Ist das AirBnB Logo zu sehen?
 
-7. Entferne nun die Zeile mit `title:` aus dem YAML, da offensichtlich jetzt keinen Titel mehr benötigt.
+7. Entferne nun die Zeile mit `title:` aus dem YAML Header, da jetzt kein zweiter Titel benötigt wird.
 
-8. Als letztes Gestaltungselement ergänze `theme: lumen` auf der selben Ebene wie `toc: true` oberhalb von `includes:`, womit verschiedene Eigenschaften des Schriftbilds angepasst werden. 
+8. Als letztes Gestaltungselement ergänze `theme: lumen` auf der selben Ebene wie `toc: true` oberhalb von `includes:`, womit verschiedene Eigenschaften des Schriftbildes angepasst werden (<a href = 'https://www.datadreaming.org/post/r-markdown-theme-gallery/'>hier</a> findest du einen Übersicht über weitere Themes)
 
 9. Knitte das Dokument. Sieht alles in Ordnung aus?  
 

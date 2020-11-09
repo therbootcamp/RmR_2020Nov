@@ -210,12 +210,12 @@ summary {
 <h1></h1>
 <div id="überblick" class="section level2">
 <h2>Überblick</h2>
-<p>In diesem Practical wirst du die ästhetische Gestaltung deines Berichts angehen.</p>
+<p>In diesem Practical wirst du an der ästhetischen Gestaltung deines Berichts arbeiten</p>
 <p>Am Ende des Practicals wirst du wissen wie man:</p>
 <ol style="list-style-type: decimal">
-<li>Den YAML header mit einem Inhaltsverzeichnis und einem neuen <code>Theme</code> ergänzen.</li>
-<li>Ein zwei Spalten Layout erstellen, dass den Text in der linken und die Grafiken/Tabellen in der rechten Spalte anzeigt.</li>
-<li>Eine CSS Datei erstellen und in deinen Bericht einbinden.</li>
+<li>Den YAML header mit einem Inhaltsverzeichnis und einem neuen <code>Theme</code> ergänzt.</li>
+<li>Ein zwei Spalten Layout erstellt, dass den Text in der linken und die Grafiken/Tabellen in der rechten Spalte anzeigt.</li>
+<li>Eine CSS Datei erstellt und in deinen Bericht einbindet.</li>
 </ol>
 </div>
 <div id="aufgaben" class="section level2">
@@ -225,19 +225,20 @@ summary {
 <ol style="list-style-type: decimal">
 <li><p>Öffne dein <code>TheRBootcamp</code> R Projekt. Es sollte die Ordner <code>1_Data</code>, <code>2_Assets</code>, und <code>3_Markdown</code> enthalten.</p></li>
 <li><p>Lade die <code>airbnb_level_two.Rmd</code> Datei, das fertige Produkt am Ende des zweiten Markdown Practicals.</p></li>
+<li><p>Speichere die Datei und dem neuen Namen: <code>airbnb_level_three.Rmd</code> ab.</p></li>
 </ol>
 </div>
 <div id="b---yaml-erweitern" class="section level3">
 <h3>B - YAML erweitern</h3>
 <ol style="list-style-type: decimal">
 <li><p>Um Einstellungen des Dokuments vornehmen zu können füge zunächst hinter <code>html_document</code> im YAML Header einen Doppelpunkt hinzu.</p></li>
-<li><p>Füge nun in einer Zeiel darunter <code>toc: true</code> hinzu um ein Inhaltsverzeichnis zu ergänzen. Stelle sicher, dass <code>toc: true</code> gegenüber <code>html_document:</code> eingerückt ist. Knitte das Dokument. Siehst du alle Überschriften im Inhaltsverzeichnis?</p></li>
+<li><p>Füge nun in einer Zeile darunter <code>toc: true</code> hinzu um ein Inhaltsverzeichnis zu ergänzen. Stelle sicher, dass <code>toc: true</code> gegenüber <code>html_document:</code> eingerückt ist. Knitte das Dokument. Siehst du alle Überschriften im Inhaltsverzeichnis?</p></li>
 <li><p>Damit alle Überschriften Levels angezeigt werden ergänze in einer weiteren Zeile (selbe Ebene wie <code>toc: true</code>) den Befehl <code>toc_depth: 5</code>.</p></li>
 <li><p>Knitte das Dokument. Wird der Abschnitt Neueinstellungen mit zwei Unterkapiteln Entwicklung und Stadteile angezeigt?</p></li>
 <li><p>Füge in einer neuen Zeile: <code>includes:</code> hinzu und dann darunter eingrückt <code>in_header: ../2_Assets/header.Rhtml</code> ein. Damit lädst du eine kleine HTML Vorlage für den Kopf des Berichts.</p></li>
 <li><p>Knitte das Dokument. Hat sich die Anzeige des Titels und Untertitels verändert? Ist das AirBnB Logo zu sehen?</p></li>
-<li><p>Entferne nun die Zeile mit <code>title:</code> aus dem YAML, da offensichtlich jetzt keinen Titel mehr benötigt.</p></li>
-<li><p>Als letztes Gestaltungselement ergänze <code>theme: lumen</code> auf der selben Ebene wie <code>toc: true</code> oberhalb von <code>includes:</code>, womit verschiedene Eigenschaften des Schriftbilds angepasst werden.</p></li>
+<li><p>Entferne nun die Zeile mit <code>title:</code> aus dem YAML Header, da jetzt kein zweiter Titel benötigt wird.</p></li>
+<li><p>Als letztes Gestaltungselement ergänze <code>theme: lumen</code> auf der selben Ebene wie <code>toc: true</code> oberhalb von <code>includes:</code>, womit verschiedene Eigenschaften des Schriftbildes angepasst werden (<a href = 'https://www.datadreaming.org/post/r-markdown-theme-gallery/'>hier</a> findest du einen Übersicht über weitere Themes)</p></li>
 <li><p>Knitte das Dokument. Sieht alles in Ordnung aus?</p></li>
 </ol>
 </div>
