@@ -274,12 +274,14 @@ body {
 
 7. Knitte dein Dokument. Du solltest nun einen wohlformatierten AirBnB Bericht vor dir haben. 
 
+8. Speichere das fertige Dokument unter: `3_Markdown/airbnb_final.Rmd` ab.
+
 ### G - Export als PDF
 
-1. Um den Bericht nun als PDF ausgeben und teilen zu können, kannst du `wk<html>topdf` verwenden (vorausgesetzt du hast die [Software](https://wkhtmltopdf.org/) installiert). Verwende hierzu den Befehl unten in der `Console` (nicht im Markdown). Danach sollte sich im Markdown Ordner die Datei `markdown_practical.pdf` befinden, welche du öffnen und begutachten kannst.
+1. Um den Bericht nun als PDF ausgeben und teilen zu können, kannst du `wk<html>topdf` verwenden (vorausgesetzt du hast die [Software](https://wkhtmltopdf.org/) installiert). Verwende hierzu den Befehl unten in der `Console` (nicht im Markdown). Danach sollte sich im Markdown Ordner die Datei `airbnb_final.pdf` befinden, welche du öffnen und begutachten kannst.
 
 ```{r}
-"wkhtmltopdf --javascript-delay 1 1_Data/markdown_practical.html 1_Data/markdown_practical.pdf"
+"wkhtmltopdf --javascript-delay 1 3_Data/airbnb_final.html 3_Data/airbnb_final.pdf"
 ```
 
 ## Datensatz

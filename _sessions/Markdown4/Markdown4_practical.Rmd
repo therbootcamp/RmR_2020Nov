@@ -4,7 +4,7 @@ author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
       <font style='font-style:normal'>Reporting mit R</font><br>
-      <a href='https://therbootcamp.github.io/RmR_2020Jun/'>
+      <a href='https://therbootcamp.github.io/RmR_2020Nov/'>
         <i class='fas fa-clock' style='font-size:.9em;' ></i>
       </a>
       <a href='https://therbootcamp.github.io'>
@@ -59,11 +59,11 @@ library(tidyverse)
 
 In diesem Practical wirst aus deinem fertigen HTML RMarkdown Dokument eine Präsentation erstellen. 
 
-Am Ende des Practicals kann du: 
+Am Ende des Practicals wirst du wissen wie man:
 
-1. Eine HTML Präsentation mit `ioslides` erstellen und Inhalte mit RMarkdown Code einfügen.
-2. Ein Logo einfügen und das Layout der Präsentation anpassen.
-3. HTML Tags und CSS für die Feinjustierung der Slides verwenden.
+1. Eine HTML Präsentation mit `ioslides` erstellt und Inhalte mit RMarkdown Code einfügt.
+2. Ein Logo einfügt und das Layout der Präsentation anpasst.
+3. HTML Tags und CSS für die Feinjustierung der Slides verwendet.
 
 ## Aufgaben
 
@@ -105,7 +105,7 @@ logo: ../2_Assets/airbnb.png
 css: ../2_Assets/airbnb_presentation.css
 ```
 
-5. Achte darafu, dass die Einrückungen korrekt sind. Der YAML Header sollte so aussehen:
+5. Achte darauf, dass die Einrückungen korrekt sind. Der YAML Header sollte so aussehen:
 
 ```R
 ---
@@ -197,7 +197,7 @@ ggplot <- function(...) ggplot2::ggplot(...) +
 
 3. Auf diesem Slide inkludiere die Tabelle mit Austattungsmerkmalen. 
 
-4. Auf dem gleichen Slide, unter der Tabelle, füge den letzten Satz des Abschnittes "Der Einfluss der Ausstattung" zum stark negativen Effekt der Küche ein. Füge HTML Code ein, der diesen die Schrift fett formatiert.
+4. Auf dem gleichen Slide, unter der Tabelle, füge den letzten Satz des Abschnittes "Der Einfluss der Ausstattung" zum stark negativen Effekt der Küche ein. Füge HTML Code ein, der die Schrift fett formatiert.
 
 5. Knitte das Dokument. Wird die Tabelle korrekt angezeigt?
 

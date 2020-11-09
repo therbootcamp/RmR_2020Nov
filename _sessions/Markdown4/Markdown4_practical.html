@@ -23,6 +23,15 @@
 <link href="Markdown4_practical_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="Markdown4_practical_files/highlightjs-9.12.0/highlight.js"></script>
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      </style>
+
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
   pre:not([class]) {
@@ -183,7 +192,7 @@ summary {
 <col width='10%'>
 <tr style="border:none">
 <td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
-<font style='font-style:normal'>Reporting mit R</font><br> <a href='https://therbootcamp.github.io/RmR_2020Jun/'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>
+<font style='font-style:normal'>Reporting mit R</font><br> <a href='https://therbootcamp.github.io/RmR_2020Nov/'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>
 </td>
 <td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
 <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
@@ -202,11 +211,11 @@ summary {
 <div id="überblick" class="section level2">
 <h2>Überblick</h2>
 <p>In diesem Practical wirst aus deinem fertigen HTML RMarkdown Dokument eine Präsentation erstellen.</p>
-<p>Am Ende des Practicals kann du:</p>
+<p>Am Ende des Practicals wirst du wissen wie man:</p>
 <ol style="list-style-type: decimal">
-<li>Eine HTML Präsentation mit <code>ioslides</code> erstellen und Inhalte mit RMarkdown Code einfügen.</li>
-<li>Ein Logo einfügen und das Layout der Präsentation anpassen.</li>
-<li>HTML Tags und CSS für die Feinjustierung der Slides verwenden.</li>
+<li>Eine HTML Präsentation mit <code>ioslides</code> erstellt und Inhalte mit RMarkdown Code einfügt.</li>
+<li>Ein Logo einfügt und das Layout der Präsentation anpasst.</li>
+<li>HTML Tags und CSS für die Feinjustierung der Slides verwendet.</li>
 </ol>
 </div>
 <div id="aufgaben" class="section level2">
@@ -242,7 +251,7 @@ summary {
 </ol>
 <pre class="r"><code>css: ../2_Assets/airbnb_presentation.css</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li>Achte darafu, dass die Einrückungen korrekt sind. Der YAML Header sollte so aussehen:</li>
+<li>Achte darauf, dass die Einrückungen korrekt sind. Der YAML Header sollte so aussehen:</li>
 </ol>
 <pre class="r"><code>---
 title: &quot;Berlin&quot;
@@ -323,7 +332,7 @@ ggplot &lt;- function(...) ggplot2::ggplot(...) +
 <li><p>Erstelle einen neuen Abschnitt “Preis” und einen neuen Slide “Einfluss der Ausstattung”.</p></li>
 <li><p>Füge einen Chunk mit dem Code zur Berechnung der Ausstattungsmerkmale ein.</p></li>
 <li><p>Auf diesem Slide inkludiere die Tabelle mit Austattungsmerkmalen.</p></li>
-<li><p>Auf dem gleichen Slide, unter der Tabelle, füge den letzten Satz des Abschnittes “Der Einfluss der Ausstattung” zum stark negativen Effekt der Küche ein. Füge HTML Code ein, der diesen die Schrift fett formatiert.</p></li>
+<li><p>Auf dem gleichen Slide, unter der Tabelle, füge den letzten Satz des Abschnittes “Der Einfluss der Ausstattung” zum stark negativen Effekt der Küche ein. Füge HTML Code ein, der die Schrift fett formatiert.</p></li>
 <li><p>Knitte das Dokument. Wird die Tabelle korrekt angezeigt?</p></li>
 <li><p>Optional: Verändere die Tabelle so, dass die Schriftgrösse in allen Zellen gleich gross ist und dass Zellen mit einer Zahl &gt; 100 rot angezeigt werden (Hinweis: <code>color = ifelse(x &gt; 100, "red", "black")</code>)</p></li>
 </ol>

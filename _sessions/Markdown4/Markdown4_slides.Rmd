@@ -5,7 +5,7 @@ author: "Reporting mit R<br>
     The R Bootcamp
   </a>
   <br>
-  <a href='https://therbootcamp.github.io/RmR_2020Jun/'>
+  <a href='https://therbootcamp.github.io/RmR_2020Nov/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -17,7 +17,7 @@ author: "Reporting mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "Juni 2020"
+date: "November 2020"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -45,7 +45,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Reporting mit R | Juni 2020
+       Reporting mit R | November 2020
       </font>
     </a>
     </span>
@@ -113,7 +113,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 # YAML
 
 <ul>
-  <li class="m1"><span>Wie in HTML Dokumenten, dient der YAML Head <high>allgemeinen Einstellungen</high>.</span></li>
+  <li class="m1"><span>Wie in HTML Dokumenten, dient der YAML Header <high>allgemeinen Einstellungen</high>.</span></li>
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -132,7 +132,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>subtitle</mono>
   </td>
   <td bgcolor="white">
-  Unterschrift auf Titelslide.
+  <high>Unterschrift</high> auf Titelslide.
   </td> 
 </tr>
 <tr>
@@ -140,7 +140,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>logo</mono>
   </td>
   <td bgcolor="white">
-  Logo auf Titelslide und in Fusszeile.
+  <high>Logo</high> auf Titelslide und in Fusszeile.
   </td> 
 </tr>
 <tr>
@@ -171,7 +171,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 # YAML
 
 <ul>
-  <li class="m1"><span>Wie in HTML Dokumenten, dient der YAML Head <high>allgemeinen Einstellungen</high>.</span></li>
+  <li class="m1"><span>Wie in HTML Dokumenten, dient der YAML Header <high>allgemeinen Einstellungen</high>.</span></li>
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -190,7 +190,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>subtitle</mono>
   </td>
   <td bgcolor="white">
-  Unterschrift auf Titelslide.
+  <high>Unterschrift</high> auf Titelslide.
   </td> 
 </tr>
 <tr>
@@ -198,7 +198,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>logo</mono>
   </td>
   <td bgcolor="white">
-  Logo auf Titelslide und in Fusszeile.
+  <high>Logo</high> auf Titelslide und in Fusszeile.
   </td> 
 </tr>
 <tr>
@@ -228,7 +228,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 # YAML
 
 <ul>
-  <li class="m1"><span>Wie in HTML Dokumenten, dient der YAML Head <high>allgemeinen Einstellungen</high>.</span></li>
+  <li class="m1"><span>Wie in HTML Dokumenten, dient der YAML Header <high>allgemeinen Einstellungen</high>.</span></li>
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -247,7 +247,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>subtitle</mono>
   </td>
   <td bgcolor="white">
-  Unterschrift auf Titelslide.
+  <high>Unterschrift</high> auf Titelslide.
   </td> 
 </tr>
 <tr>
@@ -255,7 +255,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>logo</mono>
   </td>
   <td bgcolor="white">
-  Logo auf Titelslide und in Fusszeile.
+  <high>Logo</high> auf Titelslide und in Fusszeile.
   </td> 
 </tr>
 <tr>
@@ -286,7 +286,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 # YAML
 
 <ul>
-  <li class="m1"><span>Wie in HTML Dokumenten, dient der YAML Head <high>allgemeinen Einstellungen</high>.</span></li>
+  <li class="m1"><span>Wie in HTML Dokumenten, dient der YAML Header <high>allgemeinen Einstellungen</high>.</span></li>
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -305,7 +305,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>subtitle</mono>
   </td>
   <td bgcolor="white">
-  Unterschrift auf Titelslide.
+  <high>Unterschrift</high> auf Titelslide.
   </td> 
 </tr>
 <tr>
@@ -313,7 +313,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>logo</mono>
   </td>
   <td bgcolor="white">
-  Logo auf Titelslide und in Fusszeile.
+  <high>Logo</high> auf Titelslide und in Fusszeile.
   </td> 
 </tr>
 <tr>
@@ -364,15 +364,15 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie.
+  Neue(r) <high>Abschnitt, Folie</high>.
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>## Titel | </mono>
+  <mono>## Titel</mono>
   </td>
   <td bgcolor="white">
-  Untertitel.
+  <high>Untertitel</high>.
   </td> 
 </tr>
 <tr>
@@ -380,7 +380,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets.
+  <high>Nicht-numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -388,7 +388,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets.
+  <high>Numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -404,7 +404,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>{.flexbox, .build, .smaller}</mono>
   </td>
   <td bgcolor="white">
-  Slideoptionen.
+  <high>Slideoptionen</high>.
   </td> 
 </tr>
 </table>
@@ -445,15 +445,15 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie.
+  Neue(r) <high>Abschnitt, Folie</high>.
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>## Titel | </mono>
+  <mono>## Titel</mono>
   </td>
   <td bgcolor="white">
-  Untertitel.
+  <high>Untertitel</high>.
   </td> 
 </tr>
 <tr>
@@ -461,7 +461,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets.
+  <high>Nicht-numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -469,7 +469,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets.
+  <high>Numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -485,7 +485,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>{.flexbox, .build, .smaller}</mono>
   </td>
   <td bgcolor="white">
-  Slideoptionen.
+  <high>Slideoptionen</high>.
   </td> 
 </tr>
 </table>
@@ -526,15 +526,15 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie.
+  Neue(r) <high>Abschnitt, Folie</high>.
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>## Titel | </mono>
+  <mono>## Titel</mono>
   </td>
   <td bgcolor="white">
-  Untertitel.
+  <high>Untertitel</high>.
   </td> 
 </tr>
 <tr>
@@ -542,7 +542,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets.
+  <high>Nicht-numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -550,7 +550,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets.
+  <high>Numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -566,7 +566,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>{.flexbox, .build, .smaller}</mono>
   </td>
   <td bgcolor="white">
-  Slideoptionen.
+  <high>Slideoptionen</high>.
   </td> 
 </tr>
 </table>
@@ -607,15 +607,15 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie.
+  Neue(r) <high>Abschnitt, Folie</high>.
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>## Titel | </mono>
+  <mono>## Titel</mono>
   </td>
   <td bgcolor="white">
-  Untertitel.
+  <high>Untertitel</high>.
   </td> 
 </tr>
 <tr>
@@ -623,7 +623,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets.
+  <high>Nicht-numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -631,7 +631,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets.
+  <high>Numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -647,7 +647,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>{.flexbox, .build, .smaller}</mono>
   </td>
   <td bgcolor="white">
-  Slideoptionen.
+  <high>Slideoptionen</high>.
   </td> 
 </tr>
 </table>
@@ -688,15 +688,15 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie.
+  Neue(r) <high>Abschnitt, Folie</high>.
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>## Titel | </mono>
+  <mono>## Titel</mono>
   </td>
   <td bgcolor="white">
-  Untertitel.
+  <high>Untertitel</high>.
   </td> 
 </tr>
 <tr>
@@ -704,7 +704,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets.
+  <high>Nicht-numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -712,7 +712,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets.
+  <high>Numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -728,7 +728,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>{.flexbox, .build, .smaller}</mono>
   </td>
   <td bgcolor="white">
-  Slideoptionen.
+  <high>Slideoptionen</high>.
   </td> 
 </tr>
 </table>
@@ -769,15 +769,15 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie.
+  Neue(r) <high>Abschnitt, Folie</high>.
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>## Titel | </mono>
+  <mono>## Titel</mono>
   </td>
   <td bgcolor="white">
-  Untertitel.
+  <high>Untertitel</high>.
   </td> 
 </tr>
 <tr>
@@ -785,7 +785,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets.
+  <high>Nicht-numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -793,7 +793,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets.
+  <high>Numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -809,7 +809,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>{.flexbox, .build, .smaller}</mono>
   </td>
   <td bgcolor="white">
-  Slideoptionen.
+  <high>Slideoptionen</high>.
   </td> 
 </tr>
 </table>
@@ -850,15 +850,15 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie.
+  Neue(r) <high>Abschnitt, Folie</high>.
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>## Titel | </mono>
+  <mono>## Titel</mono>
   </td>
   <td bgcolor="white">
-  Untertitel.
+  <high>Untertitel</high>.
   </td> 
 </tr>
 <tr>
@@ -866,7 +866,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets.
+  <high>Nicht-numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -874,7 +874,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets.
+  <high>Numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -890,7 +890,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>{.flexbox, .build, .smaller}</mono>
   </td>
   <td bgcolor="white">
-  Slideoptionen.
+  <high>Slideoptionen</high>.
   </td> 
 </tr>
 </table>
@@ -931,15 +931,15 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie.
+  Neue(r) <high>Abschnitt, Folie</high>.
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>## Titel | </mono>
+  <mono>## Titel</mono>
   </td>
   <td bgcolor="white">
-  Untertitel.
+  <high>Untertitel</high>.
   </td> 
 </tr>
 <tr>
@@ -947,7 +947,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets.
+  <high>Nicht-numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -955,7 +955,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets.
+  <high>Numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -971,7 +971,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>{.flexbox, .build, .smaller}</mono>
   </td>
   <td bgcolor="white">
-  Slideoptionen.
+  <high>Slideoptionen</high>.
   </td> 
 </tr>
 </table>
@@ -1013,15 +1013,15 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie.
+  Neue(r) <high>Abschnitt, Folie</high>.
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>## Titel | </mono>
+  <mono>## Titel</mono>
   </td>
   <td bgcolor="white">
-  Untertitel.
+  <high>Untertitel</high>.
   </td> 
 </tr>
 <tr>
@@ -1029,7 +1029,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets.
+  <high>Nicht-numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -1037,7 +1037,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets.
+  <high>Numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -1053,7 +1053,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>{.flexbox, .build, .smaller}</mono>
   </td>
   <td bgcolor="white">
-  Slideoptionen.
+  <high>Slideoptionen</high>.
   </td> 
 </tr>
 </table>
@@ -1097,15 +1097,15 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>#, ##</mono>
   </td>
   <td bgcolor="white">
-  Neue(r) Abschnitt, Folie.
+  Neue(r) <high>Abschnitt, Folie</high>.
   </td> 
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>## Titel | </mono>
+  <mono>## Titel</mono>
   </td>
   <td bgcolor="white">
-  Untertitel.
+  <high>Untertitel</high>.
   </td> 
 </tr>
 <tr>
@@ -1113,7 +1113,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>-<br>-</mono>
   </td>
   <td bgcolor="white">
-  Nicht-numerierte Bullets.
+  <high>Nicht-numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -1121,7 +1121,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>1.<br>2.</mono>
   </td>
   <td bgcolor="white">
-  Numerierte Bullets.
+  <high>Numerierte</high> Bullets.
   </td> 
 </tr>
 <tr>
@@ -1137,7 +1137,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <mono>{.flexbox, .build, .smaller}</mono>
   </td>
   <td bgcolor="white">
-  Slideoptionen.
+  <high>Slideoptionen</high>.
   </td> 
 </tr>
 </table>
@@ -1159,5 +1159,5 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Markdown4/Markdown4_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/RmR_2020Nov/_sessions/Markdown4/Markdown4_practical.html">Practical</a></h1>
 
