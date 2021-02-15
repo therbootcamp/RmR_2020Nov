@@ -1,0 +1,40 @@
+---
+title: "Untitled"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+```
+
+
+Seite 1 {.storyboard}
+====================================
+  
+Spalte 1 {data-width = 200}
+------------------------------------
+  
+### Inhalt 1
+
+```{r}
+hist(ChickWeight$weight)
+```
+  
+Spalte 2  {data-width = 500}
+------------------------------------
+  
+### Inhalt 2
+  
+### Inhalt 3
+
+### Maximum carats {data-width=50}
+
+### Most expensive color {data-width=50}
+
+### Maximal price {data-width=50}
+
+Row {data-height=500}
+-----------------------------------------------------------------------

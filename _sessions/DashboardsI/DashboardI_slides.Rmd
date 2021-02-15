@@ -5,7 +5,7 @@ author: "Reporting mit R<br>
     The R Bootcamp
   </a>
   <br>
-  <a href='https://therbootcamp.github.io/RmR_2020Jun/'>
+  <a href='https://therbootcamp.github.io/RmR_2021Feb/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -17,7 +17,7 @@ author: "Reporting mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "Juni 2020"
+date: "Februar 2021"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -103,9 +103,9 @@ basel <- read.csv("1_Data/basel.csv")
 # Ein Beispiel
 
 <p align = "center">
-  <iframe src="https://jjallaire.shinyapps.io/shiny-crandash/#dashboard" width="100%%" height="450" style="border:none;">
+  <iframe src="https://gallery.shinyapps.io/nz-trade-dash/" width="100%%" height="450" style="border:none;">
 </iframe><br>
-  <font style="font-size:10px">from <a href="https://jjallaire.shinyapps.io/shiny-crandash/#dashboard">rstudio.com</a></font>
+  <font style="font-size:10px">from <a href="https://gallery.shinyapps.io/nz-trade-dash/">rstudio.com</a></font>
 </p>
 
 ---
@@ -271,7 +271,7 @@ Spalte 1 {data-width = 700}
   
 ### Inhalt 1
 
-`r ''````{r fig.width=9}
+`r ''````{r fig.width = 9}
 hist(basel$einkommen)
 ```
   
