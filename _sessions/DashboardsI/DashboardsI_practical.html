@@ -13,6 +13,7 @@
 
 <title>Dashboards I</title>
 
+<script src="DashboardsI_practical_files/header-attrs-2.6/header-attrs.js"></script>
 <script src="DashboardsI_practical_files/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="DashboardsI_practical_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -22,6 +23,15 @@
 <script src="DashboardsI_practical_files/navigation-1.1/tabsets.js"></script>
 <link href="DashboardsI_practical_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="DashboardsI_practical_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -67,6 +77,7 @@ h6 {
   text-align: left;
 }
 </style>
+
 
 <link rel="stylesheet" href="practical.css" type="text/css" />
 
@@ -203,7 +214,7 @@ pre code,  .md:not(.use-csslab) pre code {
 <img src="image/dashboard_comic2.png" alt="Trulli" style="width:100%"> <br> <font style="font-size:10px">from <a href="https://dilbert.com/">https://dilbert.com/</a></font>
 </p>
 <div id="section" class="section level1 tabset">
-<h1></h1>
+<h1 class="tabset"></h1>
 <div id="überblick" class="section level2">
 <h2>Überblick</h2>
 <p>In diesem Practical übst du, dynamische Dashboards in Markdown zu erstellen. Ziel ist es <a href="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html"><strong>dieses Dashboard</strong></a> zu erstellen.</p>
@@ -213,7 +224,7 @@ pre code,  .md:not(.use-csslab) pre code {
 <li>Die einzelnen Komponenten mit Inhalt füllt.</li>
 <li>Ein Storyboard erstellt.</li>
 <li>Karten mit <code>leaflet</code> plottet.</li>
-<li>Grafiken mit <code>plotly</code> aufpeppt.</li>
+<li>Grafiken mit <code>plotly</code> interaktiv macht.</li>
 </ol>
 </div>
 <div id="aufgaben" class="section level2">
@@ -270,11 +281,11 @@ library(htmltools)</code></pre>
 <li><p>Wenn du das Dokument so knittest erhalten die beiden Zeilen gleich viel Platz. Die Karte soll jedoch mehr Platz erhalten. Füge dazu nach dem ersten Titel in derselben Zeile den folgenden Code ein: <code>{data-height = 400}</code>. Damit wird die Zeilenhöhe in Pixeln angegeben; Zeile 2 füllt dann den restlichen Platz aus. Hinweis: Die Platzverteilung erfolgt erst, wenn die Komponenten gefüllt werden; wenn du das Dokument jetzt knittest, wird also Zeile 1 im Moment noch gleich hoch sein, wie Zeile 2.</p></li>
 <li><p>Zeile 1 mit den <code>valueBoxes</code>, ist wiederum in drei Spalten unterteilt, eine für jede <code>valueBox</code>. Verwende Titel dritter Ordnung um die Spalten mit den Namen <code>Superhosts</code>, <code>Allstar</code>, und <code>Preiswert</code> zu erstellen. Für diese Titel werden keine besonderen Zeichen verwendet, sondern wie gewohnt <code>###</code>.</p></li>
 <li><p>In Zeile 2 (also unterhalb des nächsten Titels zweiter Ordnung) musst du nur einen Titel einfügen, ohne Titel dritter Ordnung klappt die automatische Grössenanpassung nicht. Gib “Karte” als Titel an, und füge direkt dahinter <code>{.no-title}</code> ein; damit wird die Präsentation des Titels auf dem Dashboard unterdrückt.</p></li>
-<li><p>Seite 1 ist vom Layout her fertig. Zeit, Seite zwei vorzubereiten. Schaue sie dir dafür nochmals kurz an.</p></li>
-<li><p>Wie du wahrscheinlich gesehen hast, sind es diesmal zwei Spalten. Überlege dir, wie du diese definieren würdest.</p></li>
+<li><p>Seite 1 ist vom Layout her fertig. Zeit, Seite zwei vorzubereiten. Schaue dir Vorlage dafür nochmals kurz an.</p></li>
+<li><p>Diesmal besteht das Layout aus zwei Spalten. Überlege dir, wie du diese definieren würdest.</p></li>
 <li><p>Du kannst wie bei Aufgabe C6 Titel zweiter Ordnung hinzfügen. Füge die zwei Spalten, diesmal mit den Titeln <code>Spalte 1</code> und <code>Spalte 2</code>, unter dem Titel der zweiten Seite hinzu (also nach der Zeile mit den Gleichheitszeichen).</p></li>
 <li><p>Wie auf Seite 1, musst du auch hier noch die Spalten anpassen. Dort hattest du mit <code>{data-height = 400}</code> die Höhe einer Zeile festgelegt. Die Breite einer Spalte kann analog mit <code>{data-width = XXX}</code> festgelegt werden. Definiere, dass Spalte 2 200 Pixel breit ist; die Erste wird dann automatisch angepasst.</p></li>
-<li><p>Nun fehlen nur noch die Titel der beiden Spalten. Verwende dazu Titel dritter Ordnung (<code>###</code>) und nenne die linke Spalte <code>Entwicklung der Berliner Airbnbs seit 2009</code> und die rechte Spalte <code>Hintergründe?</code>. Füge diese Titel dritter Ordnung jeweils unter dem Titel zweiter Ordnung (<code>Spalte 1</code> bzw. <code>Spalte 2</code>), welcher die Spalten definiert, ein.</p></li>
+<li><p>Nun fehlen nur noch die Titel der beiden Spalten. Verwende dazu Titel dritter Ordnung (<code>###</code>) und nenne die linke Spalte <code>Entwicklung der Berliner Airbnbs seit 2009</code> und die rechte Spalte <code>Hintergründe</code>. Füge diese Titel dritter Ordnung jeweils unter dem Titel zweiter Ordnung (<code>Spalte 1</code> bzw. <code>Spalte 2</code>), welcher die Spalten definiert, ein.</p></li>
 <li><p>So, nun fehlt nur noch das Layout der letzten Seite. Da es sich um ein Storyboard handelt, musst du keine Spalten oder Zeilen spezifizieren. Du kannst also direkt zu den Titeln dritter Ordnung übergehen.</p></li>
 <li><p>Um die drei Abschnitte des Storyboards zu erstellen, verwende wiederum Titel dritter Ordnung (<code>###</code>). Erstelle drei Abschnitte mit den Namen <code>Gesamtrating</code>, <code>Sauberkeit</code>, und <code>Lage</code>.</p></li>
 <li><p>In den Abschnitten des Storyboards soll es jeweils einen Hauptteil (links), sowie rechts eine schmalere Spalte mit Kommentaren haben. Definiere die Breite der kleineren Kommentarspalte, indem du nach jedem der drei Titel, aber auf derselben Zeile, <code>{data-commentary-width=300}</code> einfügst.</p></li>
@@ -297,7 +308,7 @@ n_superhosts &lt;- sum(airbnb$Host_superhost)</code></pre>
 valueBox(XXX, caption = &quot;XXX&quot;)</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li><p>Funktioniert das schon so?</p></li>
-<li><p>Funktioniert, aber ein paar Dinge fehlen noch. Zunächst stimmt die Farbe nicht. Füge in die <code>valueBox()</code> Funktion ein Argument <code>color</code> ein und setze dieses auf <code>"#6BB7B9"</code>.</p></li>
+<li><p>Ein paar Dinge fehlen noch. Zunächst stimmt die Farbe nicht. Füge in die <code>valueBox()</code> Funktion ein Argument <code>color</code> ein und setze dieses auf <code>"#6BB7B9"</code>.</p></li>
 <li><p>Passt es jetzt?</p></li>
 <li><p>Bisher ist noch kein Icon vorhanden. Füge in die <code>valueBox()</code> Funktion ein weiteres Argument <code>icon</code> ein und setze dieses auf <code>"fa-medal"</code>.</p></li>
 <li><p>Fast geschafft; der Titel ist noch etwas zu klein. Um das zu fixen, ersetze <code>"Superhost"</code> im <code>caption</code> Argument mit <code>"&lt;h3 style='color: white;'&gt;Superhost&lt;/h3&gt;"</code>. Damit passt nun alles. Um die anderen beiden value Boxen kümmern wir uns später.</p></li>
@@ -317,7 +328,7 @@ Insgesamt wurden über die Jahre in Berlin `r as.integer(sum(airbnb$Host_anzahl)
 <li><p>Das war es schon für diese Seite. Den Plot erstellen wir wiederum später. Gehe nun in deinem Dokument zur dritten Seite zum Titel <code>Gesamtrating</code> (Titel dritter Ordnung).</p></li>
 <li><p>Erstelle unterhalb des Titels einen R chunk und füge den untenstehenden Code ein. Dieser erstellt die erste Grafik.</p></li>
 </ol>
-<pre class="r"><code>## Erstelle das Histogramm der Gesamtratings
+<pre class="r"><code># Erstelle das Histogramm der Gesamtratings
 # Wähle die Rating_gesamt Variable zum Plotten aus
 ggplot(airbnb, aes(Rating_gesamt)) +
   # Erstelle ein Histogramm mit Balkenbreite 1
@@ -337,7 +348,7 @@ ggplot(airbnb, aes(Rating_gesamt)) +
 <ol start="14" style="list-style-type: decimal">
 <li>Für die rechte Seite (die Kommentarspalte), musst du unterhalb des eben in Aufgabe D13 erstellten Plot Codes, ausserhalb des R chunks, drei Sterne nacheinander einfügen. So wird die Kommentarspalte erstellt (siehe Template).</li>
 </ol>
-<pre class="mardown"><code>INHALT LINKE SPALTE (der eben erstellte Plot)
+<pre class="markdown"><code>INHALT LINKE SPALTE (der eben erstellte Plot)
 
 ***
 
@@ -367,7 +378,7 @@ gauge(XXX,
         danger = c(0, 49)
         ))</code></pre>
 <ol start="18" style="list-style-type: decimal">
-<li><p>Wenn du das Dokument jetzt knittest, siehst du, dass die Dimensionen in der Kommentarspalte noch falsch sind. Das ist, weil der <code>gauge</code> noch zu gross ist. Um das zu beheben, kannst du <code>fig.width=3, fig.height=1.5, fig.align="center"</code> in den Code Chunk Optionen erstellt.</p></li>
+<li><p>Wenn du das Dokument jetzt knittest, siehst du, dass die Dimensionen in der Kommentarspalte noch falsch sind, weil der <code>gauge</code> noch zu gross ist. Um das zu beheben, kannst du <code>fig.width=3, fig.height=1.5, fig.align="center"</code> in den Code Chunk Optionen erstellt.</p></li>
 <li><p>Füge nun unterhalb des Code Chunks, der den <code>gauge</code> definiert, den folgenden Text ein:</p></li>
 </ol>
 <pre class="markdown"><code>&lt;p style=&quot;font-size: 20px;&quot;&gt;Die Berliner Airbnbs scheinen allgemein in einem
@@ -765,7 +776,7 @@ preiswert &lt;- sum(airbnb$Preis &lt; 100)</code></pre>
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

@@ -74,7 +74,7 @@ Am Ende des Practicals wirst du wissen wie man:
 2. Die einzelnen Komponenten mit Inhalt füllt.
 3. Ein Storyboard erstellt.
 4. Karten mit `leaflet` plottet.
-5. Grafiken mit `plotly` aufpeppt.
+5. Grafiken mit `plotly` interaktiv macht.
 
 ## Aufgaben
 
@@ -108,7 +108,6 @@ library(leaflet)
 library(viridis)
 library(htmltools)
 ```
-
 
 2. Lade ebenfalls im `setup` chunk den `airbnb` Datensatz mit `read_csv()`, so wie du das in den bisherigen Practicals auch gemacht hast.
 
@@ -144,15 +143,15 @@ Zeile X
 
 9. In Zeile 2 (also unterhalb des nächsten Titels zweiter Ordnung) musst du nur einen Titel einfügen, ohne Titel dritter Ordnung klappt die automatische Grössenanpassung nicht. Gib "Karte" als Titel an, und füge direkt dahinter `{.no-title}` ein; damit wird die Präsentation des Titels auf dem Dashboard unterdrückt.
 
-10. Seite 1 ist vom Layout her fertig. Zeit, Seite zwei vorzubereiten. Schaue sie dir dafür nochmals kurz an.
+10. Seite 1 ist vom Layout her fertig. Zeit, Seite zwei vorzubereiten. Schaue dir Vorlage dafür nochmals kurz an.
 
-11. Wie du wahrscheinlich gesehen hast, sind es diesmal zwei Spalten. Überlege dir, wie du diese definieren würdest.
+11. Diesmal besteht das Layout aus zwei Spalten. Überlege dir, wie du diese definieren würdest.
 
 12. Du kannst wie bei Aufgabe C6 Titel zweiter Ordnung hinzfügen. Füge die zwei Spalten, diesmal mit den Titeln `Spalte 1` und `Spalte 2`, unter dem Titel der zweiten Seite hinzu (also nach der Zeile mit den Gleichheitszeichen).
 
 13. Wie auf Seite 1, musst du auch hier noch die Spalten anpassen. Dort hattest du mit `{data-height = 400}` die Höhe einer Zeile festgelegt. Die Breite einer Spalte kann analog mit `{data-width = XXX}` festgelegt werden. Definiere, dass Spalte 2 200 Pixel breit ist; die Erste wird dann automatisch angepasst.
 
-14. Nun fehlen nur noch die Titel der beiden Spalten. Verwende dazu Titel dritter Ordnung (`###`) und nenne die linke Spalte `Entwicklung der Berliner Airbnbs seit 2009` und die rechte Spalte `Hintergründe?`. Füge diese Titel dritter Ordnung jeweils unter dem Titel zweiter Ordnung (`Spalte 1` bzw. `Spalte 2`), welcher die Spalten definiert, ein.
+14. Nun fehlen nur noch die Titel der beiden Spalten. Verwende dazu Titel dritter Ordnung (`###`) und nenne die linke Spalte `Entwicklung der Berliner Airbnbs seit 2009` und die rechte Spalte `Hintergründe`. Füge diese Titel dritter Ordnung jeweils unter dem Titel zweiter Ordnung (`Spalte 1` bzw. `Spalte 2`), welcher die Spalten definiert, ein.
 
 15. So, nun fehlt nur noch das Layout der letzten Seite. Da es sich um ein Storyboard handelt, musst du keine Spalten oder Zeilen spezifizieren. Du kannst also direkt zu den Titeln dritter Ordnung übergehen.
 
@@ -188,7 +187,7 @@ valueBox(XXX, caption = "XXX")
 
 4. Funktioniert das schon so?
 
-5. Funktioniert, aber ein paar Dinge fehlen noch. Zunächst stimmt die Farbe nicht. Füge in die `valueBox()` Funktion ein Argument `color` ein und setze dieses auf `"#6BB7B9"`.
+5. Ein paar Dinge fehlen noch. Zunächst stimmt die Farbe nicht. Füge in die `valueBox()` Funktion ein Argument `color` ein und setze dieses auf `"#6BB7B9"`.
 
 6. Passt es jetzt?
 
@@ -218,7 +217,7 @@ Insgesamt wurden über die Jahre in Berlin `r knitr::inline_expr("as.integer(sum
 13. Erstelle unterhalb des Titels einen R chunk und füge den untenstehenden Code ein. Dieser erstellt die erste Grafik. 
 
 ```{r}
-## Erstelle das Histogramm der Gesamtratings
+# Erstelle das Histogramm der Gesamtratings
 # Wähle die Rating_gesamt Variable zum Plotten aus
 ggplot(airbnb, aes(Rating_gesamt)) +
   # Erstelle ein Histogramm mit Balkenbreite 1
@@ -239,7 +238,7 @@ ggplot(airbnb, aes(Rating_gesamt)) +
 
 14. Für die rechte Seite (die Kommentarspalte), musst du unterhalb des eben in Aufgabe D13 erstellten Plot Codes, ausserhalb des R chunks, drei Sterne nacheinander einfügen. So wird die Kommentarspalte erstellt (siehe Template). 
 
-````mardown
+````markdown
 INHALT LINKE SPALTE (der eben erstellte Plot)
 
 ***
@@ -276,7 +275,7 @@ gauge(XXX,
         ))
 ```
 
-18. Wenn du das Dokument jetzt knittest, siehst du, dass die Dimensionen in der Kommentarspalte noch falsch sind. Das ist, weil der `gauge` noch zu gross ist. Um das zu beheben, kannst du `fig.width=3, fig.height=1.5, fig.align="center"` in den Code Chunk Optionen erstellt.
+18. Wenn du das Dokument jetzt knittest, siehst du, dass die Dimensionen in der Kommentarspalte noch falsch sind, weil der `gauge` noch zu gross ist. Um das zu beheben, kannst du `fig.width=3, fig.height=1.5, fig.align="center"` in den Code Chunk Optionen erstellt.
 
 19. Füge nun unterhalb des Code Chunks, der den `gauge` definiert, den folgenden Text ein:
 
@@ -383,7 +382,7 @@ Verlauf
 
 3. Der Code von Aufgabe F2 erstellt einen statischen Plot. Dieses `ggplot` Objekt kann jetzt ganz einfach an `ggplotly()`, einer `plotly` Funktion weitergegeben werden, um den Plot interaktiv zu gestalten. Dazu musst du nur das `Verlauf` am Ende des R chunks in `ggplotly(Verlauf)` umwandeln. Fertig!
 
-4. Bzw. fast fertig. Passe die Dimensionen des Plots (`fig.width` und `fig.height` in den R Chunk Optionen) so an, dass die Spalte möglichst ausgefüllt wird. Dazu musst du evtl. ein paar Werte ausprobieren...
+4. Bzw. fast fertig. Passe die Dimensionen des Plots (`fig.width` und `fig.height` in den R Chunk Optionen) so an, dass die Spalte möglichst ausgefüllt wird. Dazu musst du evtl. ein paar Werte ausprobieren ...
 
 ### G - Navigation Bar
 
