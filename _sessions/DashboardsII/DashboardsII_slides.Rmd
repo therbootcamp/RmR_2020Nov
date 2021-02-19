@@ -188,7 +188,7 @@ print2 <- function(x, nlines=10,...) {
       <li><span>Checkboxen</li></span>
       <li><span>Dropdown Menus</li></span>
     </ul><br>
-  <li class="m2"><span>Widget-Eingaben werden server in einem <highm>input-R-Object</highm> an den Server-Code weitergegeben.</span></li>
+  <li class="m2"><span>Widget-Eingaben werden in einem <highm>input-R-Object</highm> an den Server-Code weitergegeben.</span></li>
     <ul class="level">
       <li><span><mono>input</mono> ist eine <highm>Liste</highm> mit einem Element pro Widget. </li></span>
       <li style="padding-top:10px"><span>Neue Eingabe = <high>Update</high> von <mono>input</mono>.</li></span>
