@@ -5,7 +5,7 @@ author: "Reporting mit R<br>
     The R Bootcamp
   </a>
   <br>
-  <a href='https://therbootcamp.github.io/RmR_2020Nov/'>
+  <a href='https://therbootcamp.github.io/RmR_2021Feb/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -17,7 +17,7 @@ author: "Reporting mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "November 2020"
+date: "Februar 2021"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -1005,5 +1005,5 @@ airbnb_plot
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/RmR_2020Nov/_sessions/Markdown3/Markdown3_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/RmR_2021Feb/_sessions/Markdown3/Markdown3_practical.html">Practical</a></h1>
 

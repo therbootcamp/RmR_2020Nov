@@ -186,7 +186,7 @@ hotel <- airbnb_1819 %>%
 <b>Der Anteil von Hotels ist von `r (hotel$Anteil[1]*100) %>% round(1)`% im Jahre 2018 auf `r (hotel$Anteil[2]*100) %>% round(1)`% im Jahre 2019 gestiegen. Es liegt nahe, dass der Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht hat. 
 
 
-```{rfig.asp=.5}
+```{r fig.asp=.5}
 # Tabelle mit Ergebnissen der Regression
 tab_model(ausstattung_mod,
           pred.labels = c('Achsenabschnitt', names(ausstattung)[-1]),

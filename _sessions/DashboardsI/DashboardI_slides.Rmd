@@ -45,7 +45,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Reporting mit R | Juni 2020
+       Reporting mit R | Februar 2021
       </font>
     </a>
     </span>
