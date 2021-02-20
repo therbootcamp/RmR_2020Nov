@@ -15,7 +15,7 @@ library(kableExtra)
 library(lubridate)
 
 # Lade Daten
-airbnb_1819 <- read_csv('../1_Data/airbnb.csv') %>% 
+Airbnb_1819 <- read_csv('../1_Data/Airbnb.csv') %>% 
   filter(Erstellungsdatum > "2018-01-01", 
          Erstellungsdatum < "2019-12-31")
 
@@ -29,15 +29,15 @@ Dieser Bericht analysiert Veränderungen in den Neueinstellungen und den Preisen
 
 #### Entwicklung
 
-Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin `r nrow(airbnb_1819)` Airbnb Wohnungeneingestellt. Von diesen Wohnungn weisen aktuell `r round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)`% Verfügbarkeiten von durchschnittlich `r round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)` Tagen für die nächsten 3 Monate auf.
+Seit `r strftime(min(Airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin `r nrow(Airbnb_1819)` AirBnB Wohnungen eingestellt. Von diesen Wohnungen weisen aktuell `r round(mean(Airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)`% Verfügbarkeiten von durchschnittlich `r round(mean(Airbnb_1819$Verfügbarkeit_90Tage[Airbnb_1819$Verfügbarkeit_90Tage>0]),1)` Tagen für die nächsten 3 Monate auf.
 
-**Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Jahr 2019 wurden insgesamt `r n_2019 = sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019` neue Wohnungen eingestellt wohingegend im Jahr 2018 nur `r n_2018 = sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018` Wohnungen eingestellt wurden. Dies entspricht einem Zuwachs von `r (round(n_2019/n_2018, 2) - 1)*100`%.**
+**Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Jahr 2019 wurden insgesamt `r n_2019 = sum(year(Airbnb_1819$Erstellungsdatum) == 2019); n_2019` neue Wohnungen eingestellt, wohingegend im Jahr 2018 nur `r n_2018 = sum(year(Airbnb_1819$Erstellungsdatum) == 2018); n_2018` Wohnungen eingestellt wurden. Dies entspricht einem Zuwachs von `r (round(n_2019/n_2018, 2) - 1)*100`%.**
 
 
 ```{r}
 
 # Plotte Häufigkeiten
-ggplot(airbnb_1819 %>% 
+ggplot(Airbnb_1819 %>% 
          group_by(Jahr = year(Erstellungsdatum), 
                   Monat_tmp = month(Erstellungsdatum)) %>% 
          summarize(
@@ -53,7 +53,7 @@ ggplot(airbnb_1819 %>%
 
 ```{r}
 # Berechne Häufigkeiten über die Bezirke
-stadtteile <- airbnb_1819 %>% 
+stadtteile <- Airbnb_1819 %>% 
          group_by(Stadtteil, 
                   Jahr = year(Erstellungsdatum)) %>% 
          summarize(Wohnungen = n()) %>% 

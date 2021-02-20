@@ -51,9 +51,9 @@ Dieser Bericht analysiert Veränderungen in den Neueinstellungen und den Preisen
   <tr>
   <td>
   
-Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin `r nrow(airbnb_1819)` Airbnb Wohnungeneingestellt. Von diesen Wohnungn weisen aktuell `r round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)`% Verfügbarkeiten von durchschnittlich `r round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)` Tagen für die nächsten 3 Monate auf.
+Seit `r strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")` wurden in Berlin `r nrow(airbnb_1819)` AirBnB Wohnungen eingestellt. Von diesen Wohnungen weisen aktuell `r round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)`% Verfügbarkeiten von durchschnittlich `r round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)` Tagen für die nächsten 3 Monate auf.
 
-**Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Jahr 2019 wurden insgesamt `r n_2019 = sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019` neue Wohnungen eingestellt wohingegend im Jahr 2018 nur `r n_2018 = sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018` Wohnungen eingestellt wurden. Dies entspricht einem Zuwachs von `r (round(n_2019/n_2018, 2) - 1)*100`%.**
+**Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Jahr 2019 wurden insgesamt `r n_2019 = sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019` neue Wohnungen eingestellt, wohingegend im Jahr 2018 nur `r n_2018 = sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018` Wohnungen eingestellt wurden. Dies entspricht einem Zuwachs von `r (round(n_2019/n_2018, 2) - 1)*100`%.**
   
   </td>
   <td>
@@ -104,7 +104,7 @@ stadtteile <- airbnb_1819 %>%
   mutate(Stadtteil = as_factor(Stadtteil))
 ```
 
-Neueinstellungen fallen nach wie vor sehr unterschiedlich in den Bezirke aus. Die meisten Neueinstellungen im Jahr 2019 gab es in `r stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% last()`, die wenigsten in `r stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% first()`.   
+Neueinstellungen fallen nach wie vor sehr unterschiedlich in den Bezirken aus. Die meisten Neueinstellungen im Jahr 2019 gab es in `r stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% last()`, die wenigsten in `r stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% first()`.   
  
 ```{r}
 # Veränderung über die Stadtteile
@@ -244,7 +244,7 @@ Die Regression legt nahe, dass Küche, TV und Terrasse oder Balkon den grössten
   
 Der Einfluss der Küche ist gegenüber dem Unterschied in Tabelle 1 gesunken, jedoch nach wie vor signifikant. 
   
-<b>Überraschenderweise ist der Effekt eines 24h Check-ins, deskriptiv der grösste Effekt, nicht signifikant. Dies ist ebenfalls auf den Zusammenhang zur Unterkunftsart zurückzuführen</b>
+<b>Überraschenderweise ist der Effekt eines 24h Check-ins, deskriptiv der grösste Effekt, nicht signifikant. Dies ist ebenfalls auf den Zusammenhang zur Unterkunftsart zurückzuführen.</b>
   
 Es besteht ein substantieller Unterschied im Preis zwischen Unterkunftsarten. Hotels haben eine um `r coefficients(ausstattung_mod)['HotelTRUE'] %>% round(1)`€ höheren Preis als Unterkünfte die keine Hotels sind.  
   
