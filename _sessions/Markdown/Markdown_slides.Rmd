@@ -45,7 +45,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Reporting mit R | November 2020
+       Reporting mit R | Februar 2021
       </font>
     </a>
     </span>
@@ -145,7 +145,7 @@ basel <- read.csv("1_Data/basel.csv")
 <ul>
   <li class="m1"><span>RMarkdown ermöglicht die Erstellung und Gestaltung unterschiedlicher <high>Berichttypen</high>.</span></li><br>
   <ul>
-    <li><span>Dokumente</span></li>
+    <li><span><high>Dokumente</high></span></li>
     <li><span>Präsentationen</span></li>   
     <li><span>Dashboards (Cockpits)</span></li>
     <li><span>Bücher</span></li>
@@ -154,16 +154,73 @@ basel <- read.csv("1_Data/basel.csv")
   </ul>
 </ul>
 
+
 ]
 
 .pull-right6[
 
-<br><br><br>
-<p align = "center">
-  <img src="image/types.png">
-</p>
+<br><br>
+<iframe src="https://therbootcamp.github.io/RmR_2021Feb/_sessions/Markdown/app/airbnb_final.html" width="500" height="500"></iframe>
 
 ]
+
+---
+
+.pull-left3[
+
+# Arten des Berichts
+
+<ul>
+  <li class="m1"><span>RMarkdown ermöglicht die Erstellung und Gestaltung unterschiedlicher <high>Berichttypen</high>.</span></li><br>
+  <ul>
+    <li><span>Dokumente</span></li>
+    <li><span><high>Präsentationen</high></span></li>   
+    <li><span>Dashboards (Cockpits)</span></li>
+    <li><span>Bücher</span></li>
+    <li><span>Webseiten</span></li>
+    <li><span>etc.</span></li>
+  </ul>
+</ul>
+
+
+]
+
+.pull-right6[
+
+<br><br>
+<iframe src="https://therbootcamp.github.io/RmR_2021Feb/_sessions/Markdown/app/slides.html" width="500" height="500"></iframe>
+
+]
+
+---
+
+
+.pull-left3[
+
+# Arten des Berichts
+
+<ul>
+  <li class="m1"><span>RMarkdown ermöglicht die Erstellung und Gestaltung unterschiedlicher <high>Berichttypen</high>.</span></li><br>
+  <ul>
+    <li><span>Dokumente</span></li>
+    <li><span>Präsentationen</span></li>   
+    <li><span><high>Dashboards (Cockpits)</high></span></li>
+    <li><span>Bücher</span></li>
+    <li><span>Webseiten</span></li>
+    <li><span>etc.</span></li>
+  </ul>
+</ul>
+
+
+]
+
+.pull-right6[
+
+<br><br>
+<iframe src="https://therbootcamp.github.io/RmR_2021Feb/_sessions/Markdown/app/dashboard.html" width="500" height="500"></iframe>
+
+]
+
 
 ---
 
