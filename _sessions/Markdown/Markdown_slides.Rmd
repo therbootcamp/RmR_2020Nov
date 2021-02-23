@@ -160,7 +160,7 @@ basel <- read.csv("1_Data/basel.csv")
 .pull-right6[
 
 <br><br>
-<iframe src="https://therbootcamp.github.io/RmR_2021Feb/_sessions/Markdown/app/airbnb_final.html" width="500" height="500"></iframe>
+<iframe src="https://therbootcamp.github.io/RmR_2021Feb/_sessions/Markdown/app/airbnb_final.html" width="800" height="500"></iframe>
 
 ]
 
@@ -188,7 +188,7 @@ basel <- read.csv("1_Data/basel.csv")
 .pull-right6[
 
 <br><br>
-<iframe src="https://therbootcamp.github.io/RmR_2021Feb/_sessions/Markdown/app/slides.html" width="500" height="500"></iframe>
+<iframe src="https://therbootcamp.github.io/RmR_2021Feb/_materials/case/3_Markdown/airbnb_presentation.html" width="800" height="500"></iframe>
 
 ]
 
@@ -217,7 +217,7 @@ basel <- read.csv("1_Data/basel.csv")
 .pull-right6[
 
 <br><br>
-<iframe src="https://therbootcamp.github.io/RmR_2021Feb/_sessions/Markdown/app/dashboard.html" width="500" height="500"></iframe>
+<iframe src="https://therbootcamp.github.io/RmR_2021Feb/_sessions/Markdown/app/BerlinDashboard.html" width="800" height="500"></iframe>
 
 ]
 

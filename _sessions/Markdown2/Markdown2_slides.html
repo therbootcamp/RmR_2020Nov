@@ -3,7 +3,8 @@
   <head>
     <title>Markdown II</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Reporting mit R   The R Bootcamp" />
+    <meta name="author" content="Reporting mit R   The R Bootcamp                  " />
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
   </head>
@@ -13,7 +14,7 @@ class: center, middle, inverse, title-slide
 
 # Markdown II
 ### Reporting mit R<br> <a href='https://therbootcamp.github.io'> The R Bootcamp </a> <br> <a href='https://therbootcamp.github.io/RmR_2021Feb/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
-### November 2020
+### Februar 2021
 
 ---
 
@@ -34,7 +35,7 @@ layout: true
     &lt;/a&gt;
     &lt;a href="https://therbootcamp.github.io/"&gt;
       &lt;font color="#7E7E7E"&gt;
-       Reporting mit R | November 2020
+       Reporting mit R | Februar 2021
       &lt;/font&gt;
     &lt;/a&gt;
     &lt;/span&gt;
@@ -439,7 +440,7 @@ layout: true
   &lt;mono&gt;format&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;&lt;high&gt;Ausgabeformat&lt;/high&gt;: 
-  &lt;mono&gt;"html"&lt;/mon&gt;, &lt;mono&gt;"latex"&lt;/mono&gt;, etc.
+  &lt;mono&gt;"html"&lt;/mon&gt;, &lt;mono&gt;"latex"&lt;/mono&gt;
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -521,7 +522,7 @@ layout: true
   &lt;mono&gt;format&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;&lt;high&gt;Ausgabeformat&lt;/high&gt;: 
-  &lt;mono&gt;"html"&lt;/mon&gt;, &lt;mono&gt;"latex"&lt;/mono&gt;, etc.
+  &lt;mono&gt;"html"&lt;/mon&gt;, &lt;mono&gt;"latex"&lt;/mono&gt;
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -603,7 +604,7 @@ layout: true
   &lt;mono&gt;format&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;&lt;high&gt;Ausgabeformat&lt;/high&gt;: 
-  &lt;mono&gt;"html"&lt;/mon&gt;, &lt;mono&gt;"latex"&lt;/mono&gt;, etc.
+  &lt;mono&gt;"html"&lt;/mon&gt;, &lt;mono&gt;"latex"&lt;/mono&gt;
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -685,7 +686,7 @@ layout: true
   &lt;mono&gt;format&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;&lt;high&gt;Ausgabeformat&lt;/high&gt;: 
-  &lt;mono&gt;"html"&lt;/mon&gt;, &lt;mono&gt;"latex"&lt;/mono&gt;, etc.
+  &lt;mono&gt;"html"&lt;/mon&gt;, &lt;mono&gt;"latex"&lt;/mono&gt;
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -767,7 +768,7 @@ layout: true
   &lt;mono&gt;format&lt;/mono&gt;
   &lt;/td&gt;
   &lt;td bgcolor="white"&gt;&lt;high&gt;Ausgabeformat&lt;/high&gt;: 
-  &lt;mono&gt;"html"&lt;/mon&gt;, &lt;mono&gt;"latex"&lt;/mono&gt;, etc.
+  &lt;mono&gt;"html"&lt;/mon&gt;, &lt;mono&gt;"latex"&lt;/mono&gt;
   &lt;/td&gt; 
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1229,9 +1230,141 @@ layout: true
 
 ---
 
+.pull-left4[
+
+# Quotes, Rulers
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Für Quotes und horizontale linien gibt es spezielle &lt;high&gt;Markdown Syntax&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&gt; block quote&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Text wird &lt;high&gt;&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;***&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   &lt;high&gt;Horizonalte Linie&lt;/high&gt; ... .    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/.png"&gt;
+&lt;/p&gt;
+
+| 1  |  2 |
+|---|---|
+| fdsdf  |  sdf |
+
+]
+
+---
+
+.pull-left4[
+
+# Einfache Markdown Tabellen
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Für Quotes und horizontale linien gibt es spezielle &lt;high&gt;Markdown Syntax&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%&gt;
+  &lt;col width="40%"&gt;
+  &lt;col width="60%"&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Argument&lt;/b&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+    &lt;b&gt;Beschreibung&lt;/b&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&gt; |&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  Definition von &lt;high&gt;Spalten&lt;/high&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;---&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+   Definition von &lt;high&gt;horizontalen Linien&lt;/high&gt; ... .    
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;|:,  |: :|, :|&lt;/mono&gt; 
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  links-bündig, zentriert, rechts-bündig
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;mono&gt;&lt;/mono&gt;
+  &lt;/td&gt;
+  &lt;td bgcolor="white"&gt;
+  &lt;/td&gt; 
+&lt;/tr&gt;
+&lt;/table&gt;
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "center"&gt;
+  &lt;img src="image/.png"&gt;
+&lt;/p&gt;
+
+
+]
+
+---
 class: middle, center
 
 &lt;h1&gt;&lt;a href="https://therbootcamp.github.io/RmR_2021Feb/_sessions/Markdown2/Markdown2_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

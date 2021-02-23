@@ -45,7 +45,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Reporting mit R | November 2020
+       Reporting mit R | Februar 2021
       </font>
     </a>
     </span>
@@ -482,7 +482,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>format</mono>
   </td>
   <td bgcolor="white"><high>Ausgabeformat</high>: 
-  <mono>"html"</mon>, <mono>"latex"</mono>, etc.
+  <mono>"html"</mon>, <mono>"latex"</mono>
   </td> 
 </tr>
 <tr>
@@ -564,7 +564,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>format</mono>
   </td>
   <td bgcolor="white"><high>Ausgabeformat</high>: 
-  <mono>"html"</mon>, <mono>"latex"</mono>, etc.
+  <mono>"html"</mon>, <mono>"latex"</mono>
   </td> 
 </tr>
 <tr>
@@ -646,7 +646,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>format</mono>
   </td>
   <td bgcolor="white"><high>Ausgabeformat</high>: 
-  <mono>"html"</mon>, <mono>"latex"</mono>, etc.
+  <mono>"html"</mon>, <mono>"latex"</mono>
   </td> 
 </tr>
 <tr>
@@ -728,7 +728,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>format</mono>
   </td>
   <td bgcolor="white"><high>Ausgabeformat</high>: 
-  <mono>"html"</mon>, <mono>"latex"</mono>, etc.
+  <mono>"html"</mon>, <mono>"latex"</mono>
   </td> 
 </tr>
 <tr>
@@ -810,7 +810,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <mono>format</mono>
   </td>
   <td bgcolor="white"><high>Ausgabeformat</high>: 
-  <mono>"html"</mon>, <mono>"latex"</mono>, etc.
+  <mono>"html"</mon>, <mono>"latex"</mono>
   </td> 
 </tr>
 <tr>
@@ -1272,6 +1272,137 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 
 ---
 
+.pull-left4[
+
+# Quotes, Rulers
+
+<ul>
+  <li class="m1"><span>Für Quotes und horizontale linien gibt es spezielle <high>Markdown Syntax</high>.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>> block quote</mono>
+  </td>
+  <td bgcolor="white">
+  Text wird <high></high>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>***</mono>
+  </td>
+  <td bgcolor="white">
+   <high>Horizonalte Linie</high> ... .    
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono></mono> 
+  </td>
+  <td bgcolor="white">
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono></mono>
+  </td>
+  <td bgcolor="white">
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+<br><br>
+<p align = "center">
+  <img src="image/.png">
+</p>
+
+| 1  |  2 |
+|---|---|
+| fdsdf  |  sdf |
+
+]
+
+---
+
+.pull-left4[
+
+# Einfache Markdown Tabellen
+
+<ul>
+  <li class="m1"><span>Für Quotes und horizontale linien gibt es spezielle <high>Markdown Syntax</high>.</span></li>
+</ul>
+
+<table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
+  <col width="40%">
+  <col width="60%">
+<tr>
+  <td bgcolor="white">
+    <b>Argument</b>
+  </td>
+  <td bgcolor="white">
+    <b>Beschreibung</b>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>> |</mono>
+  </td>
+  <td bgcolor="white">
+  Definition von <high>Spalten</high>
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>---</mono>
+  </td>
+  <td bgcolor="white">
+   Definition von <high>horizontalen Linien</high> ... .    
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono>|:,  |: :|, :|</mono> 
+  </td>
+  <td bgcolor="white">
+  links-bündig, zentriert, rechts-bündig
+  </td> 
+</tr>
+<tr>
+  <td bgcolor="white">
+  <mono></mono>
+  </td>
+  <td bgcolor="white">
+  </td> 
+</tr>
+</table>
+
+]
+
+.pull-right5[
+<br><br>
+<p align = "center">
+  <img src="image/.png">
+</p>
+
+
+]
+
+---
 class: middle, center
 
 <h1><a href="https://therbootcamp.github.io/RmR_2021Feb/_sessions/Markdown2/Markdown2_practical.html">Practical</a></h1>
