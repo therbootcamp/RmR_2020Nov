@@ -1,4 +1,4 @@
- ---
+---
 title: "Dashboards I"
 author: "Reporting mit R<br>
   <a href='https://therbootcamp.github.io'>
@@ -480,14 +480,14 @@ gauge(round(mean(basel$glueck), 2),
   <li class="m1"><span>Interface zur <mono>leaflet</mono> JS library zum Erstellen <high>interaktiver Karten</high>.</span></li>  
 </ul>
 
-```{r eval = FALSE, echo =TRUE}
+```{r eval = FALSE, echo = TRUE}
 # Initiiere leaflet
 leaflet() %>% 
-  # Setze Anfangskoordinaten und Zoomwert
+# Setze Anfangskoordinaten und Zoomwert
   setView(lng = 7.5885761,
           lat = 47.5595986,
           zoom = 15) %>% 
-  # Zeichne Karte
+# Zeichne Karte
   addTiles()
 ```
 
@@ -496,12 +496,9 @@ leaflet() %>%
 
 .pull-right45[
 
-```{r fig.width = 1.75, fig.height = 1.5}
-# Initiiere leaflet
+```{r , echo=F, message=F, warning=F}
 leaflet() %>% 
-  # Setze Anfangskoordinaten und Zoomwert
   setView(lng = 7.5885761, lat = 47.5595986, zoom = 15) %>% 
-  # Zeichne Karte
   addTiles()
 ```
 
@@ -520,13 +517,13 @@ leaflet() %>%
 ```{r eval = FALSE, echo =TRUE}
 # Initiiere leaflet
 leaflet() %>% 
-  # Setze Anfangskoordinaten und Zoomwert
+# Setze Anfangskoordinaten und Zoomwert
   setView(lng = 7.5885761,
           lat = 47.5595986,
           zoom = 15) %>% 
-  # Zeichne Karte
+# Zeichne Karte
   addTiles() %>% 
-  # Zeichne Marker
+# Zeichne Marker
   addCircleMarkers(
     lng = 7.589263051748261,
     lat = 47.55892108771642)
@@ -540,13 +537,13 @@ leaflet() %>%
 ```{r fig.width = 1.75, fig.height = 1.5}
 # Initiiere leaflet
 leaflet() %>% 
-  # Setze Anfangskoordinaten und Zoomwert
+# Setze Anfangskoordinaten und Zoomwert
   setView(lng = 7.5885761,
           lat = 47.5595986,
           zoom = 15) %>% 
-  # Zeichne Karte
+# Zeichne Karte
   addTiles() %>% 
-  # Zeichne Marker
+# Zeichne Marker
   addCircleMarkers(
     lng = 7.589263051748261,
     lat = 47.55892108771642)
@@ -567,13 +564,13 @@ leaflet() %>%
 ```{r eval = FALSE, echo =TRUE}
 # Initiiere leaflet
 leaflet() %>% 
-  # Setze Anfangskoordinaten und Zoomwert
+# Setze Anfangskoordinaten und Zoomwert
   setView(lng = 7.5885761,
           lat = 47.5595986,
           zoom = 15) %>% 
-  # Zeichne Karte
+# Zeichne Karte
   addTiles() %>% 
-  # Zeichne Marker
+# Zeichne Marker
   addAwesomeMarkers(
     lng = 7.589263051748261,
     lat = 47.55892108771642,
@@ -590,13 +587,13 @@ leaflet() %>%
 ```{r fig.width = 1.75, fig.height = 1.5}
 # Initiiere leaflet
 leaflet() %>% 
-  # Setze Anfangskoordinaten und Zoomwert
+# Setze Anfangskoordinaten und Zoomwert
   setView(lng = 7.5885761,
           lat = 47.5595986,
           zoom = 15) %>% 
-  # Zeichne Karte
+# Zeichne Karte
   addTiles() %>% 
-  # Zeichne Marker
+# Zeichne Marker
   addAwesomeMarkers(
     lng = 7.589263051748261,
     lat = 47.55892108771642,

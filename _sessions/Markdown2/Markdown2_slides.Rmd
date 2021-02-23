@@ -1331,9 +1331,6 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
   <img src="image/.png">
 </p>
 
-| 1  |  2 |
-|---|---|
-| fdsdf  |  sdf |
 
 ]
 
@@ -1341,7 +1338,7 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 
 .pull-left4[
 
-# Einfache Markdown Tabellen
+# Markdown Tabellen
 
 <ul>
   <li class="m1"><span>Für Quotes und horizontale linien gibt es spezielle <high>Markdown Syntax</high>.</span></li>
@@ -1395,9 +1392,10 @@ cols = "https://www.colourlovers.com/palette/3498539/airbnb"
 
 .pull-right5[
 <br><br>
-<p align = "center">
-  <img src="image/.png">
-</p>
+
+| 1  |  2 |
+|---|---|
+| fdsdf  |  sdf |
 
 
 ]

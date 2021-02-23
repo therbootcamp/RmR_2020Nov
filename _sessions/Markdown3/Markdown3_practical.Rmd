@@ -336,9 +336,7 @@ Der [airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/mast
 |`tidyverse`|`install.packages("tidyverse")`|
 
 
-
 ### Funktionen
-
 
 | Funktion| Paket | Beschreibung |
 |:---|:------|:---------------------------------------------|

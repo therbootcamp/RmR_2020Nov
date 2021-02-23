@@ -347,7 +347,8 @@ Der [Airbnb.csv](https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/mast
 
 | Funktion| Paket | Beschreibung |
 |:---|:------|:---------------------------------------------|
-| `strftime`|`lubridate`| Formatierung von Daten | 
+| `strftime`|`lubridate`| Formatierung von Daten |
+| `ggplot`|`ggplot`| Erstellen von Grafiken | 
 
 
 

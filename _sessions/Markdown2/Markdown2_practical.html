@@ -13,6 +13,7 @@
 
 <title>Markdown II</title>
 
+<script src="Markdown2_practical_files/header-attrs-2.6/header-attrs.js"></script>
 <script src="Markdown2_practical_files/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="Markdown2_practical_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -30,7 +31,7 @@
   div.column{display: inline-block; vertical-align: top; width: 50%;}
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
-      </style>
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -76,6 +77,7 @@ h6 {
   text-align: left;
 }
 </style>
+
 
 <link rel="stylesheet" href="practical.css" type="text/css" />
 
@@ -212,7 +214,7 @@ pre code,  .md:not(.use-csslab) pre code {
 <img src="image/flat_crop.png" alt="Chunks" style="width:100%"> <br> <font style="font-size:10px">from <a href="https://www.airbnb.ca/rooms/1347514/photos/13227297?guests=4&s=4fFl&source_impression_id=p3_1591077094_V6VkyaMzWmptgznT&adults=1">airbnb.ca</a></font>
 </p>
 <div id="section" class="section level1 tabset">
-<h1></h1>
+<h1 class="tabset"></h1>
 <div id="überblick" class="section level2">
 <h2>Überblick</h2>
 <p>In diesem Practical wirst du nun die Grafiken in deinem Dokument gestalten und Bausteine, Text und Tabellen, einfügen.</p>
@@ -231,7 +233,7 @@ pre code,  .md:not(.use-csslab) pre code {
 <li><p>Öffne dein <code>TheRBootcamp</code> R Projekt. Es sollte die Ordner <code>1_Data</code>, <code>2_Assets</code>, und <code>3_Markdown</code> enthalten.</p></li>
 <li><p>Lade die <code>airbnb_level_one.Rmd</code> Datei, das fertige Produkt am Ende des ersten Markdown Practicals.</p></li>
 <li><p>Speichere die Datei und dem neuen Namen: <code>airbnb_level_two.Rmd</code> ab.</p></li>
-<li><p>Zusätzlich lade die Pakete <code>knitr</code>, <code>kableExtra</code> <code>sjPlot</code> im <code>setup</code> chunk.</p></li>
+<li><p>Zusätzlich lade die Pakete <code>knitr</code>, <code>kableExtra</code> und <code>sjPlot</code> im <code>setup</code> chunk.</p></li>
 </ol>
 </div>
 <div id="b---präambel-fussnote-einfügen" class="section level3">
@@ -653,7 +655,7 @@ tab_model(ausstattung_mod)</code></pre>
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

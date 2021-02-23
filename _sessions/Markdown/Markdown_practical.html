@@ -13,6 +13,7 @@
 
 <title>Markdown</title>
 
+<script src="Markdown_practical_files/header-attrs-2.6/header-attrs.js"></script>
 <script src="Markdown_practical_files/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="Markdown_practical_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -30,7 +31,7 @@
   div.column{display: inline-block; vertical-align: top; width: 50%;}
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
-      </style>
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -76,6 +77,7 @@ h6 {
   text-align: left;
 }
 </style>
+
 
 <link rel="stylesheet" href="practical.css" type="text/css" />
 
@@ -209,10 +211,10 @@ pre code,  .md:not(.use-csslab) pre code {
   }
 </style>
 <p align="center" width="100%">
-<img src="image/airbnb_banner.png" alt="Trulli" style="width:100%"> <br> <font style="font-size:10px">adapted from <a href="https://news.airbnb.com/de/unterkunften-fur-covid-19-einsatzkrafte/">airbnb.com</a></font>
+<img src="image/airbnb_banner.png" alt="Trulli" style="width:100%"> <br> <font style="font-size:10px">adapted from <a href="https://news.Airbnb.com/de/unterkunften-fur-covid-19-einsatzkrafte/">Airbnb.com</a></font>
 </p>
 <div id="section" class="section level1 tabset">
-<h1></h1>
+<h1 class="tabset"></h1>
 <div id="überblick" class="section level2">
 <h2>Überblick</h2>
 <p>In diesem Practical machst du deine ersten Schritte mit R Markdown.</p>
@@ -236,7 +238,7 @@ pre code,  .md:not(.use-csslab) pre code {
 </p>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Trage als Titel <code>Bericht Berlin 2018/2019</code> ein.</p></li>
-<li><p>Speichere das neue Markdown Skript unter dem Namen <code>airbnb_level_one.Rmd</code> im <code>3_Markdown</code> Ordner ab.</p></li>
+<li><p>Speichere das neue Markdown Skript unter dem Namen <code>Airbnb_level_one.Rmd</code> im <code>3_Markdown</code> Ordner ab.</p></li>
 <li><p>Lösche alles unterhalb des <code>setup</code> Code Chunks.</p></li>
 <li><p>Lade die Pakete <code>tidyverse</code> und <code>lubridate</code> im <code>setup</code> Chunk.</p></li>
 </ol>
@@ -244,15 +246,15 @@ pre code,  .md:not(.use-csslab) pre code {
 library(tidyverse)
 library(lubridate)</code></pre>
 <ol start="6" style="list-style-type: decimal">
-<li>Lade den <code>airbnb</code> Datensatz mit <code>read_csv()</code> ebenfalls im <code>setup</code> Chunk mit dem Code unten.</li>
+<li>Lade den <code>Airbnb</code> Datensatz mit <code>read_csv()</code> ebenfalls im <code>setup</code> Chunk mit dem Code unten.</li>
 </ol>
-<pre class="r"><code># Lade airbnb Datensatz
-airbnb &lt;- read_csv(&quot;../1_Data/airbnb.csv&quot;)</code></pre>
+<pre class="r"><code># Lade Airbnb Datensatz
+Airbnb &lt;- read_csv(&quot;../1_Data/Airbnb.csv&quot;)</code></pre>
 <ol start="7" style="list-style-type: decimal">
-<li>Verwende den Code unten um nur die beiden Jahre <code>2018</code> und <code>2019</code> aus den Daten auszuwählen und ein neues Objekt <code>airbnb_1819</code> zu erstellen.</li>
+<li>Verwende den Code unten um nur die beiden Jahre <code>2018</code> und <code>2019</code> aus den Daten auszuwählen und ein neues Objekt <code>Airbnb_1819</code> zu erstellen.</li>
 </ol>
 <pre class="r"><code># Wähle Jahre 2018 und 2019 aus
-airbnb_1819 &lt;- airbnb %&gt;% 
+Airbnb_1819 &lt;- Airbnb %&gt;% 
   filter(Erstellungsdatum &gt; &quot;2018-01-01&quot;, 
          Erstellungsdatum &lt; &quot;2019-12-31&quot;)</code></pre>
 </div>
@@ -265,7 +267,7 @@ airbnb_1819 &lt;- airbnb %&gt;%
 <ol start="2" style="list-style-type: decimal">
 <li>Nun setze unter die Überschrift den folgenden Text.</li>
 </ol>
-<pre class="wrap"><code>Dieser Bericht analysiert Veränderungen in den Neueinstellungen und den Preisen von AirBnB Objekten in Berlin, Deutschland. Er wurde zum Zwecke der Übung auf Basis öffentlich verfügbarer Daten erstellt und repräsentiert einzig die Position der Autoren. Es besteht keine Beziehung zu AirBnB.  </code></pre>
+<pre class="wrap"><code>Dieser Bericht analysiert Veränderungen in den Neueinstellungen und den Preisen von Airbnb Objekten in Berlin, Deutschland. Er wurde zum Zwecke der Übung auf Basis öffentlich verfügbarer Daten erstellt und repräsentiert einzig die Position der Autoren. Es besteht keine Beziehung zu Airbnb.  </code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li><code>Knitte</code> das Dokument. Sieht alles in Ordnung aus?</li>
 </ol>
@@ -283,19 +285,19 @@ airbnb_1819 &lt;- airbnb %&gt;%
 </ol>
 <pre class="wrap"><code>Seit 02.01.2018 wurden in Berlin 5007 Airbnb Wohnungen eingestellt. Von diesen Wohnungn weisen aktuell 73% Verfügbarkeiten von durchschnittlich 47.5 Tagen für die nächsten 3 Monate auf.
 
-Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Jahr 2019 wurden insgesamt 3274 neue Wohnungen eingestellt wohingegend im Jahr 2018 nur 1733 Wohnungen eingestellt wurden. Dies entspricht einem Zuwachs von 89%.</code></pre>
+Einstellungen von Airbnb Wohnungen haben im letzten Jahr stark zugenommen. Im Jahr 2019 wurden insgesamt 3274 neue Wohnungen eingestellt, wohingegend im Jahr 2018 nur 1733 Wohnungen eingestellt wurden. Dies entspricht einem Zuwachs von 89%.</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Tausche zunächst das Datum an zweiter Stelle im Text durch den folgenden inline Code aus. Nicht vergessen, der Code muss zwischen zwei Gravis (`r Code`) gesetzt werden. Knitte das Dokument.</li>
 </ol>
-<pre class="text"><code>r min(airbnb_1819$Erstellungsdatum)</code></pre>
+<pre class="text"><code>r min(Airbnb_1819$Erstellungsdatum)</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Jetzt sollte der Text ein Datum enthalten, welches aber noch nicht ganz richtig formatiert ist. Hier hilft die <code>strftime()</code> Funktion. Versuche mit dem folgenden inline Code das Datum in das richtige Format zu bringen.</li>
 </ol>
-<pre class="text"><code>r strftime(min(airbnb_1819$Erstellungsdatum), &quot;%d.%m.%Y&quot;)</code></pre>
+<pre class="text"><code>r strftime(min(Airbnb_1819$Erstellungsdatum), &quot;%d.%m.%Y&quot;)</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li><p>Als nächstes ersetze die Anzahl der Wohnungen durch <code>nrow(airbnb_1819)</code>. Nicht das <code>r</code> am Anfang vergessen!</p></li>
-<li><p>Ersetze nun Prozentsatz der Wohnungen durch <code>round(mean(airbnb_1819$Verfügbarkeit_90Tage &gt; 0) * 100)</code> und die durchschnittliche Verfügbarkeit durch <code>round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage&gt;0]),1)</code>. Jetzt sollten alle Zahlen des ersten Absatz durch Code ersetzt worden sein. Überprüfe ob alles stimmt.</p></li>
-<li><p>Im nächsten Absatz ersetze die ersten beiden Zahlen durch <code>n_2019 &lt;- sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019</code> und <code>n_2018 &lt;- sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018</code>. In diesen beiden Fällen siehst du, dass auch Zuweisungen in inline Code möglich sind.</p></li>
+<li><p>Als nächstes ersetze die Anzahl der Wohnungen durch <code>nrow(Airbnb_1819)</code>. Nicht das <code>r</code> am Anfang vergessen!</p></li>
+<li><p>Ersetze nun Prozentsatz der Wohnungen durch <code>round(mean(Airbnb_1819$Verfügbarkeit_90Tage &gt; 0) * 100)</code> und die durchschnittliche Verfügbarkeit durch <code>round(mean(Airbnb_1819$Verfügbarkeit_90Tage[Airbnb_1819$Verfügbarkeit_90Tage&gt;0]),1)</code>. Jetzt sollten alle Zahlen des ersten Absatz durch Code ersetzt worden sein. Überprüfe ob alles stimmt.</p></li>
+<li><p>Im nächsten Absatz ersetze die ersten beiden Zahlen durch <code>n_2019 &lt;- sum(year(Airbnb_1819$Erstellungsdatum) == 2019); n_2019</code> und <code>n_2018 &lt;- sum(year(Airbnb_1819$Erstellungsdatum) == 2018); n_2018</code>. In diesen beiden Fällen siehst du, dass auch Zuweisungen in inline Code möglich sind.</p></li>
 <li><p>Ersetze nun den wert des Zuwachses am Ende des Absatzes durch <code>(round(n_2019/n_2018, 2) - 1)*100</code>, was, wie du siehst, auf die beiden zuvor im inline Code definierten Objekte zurückgreift. Knitte das Dokument und überprüfe, ob nun alle Zahlen einwandfrei wiedergegeben werden.</p></li>
 <li><p>Zuletzt verwende ** um den gesamten zweiten Absatz fett zu setzen. Setze hierfür einmal die zwei Asteriske vor das erste und nach dem letzten Wort des Absatzes. Nun alles wie im Zieldokument?</p></li>
 </ol>
@@ -312,7 +314,7 @@ Einstellungen von AirBnB Wohnungen haben im letzten Jahr stark zugenommen. Im Ja
 <li>Kopiere in den Chunk, d.h., zwischen die zwei Zeilen mit den drei Gravis/Ticks, den Code unten, welcher eine erste Version der ersten Grafik im Bericht generiert.</li>
 </ol>
 <pre class="r"><code># Plotte Häufigkeiten
-ggplot(airbnb_1819 %&gt;% 
+ggplot(Airbnb_1819 %&gt;% 
       group_by(Jahr = year(Erstellungsdatum), 
                Monat_tmp = month(Erstellungsdatum)) %&gt;% 
       summarize(Monat = as_factor(paste(first(Jahr), first(Monat_tmp), sep = &#39;-&#39;)),
@@ -343,14 +345,14 @@ ggplot(airbnb_1819 %&gt;%
 <li><p>Setze unten im Script eine weitere Überschrift auf vierter Ebene (<code>####</code>) mit dem Titel <code>Stadtteile</code>.</p></li>
 <li><p>Unter die Überschrift setze den folgenden Text.</p></li>
 </ol>
-<pre class="wrap"><code>Neueinstellungen fallen nach wie vor sehr unterschiedlich in den Bezirke aus. Die meisten Neueinstellungen im Jahr 2019 gab es in Friedrichshain-Kreuzberg, die wenigsten in Marzahn - Hellersdorf.
+<pre class="wrap"><code>Neueinstellungen fallen nach wie vor sehr unterschiedlich in den Bezirken aus. Die meisten Neueinstellungen im Jahr 2019 gab es in Friedrichshain-Kreuzberg, die wenigsten in Marzahn - Hellersdorf.
 
 Die grössten Veränderungen gab es in Marzahn - Hellersdorf und Treptow - Köpenick. In Marzahn - Hellersdorf schrumpften die Neueinstellungen um -13.3%, in Treptow - Köpenick wuchsen die Neueinstellungen um 137.8%.</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Vor den Text setze den folgenden Chunk, welcher die Häufigkeiten der Neueinstellungen über die Stadtteile berechnet und im Objekt <code>stadtteile</code> speichert.</li>
 </ol>
 <pre class="r"><code># Berechne Häufigkeiten über die Bezirke
-stadtteile &lt;- airbnb_1819 %&gt;% 
+stadtteile &lt;- Airbnb_1819 %&gt;% 
               group_by(Stadtteil, 
                        Jahr = year(Erstellungsdatum)) %&gt;% 
               summarize(Wohnungen = n()) %&gt;% 
@@ -399,8 +401,9 @@ max_stadtteil = veränderung %&gt;%
 <pre class="r"><code># Plotte Häufigkeieten der Stadtteile
 ggplot(stadtteile, 
        aes(y = Stadtteil, x = Wohnungen, group = Jahr, fill = Jahr)) + 
-  geom_bar(stat = &#39;identity&#39;, position = &#39;dodge&#39;) + 
-  theme(legend.position = &#39;none&#39;) + labs(y=&#39;&#39;)</code></pre>
+       geom_bar(stat = &#39;identity&#39;, position = &#39;dodge&#39;) + 
+       theme(legend.position = &#39;none&#39;) + 
+       labs(y = &#39;&#39;)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Knitte das Dokument. Der erste Teil ist hiermit abgeschlossen.</li>
 </ol>
@@ -408,7 +411,7 @@ ggplot(stadtteile,
 </div>
 <div id="datensatz" class="section level2">
 <h2>Datensatz</h2>
-<p>Der <a href="https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/master/_materials/case/airbnb.csv">airbnb.csv</a> Datensatz enthält Zahlen zu 9868 Berliner Airbnbs</p>
+<p>Der <a href="https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/master/_materials/case/Airbnb.csv">Airbnb.csv</a> Datensatz enthält Zahlen zu 9868 Berliner Airbnbs</p>
 <table>
 <thead>
 <tr class="header">
@@ -591,6 +594,11 @@ ggplot(stadtteile,
 <td align="left"><code>lubridate</code></td>
 <td align="left">Formatierung von Daten</td>
 </tr>
+<tr class="even">
+<td align="left"><code>ggplot</code></td>
+<td align="left"><code>ggplot</code></td>
+<td align="left">Erstellen von Grafiken</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -614,7 +622,7 @@ ggplot(stadtteile,
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
