@@ -57,18 +57,24 @@ layout: true
 options(htmltools.dir.version = FALSE)
 options(width = 110)
 options(digits = 4)
+
 # Load packages
 require(tidyverse)
 library(leaflet)
 library(plotly)
+
 # load color set
 source("../../_materials/palette/therbootcamp_palettes.R")
+
 # knitr options
 knitr::opts_chunk$set(dpi = 300, echo = FALSE, warning = FALSE, fig.align = 'center', message= FALSE)
+
 # special print function: avoid if possible
 print2 <- function(x, nlines=10,...) {
    cat(head(capture.output(print(x,...)), nlines), sep="\n")}
+
 basel <- read.csv("1_Data/basel.csv")
+
 ```
 
 # Was sind Dashboards?
@@ -97,9 +103,9 @@ basel <- read.csv("1_Data/basel.csv")
 # Ein Beispiel
 
 <p align = "center">
-  <iframe src="https://gallery.shinyapps.io/nz-trade-dash/" width="100%%" height="450" style="border:none;">
+  <iframe src="https://jjallaire.shinyapps.io/shiny-crandash/#dashboard" width="100%%" height="450" style="border:none;">
 </iframe><br>
-  <font style="font-size:10px">from <a href="https://gallery.shinyapps.io/nz-trade-dash/">rstudio.com</a></font>
+  <font style="font-size:10px">from <a href="https://jjallaire.shinyapps.io/shiny-crandash/#dashboard">rstudio.com</a></font>
 </p>
 
 ---
@@ -265,7 +271,7 @@ Spalte 1 {data-width = 700}
   
 ### Inhalt 1
 
-`r ''````{r fig.width = 9}
+`r ''````{r fig.width=9}
 hist(basel$einkommen)
 ```
   
@@ -474,14 +480,14 @@ gauge(round(mean(basel$glueck), 2),
   <li class="m1"><span>Interface zur <mono>leaflet</mono> JS library zum Erstellen <high>interaktiver Karten</high>.</span></li>  
 </ul>
 
-```{r eval = FALSE, echo = TRUE}
+```{r eval = FALSE, echo =TRUE}
 # Initiiere leaflet
 leaflet() %>% 
-# Setze Anfangskoordinaten und Zoomwert
+  # Setze Anfangskoordinaten und Zoomwert
   setView(lng = 7.5885761,
           lat = 47.5595986,
           zoom = 15) %>% 
-# Zeichne Karte
+  # Zeichne Karte
   addTiles()
 ```
 
@@ -490,9 +496,12 @@ leaflet() %>%
 
 .pull-right45[
 
-```{r, fig.width = 1.75, fig.height = 1.5}
+```{r fig.width = 1.75, fig.height = 1.5}
+# Initiiere leaflet
 leaflet() %>% 
+  # Setze Anfangskoordinaten und Zoomwert
   setView(lng = 7.5885761, lat = 47.5595986, zoom = 15) %>% 
+  # Zeichne Karte
   addTiles()
 ```
 
@@ -511,13 +520,13 @@ leaflet() %>%
 ```{r eval = FALSE, echo =TRUE}
 # Initiiere leaflet
 leaflet() %>% 
-# Setze Anfangskoordinaten und Zoomwert
+  # Setze Anfangskoordinaten und Zoomwert
   setView(lng = 7.5885761,
           lat = 47.5595986,
           zoom = 15) %>% 
-# Zeichne Karte
+  # Zeichne Karte
   addTiles() %>% 
-# Zeichne Marker
+  # Zeichne Marker
   addCircleMarkers(
     lng = 7.589263051748261,
     lat = 47.55892108771642)
@@ -531,13 +540,13 @@ leaflet() %>%
 ```{r fig.width = 1.75, fig.height = 1.5}
 # Initiiere leaflet
 leaflet() %>% 
-# Setze Anfangskoordinaten und Zoomwert
+  # Setze Anfangskoordinaten und Zoomwert
   setView(lng = 7.5885761,
           lat = 47.5595986,
           zoom = 15) %>% 
-# Zeichne Karte
+  # Zeichne Karte
   addTiles() %>% 
-# Zeichne Marker
+  # Zeichne Marker
   addCircleMarkers(
     lng = 7.589263051748261,
     lat = 47.55892108771642)
@@ -558,13 +567,13 @@ leaflet() %>%
 ```{r eval = FALSE, echo =TRUE}
 # Initiiere leaflet
 leaflet() %>% 
-# Setze Anfangskoordinaten und Zoomwert
+  # Setze Anfangskoordinaten und Zoomwert
   setView(lng = 7.5885761,
           lat = 47.5595986,
           zoom = 15) %>% 
-# Zeichne Karte
+  # Zeichne Karte
   addTiles() %>% 
-# Zeichne Marker
+  # Zeichne Marker
   addAwesomeMarkers(
     lng = 7.589263051748261,
     lat = 47.55892108771642,
@@ -581,13 +590,13 @@ leaflet() %>%
 ```{r fig.width = 1.75, fig.height = 1.5}
 # Initiiere leaflet
 leaflet() %>% 
-# Setze Anfangskoordinaten und Zoomwert
+  # Setze Anfangskoordinaten und Zoomwert
   setView(lng = 7.5885761,
           lat = 47.5595986,
           zoom = 15) %>% 
-# Zeichne Karte
+  # Zeichne Karte
   addTiles() %>% 
-# Zeichne Marker
+  # Zeichne Marker
   addAwesomeMarkers(
     lng = 7.589263051748261,
     lat = 47.55892108771642,
