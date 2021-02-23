@@ -17,7 +17,7 @@ author: "Reporting mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "Juni 2020"
+date: "Februar 2021"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -45,7 +45,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Reporting mit R | Juni 2020
+       Reporting mit R | Februar 2021
       </font>
     </a>
     </span>
@@ -64,7 +64,7 @@ library(plotly)
 # load color set
 source("../../_materials/palette/therbootcamp_palettes.R")
 # knitr options
-knitr::opts_chunk$set(dpi = 300, echo = FALSE, warning = FALSE, fig.align = 'center', message= FALSE)
+knitr::opts_chunk$set(dpi = 300, echo = FALSE, warning = FALSE, message = FALSE)
 # special print function: avoid if possible
 print2 <- function(x, nlines=10,...) {
    cat(head(capture.output(print(x,...)), nlines), sep="\n")}
@@ -485,14 +485,17 @@ leaflet() %>%
   addTiles()
 ```
 
-
 ]
 
 .pull-right45[
 
-```{r, fig.width = 1.75, fig.height = 1.5}
+```{r fig.width = 1.75, fig.height = 1.5}
 leaflet() %>% 
-  setView(lng = 7.5885761, lat = 47.5595986, zoom = 15) %>% 
+# Setze Anfangskoordinaten und Zoomwert
+  setView(lng = 7.5885761,
+          lat = 47.5595986,
+          zoom = 15) %>% 
+# Zeichne Karte
   addTiles()
 ```
 
@@ -527,6 +530,7 @@ leaflet() %>%
 ]
 
 .pull-right45[
+
 
 ```{r fig.width = 1.75, fig.height = 1.5}
 # Initiiere leaflet
