@@ -278,10 +278,10 @@ body {
 
 ### G - Export als PDF
 
-1. Um den Bericht nun als PDF ausgeben und teilen zu können, kannst du `wk<html>topdf` verwenden (vorausgesetzt du hast die [Software](https://wkhtmltopdf.org/) installiert). Verwende hierzu den Befehl unten in der `Console` (nicht im Markdown). Danach sollte sich im Markdown Ordner die Datei `airbnb_final.pdf` befinden, welche du öffnen und begutachten kannst.
+1. Um den Bericht nun als PDF ausgeben und teilen zu können, kannst du `wk<html>topdf` verwenden (vorausgesetzt du hast die [Software](https://wkhtmltopdf.org/) installiert). Verwende hierzu den Befehl unten in der `Terminal` (nicht im Markdown). Danach sollte sich im Markdown Ordner die Datei `airbnb_final.pdf` befinden, welche du öffnen und begutachten kannst.
 
-```{r}
-"wkhtmltopdf --javascript-delay 1 3_Data/airbnb_final.html 3_Data/airbnb_final.pdf"
+```{r eval = FALSE, echo = TRUE}
+wkhtmltopdf --javascript-delay 1 3_Data/airbnb_final.html 3_Data/airbnb_final.pdf
 ```
 
 ## Datensatz

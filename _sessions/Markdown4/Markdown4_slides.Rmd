@@ -90,8 +90,8 @@ airbnb <- read_csv("1_Data/airbnb.csv")
   <li class="m1"><span>Folien</span></li>
   <ul><br>
     <li><span>YAML</span></li>
-    <li><span>Slides kreieren</span></li>
-    <li><span>Listen</span></li>
+    <li><span>Slide Markdown</span></li>
+    <li><span>Inhalte einbetten</span></li>
   </ul>
 </ul>
 

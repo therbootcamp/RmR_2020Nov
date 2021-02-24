@@ -365,13 +365,13 @@ basel <- read.csv("1_Data/basel.csv")
 
 ---
 
-# R Markdown
+# Rendern
 
 .pull-left3[
 
 <ul>
-  <li class="m1"><span>HTML ist der <high>universelle Framework</high> für Dokumente, Präsentationen, und v.a. Dashboards.</span></li>
-  <li class="m2"><span><high>Export zu PDF</high> ist, mit minimalen Einschränkungen, möglich.</span></li><br>
+  <li class="m1"><span>HTML wird interpretiert von RStudio (oder Browsern) in ein wohl formatiertes Dokument.</span></li>
+  <li class="m2"><span><high>Rstudio</high> zeigt ein gerendertes Dokument im Viewer an. </span></li><br>
 </ul>
 
 ]
