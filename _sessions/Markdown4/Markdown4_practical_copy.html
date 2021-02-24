@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Slides</title>
+
+<script src="Markdown4_practical_copy_files/header-attrs-2.6/header-attrs.js"></script>
+<script src="Markdown4_practical_copy_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Markdown4_practical_copy_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Markdown4_practical_copy_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Markdown4_practical_copy_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Markdown4_practical_copy_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="Markdown4_practical_copy_files/navigation-1.1/tabsets.js"></script>
+<link href="Markdown4_practical_copy_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="Markdown4_practical_copy_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+<link rel="stylesheet" href="practical.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Slides</h1>
+<h4 class="author"><table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'>
+<col width='10%'>
+<col width='10%'>
+<tr style="border:none">
+<td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
+<font style='font-style:normal'>Reporting mit R</font><br> <a href='https://therbootcamp.github.io/SmR_2020Jun/'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>
+</td>
+<td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
+<img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
+</td>
+</tr>
+</table></h4>
+
+</div>
+
+
+<p align="center" width="100%">
+<img src="image/pp.png" alt="Style" style="width:100%"> <br> <font style="font-size:10px">from <a href="https://dvisiondesign.net/2019/09/25/what-does-design-mean/">dvisiondesign.net</a></font>
+</p>
+<div id="section" class="section level1 tabset">
+<h1 class="tabset"></h1>
+<div id="überblick" class="section level2">
+<h2>Überblick</h2>
+<p>In diesem Practical wirst aus deinem fertigen HTML RMarkdown Dokument eine Präsentation erstellen.</p>
+<p>Am Ende des Practicals kann du:</p>
+<ol style="list-style-type: decimal">
+<li>Eine HTML Präsentation mit <code>ioslides</code> erstellen und Inhalte mit RMarkdown Code einfügen.</li>
+<li>Ein Logo einfügen und das Layout der Präsentation anpassen.</li>
+<li>HTML Tags und CSS für die Feinjustierung der Slides verwenden.</li>
+</ol>
+</div>
+<div id="aufgaben" class="section level2">
+<h2>Aufgaben</h2>
+<div id="a---setup" class="section level3">
+<h3>A - Setup</h3>
+<ol style="list-style-type: decimal">
+<li><p>Öffne dein <code>TheRBootcamp</code> R Projekt. Es sollte die Ordner <code>1_Data</code>, <code>2_Assets</code>, und <code>3_Markdown</code> enthalten.</p></li>
+<li><p>Öffne ein neues RMarkdown Skript und wähle das Presentation - Template “HTML” aus (siehe screenshot unten).</p></li>
+</ol>
+<p align="center">
+<img src="image/markdown_presentation_menu.png" alt="Trulli" style="height:200px">
+</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Trage als Titel <code>Berlin</code> ein und drücke OK.</p></li>
+<li><p>Lösche alles unterhalb des <code>setup</code> Chunks.</p></li>
+<li><p>Speichere das neue Markdown Skript unter dem Namen <code>presentation_practical.Rmd</code> im <code>3_Markdown</code> Ordner ab.</p></li>
+</ol>
+</div>
+<div id="b---yaml" class="section level3">
+<h3>B - YAML</h3>
+<ol style="list-style-type: decimal">
+<li><p>Entferne die <code>author:</code> und <code>date:</code> Angaben aus dem YAML header</p></li>
+<li><p>Bearbeite nun den YAML Header um das Dokument allgemein anzupassen. Füge zunächst unter <code>title: Berlin</code>, in einer neuen Zeilte, einen Untertitel ein. Knitte das Dokument. Siehst du den Untertitel?</p></li>
+</ol>
+<pre class="r"><code>subtitle: &quot;Bericht: 18/19&quot;</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Damit das Logo automatisch auf der Titelslide und in der Fusszeile jedes Slides angezeigt wird, ergänze zunächst einen Doppelpunkt hinter <code>ioslides</code> und dann darunter, eine Ebene weiter eingerückt, die Zeile unten, welche den Pfad zum Logo dem YAML Header bereitstellt. Knitte das Dokument und schaue wie R das Logo einbindet.</li>
+</ol>
+<pre class="r"><code>logo: ../2_Assets/airbnb.png</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Abschliessend füge auf der selben Ebene wie das Logo die Zeile unten hinzu, welche dem YAML header den Pfad zu einer CSS Datei bereitstellt um weitere Details der Darstellung (Schrift, genaue Position der Komponenten, etc.) zu bestimmen. Einige der Änderungen betreffen Bestandteile der Slides, die erst in späteren Abschnitten erstellt werden.</li>
+</ol>
+<pre class="r"><code>css: ../2_Assets/airbnb_presentation.css</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Achte auf die korrekten Einrückungen! Der YAML Header sollte so aussehen:</li>
+</ol>
+<pre class="r"><code>---
+title: &quot;Berlin&quot;
+subtitle: &quot;Bericht 18/19&quot;
+output: 
+  ioslides_presentation:
+    logo: ../2_Assets/airbnb.png
+    css: ../2_Assets/airbnb_presentation.css
+---</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Knitte das Dokument. Es sollte ein, in den AirBnB Farben gestalteter Titelslide angezeigt werden, mit rote, AirBnB Logo.</li>
+</ol>
+</div>
+<div id="c---setup-chunk" class="section level3">
+<h3>C - Setup chunk</h3>
+<p>Nun wirst du im <code>Setup</code> Chunk die notwendigen Pakete laden, Daten laden und verschiedenen Einstellungen vornehmen.</p>
+<ol style="list-style-type: decimal">
+<li><p>Lade die Pakete <code>tidyverse</code>, <code>lubridate</code>, <code>sjPlot</code>, <code>knitr</code> und <code>kableExtra</code></p></li>
+<li><p>Inkludiere im Setup-Chunk den folgenden Code um die AirBnB Daten zu laden und Auf den Zeitraum 2018-2019 zu limitieren.</p></li>
+</ol>
+<pre class="r"><code># Lade Daten
+airbnb_1819 &lt;- read_csv(&#39;../1_Data/airbnb.csv&#39;) %&gt;% 
+  filter(Erstellungsdatum &gt; &quot;2018-01-01&quot;, 
+         Erstellungsdatum &lt; &quot;2019-12-31&quot;)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Ergänze weiterhin folgenden Code um die Grafikeinstellungen hinsichtlich <code>ggplot</code>, wie im gestrigen Dokument, anzupassen.</li>
+</ol>
+<pre class="r"><code># Ändere Thema zu minimal
+theme_set(theme_minimal())
+theme_update(panel.background = element_rect(fill = &quot;transparent&quot;, colour = NA),
+             plot.background = element_rect(fill = &quot;transparent&quot;, colour = NA),
+             axis.title.x = element_text(size = 16), 
+             text = element_text(size=19))
+             
+# Setze defaults in ggplot
+ggplot &lt;- function(...) ggplot2::ggplot(...) + 
+  scale_fill_gradientn(colors = c(&#39;#555555&#39;,&#39;#6BB7B9&#39;)) + 
+  scale_colour_gradientn(colors = c(&#39;#555555&#39;,&#39;#6BB7B9&#39;))</code></pre>
+</div>
+<div id="d---slides-erstellen" class="section level3">
+<h3>D - Slides erstellen</h3>
+<ol style="list-style-type: decimal">
+<li><p>Füge nach dem <code>setup</code> Chunk in einer neuen Zeile <code># Neueinstellungen</code> ein. Damit erstellst du deine erste Zwischenfolie mit grauem Hintergrund die den Abschnitt einleitet.</p></li>
+<li><p>Knitte das Dokument. Nach dem Titelslide sollte es jetzt einen 2. Slide mit dem Titel Neueinstellungen geben.</p></li>
+<li><p>In die nächste Zeile füge in einer neuen Zeile “## Entwicklung” ein, was einen ersten Slide mit Inhalt beginnt.</p></li>
+<li><p>Füge darunter den folgenden Satz mit inline Code in der nächsten Zeile ein:</p></li>
+</ol>
+<pre class="r">
+  <code class="hljs">
+Seit &grave;&#114; strftime(min(airbnb_1819$Erstellungsdatum), "%d.%m.%Y")&grave; wurden in Berlin:
+  </code>
+</pre>
+<ol start="5" style="list-style-type: decimal">
+<li>In einer Liste mit Bullet Points ergänze die folgenden, zusammengefassten Informationen. Das <code>-</code> ist Markup um eine Liste zu erstellen, also in diesem Fall Bullet Points. Knitte das Dokument. Tauchen die Bullets als Liste auf?</li>
+</ol>
+<pre class="r">
+  <code class="hljs">
+- &grave;r nrow(airbnb_1819)&grave; Airbnb Wohnungen eingestellt
+- &grave;r round(mean(airbnb_1819$Verfügbarkeit_90Tage > 0) * 100)&grave;% haben Verfügbarkeiten von durchschnittlich&grave round(mean(airbnb_1819$Verfügbarkeit_90Tage[airbnb_1819$Verfügbarkeit_90Tage>0]),1)&grave; Tagen
+- 2019 wurden insgesamt &grave;r n_2019 = sum(year(airbnb_1819$Erstellungsdatum) == 2019); n_2019&grave; neue Wohnungen eingestellt
+- 2018 nur &grave;r n_2018 = sum(year(airbnb_1819$Erstellungsdatum) == 2018); n_2018&grave Wohnungen eingestellt
+- Zuwachs: &grave;r (round(n_2019/n_2018, 2) - 1)*100&grave;%
+  </code>
+</pre>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Ergänze nun vor jedem einzelnen Bullet ein grösser als Zeichen, d.h. vor jeder Zeile sollte <code>&gt;-</code> stehen. Damit tauchen die einzelnen Bullets gestaffelt nacheinander auf.</p></li>
+<li><p>Knitte das Dokument. Sind die Bullets nun gestaffelt?</p></li>
+</ol>
+</div>
+<div id="e---grafiken-einbinden" class="section level3">
+<h3>E - Grafiken einbinden</h3>
+<ol style="list-style-type: decimal">
+<li><p>Füge einen neuen Slide mit dem Titel “Entwicklung” ein. Verwende zwei <code>#</code>.</p></li>
+<li><p>Auf diesem Slide soll die erste Grafik abgebildet werden. Füge dafür einen Code-Chunk mit der Grafik über die Neueinstellungen pro Monat ein.</p></li>
+</ol>
+<pre class="r"><code># Plotte Häufigkeiten
+ggplot(airbnb_1819 %&gt;% 
+         group_by(Jahr = year(Erstellungsdatum), 
+                  Monat_tmp = month(Erstellungsdatum)) %&gt;% 
+         summarize(
+           Monat = as_factor(paste(first(Jahr), first(Monat_tmp), sep = &#39;-&#39;)),
+           Wohnungen = n()), 
+       aes(x = Monat, y = Wohnungen, fill = Jahr)) + 
+  geom_bar(stat = &#39;identity&#39;, position = &#39;dodge&#39;) + 
+  theme(legend.position = &#39;none&#39;,
+        axis.text.x = element_text(angle = 45, hjust = 1)) 
+
+# Ergänze caption
+cap = &quot;&lt;center&gt;Abbildung 1. Neueinstellungen pro Monat&lt;/center&gt;&quot;</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Ergänze in den chunk Optionen <code>fig.cap = cap</code> damit die Bildunterschrift angezeigt wird.</p></li>
+<li><p><code>Knitte</code> das Dokument. Enthält Slide 4/4 die Abbilding 1?</p></li>
+</ol>
+</div>
+<div id="f---slides-über-die-stadtteile" class="section level3">
+<h3>F - Slides über die Stadtteile</h3>
+<ol style="list-style-type: decimal">
+<li><p>Füge einen neuen slide mit dem Titel “Stadtteile” ein (zwei <code>#</code>).</p></li>
+<li><p>In einem Code-Chunk inkludiere nun die folgenden Berechnungen.</p></li>
+</ol>
+<pre class="r"><code># Berechne Häufigkeiten über die Bezirke
+stadtteile &lt;- airbnb_1819 %&gt;% 
+         group_by(Stadtteil, 
+                  Jahr = year(Erstellungsdatum)) %&gt;% 
+         summarize(Wohnungen = n()) %&gt;% 
+  ungroup() %&gt;% 
+  arrange(desc(Jahr), Wohnungen) %&gt;% 
+  mutate(Stadtteil = as_factor(Stadtteil))
+
+# Veränderung über die Stadtteile
+veränderung = stadtteile %&gt;% 
+  group_by(Stadtteil) %&gt;% 
+  summarize(veränderung = (100 * (Wohnungen[Jahr == 2019]/Wohnungen[Jahr == 2018] - 1)) %&gt;% round(1))
+
+# Geringsten Veränderung
+min_veränderung = veränderung %&gt;% 
+  slice(which.min(veränderung)) %&gt;% 
+  pull(veränderung)
+
+# Stadteil mit der geringsten Veränderung
+min_stadtteil = veränderung %&gt;% 
+  slice(which.min(veränderung)) %&gt;% 
+  pull(Stadtteil)
+
+# Grösste Veränderung
+max_veränderung = veränderung %&gt;% 
+  slice(which.max(veränderung)) %&gt;% 
+  pull(veränderung)
+
+# Stadteil mit der grössten Veränderung
+max_stadtteil = veränderung %&gt;% 
+  slice(which.max(veränderung)) %&gt;% 
+  pull(Stadtteil)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Jetzt füge die folgende Liste mit Bullet Points als Inhalt für den Slide ein.</li>
+</ol>
+<pre class="r">
+  <code class="hljs">
+> - Meisten Neueinstellungen: &grave;r stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% last()&grave;
+> - Wenigste Neueinstellungen:  &grave;r stadtteile %>% filter(Jahr == 2019) %>% pull(Stadtteil) %>% first()&grave;
+> - Grössten Reduktion mit  &grave;r min_veränderung&grave;% in &grave;r min_stadtteil&grave; 
+> - Grösster Zuwachs mit &grave;r max_veränderung&grave;% in &grave;r max_stadtteil&grave; 
+  </code>
+</pre>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Als nächstes kreiere einen neuen Slide mit dem Titel “Stadtteile”.</p></li>
+<li><p>Darunter setze folgenden Code für die 2. Grafik in dein Markdown Dokument.</p></li>
+</ol>
+<pre class="r"><code># Plotte Häufigkeieten der Stadtteile
+ggplot(stadtteile, 
+       aes(y = Stadtteil, x = Wohnungen, group = Jahr, fill = Jahr)) + 
+  geom_bar(stat = &#39;identity&#39;, position = &#39;dodge&#39;) + 
+  theme(legend.position = &#39;none&#39;) + labs(y=&#39;&#39;)
+
+# Ergänze caption
+cap = &quot;&lt;center&gt;Figure 2. Neueinstellungen pro Bezirk&lt;/center&gt;&quot;</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li><code>Knitte</code> das Dokument. Werden die 2. Grafik und die Bullets korrekt angezeigt?</li>
+</ol>
+</div>
+<div id="g---tabelle-und-regressionsergebnissen" class="section level3">
+<h3>G - Tabelle und Regressionsergebnissen</h3>
+<ol style="list-style-type: decimal">
+<li><p>Erstelle einen neuen Abschnitt “Preis” (ein <code>#</code>) und einen neuen Slide “Einfluss der Ausstattung” (zwei <code>##</code>) .</p></li>
+<li><p>Füge einen Chunk mit dem folgenden Code zur Berechnung der Ausstattungsmerkmale ein.</p></li>
+</ol>
+<pre class="r"><code># Vector mit Ausstatttungsmerkmalen
+ausstattung_var &lt;- c(&#39;Küche&#39;,&#39;Wifi&#39;,&#39;TV&#39;,&#39;Kaffeemaschine&#39;,
+                    &#39;Geschirrspüler&#39;,&#39;Terrasse_Balkon&#39;,
+                    &#39;Check_in_24h&#39;)
+
+# Bestimme Preise als Funktion der Ausstatttungsmerkmale
+ausstattung &lt;- airbnb_1819 %&gt;% 
+  select(all_of(ausstattung_var), Preis) %&gt;%
+  pivot_longer(-Preis,
+             names_to = &#39;Ausstattung&#39;,
+             values_to = &#39;Ausstattung_vorhanden&#39;) %&gt;% 
+  group_by(Ausstattung) %&gt;% 
+  summarize(Nicht_vorhanden = mean(Preis[!Ausstattung_vorhanden]),
+            Vorhanden = mean(Preis[Ausstattung_vorhanden]),
+            Differenz = Vorhanden - Nicht_vorhanden, 
+            Prozent_vorhanden = mean(Ausstattung_vorhanden) * 100) %&gt;% 
+  arrange(desc(Differenz)) </code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Erstelle die folgende Liste gestaffelter Bulletpoints. Dann knitte die Slides. Bullets korrekt angezeigt?</li>
+</ol>
+<pre class="r">
+  <code class="hljs">
+> - Durchschnittliche Preis der Neueinstellungen &grave;r round(mean(airbnb_1819 %>% pull(Preis)),1)&grave; €
+> - Anstieg der Preise um &grave;r m <- mean(airbnb_1819 %>% filter(year(Erstellungsdatum) == 2019) %>% pull(Preis))/mean(airbnb_1819 %>% filter(year(Erstellungsdatum) == 2018) %>% pull(Preis)) ; round(m, 3) * 100 - 100&grave;%
+> - Grössten Unterschied im Preis &grave;r ausstattung %>% pull(Ausstattung) %>% first()&grave; (&grave;r ausstattung %>% pull(Differenz) %>% first() %>% round(1)&grave;)
+> - Kleinster Unterschied im Preis &grave;r ausstattung %>% pull(Ausstattung) %>% last()&grave; (&grave;r ausstattung %>% pull(Differenz) %>% last() %>% round(1)&grave;)
+ </code>
+</pre>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Füge nun einen neuen Slide mit dem Titel “Einfluss der Ausstattung” (zwei <code>##</code>) ein.</p></li>
+<li><p>Auf diesem Slide inkludiere die folgende Tabelle mit Austattungsmerkmalen.</p></li>
+</ol>
+<pre class="r"><code># Plotte Tabelle mit Austattungsmerkmalen
+ausstattung %&gt;% 
+  mutate_if(is.numeric, function(x) {
+    cell_spec(round(x,1), bold = T, 
+              font_size = spec_font_size(x, begin=14, end=22))}) %&gt;%
+  mutate(Ausstattung = cell_spec(Ausstattung, font_size=18)) %&gt;% 
+  kable(digits = 2,
+        format=&#39;html&#39;, 
+        caption = &#39;Tabelle 1. Ausstattung und Einfluss auf den Preis&#39;, 
+        col.names = c(&#39;&#39;, &#39;Preis&lt;br&gt;Nicht-vorh.&#39;, &#39;Preis&lt;br&gt;vorh.&#39;,&#39;Differenz&#39;,&#39;Prozent&lt;br&gt;vorh.&#39;),
+        escape = FALSE,
+        align=&quot;lcccc&quot;,
+        padding = 0) %&gt;% 
+  column_spec(c(2,3,4,5), width = &quot;1.2in&quot;) </code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Auf dem gleichen Slide, unter der Tabelle, füge folgenden Text in fetter Schrift ein:</li>
+</ol>
+<pre class="r"><code>&lt;br&gt;
+&lt;b&gt;Der stark negative Effekt der Küche überrascht. 
+Er könnte durch die Art der Unterkunft moderiert werden, gegeben dass auch 
+Hotels im Angebot enthalten sind.&lt;/b&gt;  </code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li><p>Knitte das Dokument. Werden die beiden neuen Slides mit der Tabelle korrekt angezeigt?</p></li>
+<li><p>Füge eine neuen Slide mit dem Titel <code>Regressionsmodell</code> ein.</p></li>
+<li><p>Definiere die Liste der Ausstattungsmermale und sage den Preis mit diesen Ausstattungsmermalen und Hotel Ja/Nein in einer Regression vorher.</p></li>
+</ol>
+<pre class="r"><code># Reduzierter Vektor mit Ausstattungsmerkmalen
+ausstattung_var &lt;- c(&#39;Küche&#39;,&#39;TV&#39;,&#39;Terrasse_Balkon&#39;,&#39;Check_in_24h&#39;)
+
+# Rechne Regression des Preises auf Austattungsmerkmale und Hotel
+ausstattung_mod &lt;- airbnb_1819 %&gt;% 
+  mutate(Hotel = Unterkunftsart %in% c(&#39;Boutique hotel&#39;, &#39;Hotel&#39;)) %&gt;% 
+  select(Preis, Hotel, all_of(ausstattung_var)) %&gt;% 
+  lm(formula = Preis ~ .)</code></pre>
+<ol start="10" style="list-style-type: decimal">
+<li>Füge die Ergebnisse der Regression, mit Hilfe der Funktion <code>tab_model</code> ein.</li>
+</ol>
+<pre class="r"><code># Tabelle mit Ergebnissen der Regression
+tab_model(ausstattung_mod,
+          pred.labels = c(&#39;Achsenabschnitt&#39;, names(ausstattung)[-1]),
+          title = &#39;Tabelle 2. Regression des Preises auf die Ausstattung.&#39;,
+          CSS = list(css.caption = &quot;font-weight:500&quot;, 
+                     css.table = &quot;width: 100%;font-size:.6em&quot;))</code></pre>
+<ol start="11" style="list-style-type: decimal">
+<li>Inkludiere den folgenden Chunk um den Anteil Hotels zu besteimmen.</li>
+</ol>
+<pre class="r"><code># Bestimme Anteil Hotels in 2018 und 2019
+hotel &lt;- airbnb_1819 %&gt;% 
+  group_by(year(Erstellungsdatum)) %&gt;% 
+  summarize(Anteil = mean(Unterkunftsart %in% c(&#39;Boutique hotel&#39;, &#39;Hotel&#39;))) </code></pre>
+<ol start="12" style="list-style-type: decimal">
+<li>Ergänze in fetter Schriftart die abschliessenden Sätze direkt unter der Regressionstabelle.</li>
+</ol>
+<pre class="r">
+  <code class="hljs">
+<b>Der Anteil von Hotels ist von &grave;r (hotel$Anteil[1]*100) %>% round(1)&grave;% im Jahre 2018 auf 
+&grave;(hotel$Anteil[2]*100) %>% round(1)&grave;% im Jahre 2019 gestiegen. Es liegt nahe, dass der 
+Anstieg im Anteil der Hotels, den Anstieg der Objektpreise verursacht hat.  </b>
+</code>
+</pre>
+</div>
+<div id="h---export" class="section level3">
+<h3>H - Export</h3>
+<ol style="list-style-type: decimal">
+<li><p>Slides können sehr gut über eine Browser als PDF ausgegeben werden. Öffne hierzu die durch das Knitten erzeugte <code>.html</code> Datei in einem Browser (z.B., Chrome).</p></li>
+<li><p>Dann drücke <code>Cmd + P</code> oder <code>Ctrl + P</code> um das Druckmenu zu öffnen wo du PDF als Output auswählen musst.</p></li>
+<li><p>Speichere das PDF auf deine Festplatte und schaue ob alles angemessen ausgegeben wurde.</p></li>
+</ol>
+</div>
+</div>
+<div id="datensatz" class="section level2">
+<h2>Datensatz</h2>
+<p>Der <a href="https://raw.githubusercontent.com/therbootcamp/RmR_2020Apr/master/_materials/case/airbnb.csv">airbnb.csv</a> Datensatz enthält Zahlen zu 9868 Berliner Airbnbs</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Preis</td>
+<td align="left">Preis pro Nacht</td>
+</tr>
+<tr class="even">
+<td align="left">Erstellungsdatum</td>
+<td align="left">Eröffnungsdatum des Airbnbs</td>
+</tr>
+<tr class="odd">
+<td align="left">Unterkunftsart</td>
+<td align="left">Appartement, Loft, House, etc.</td>
+</tr>
+<tr class="even">
+<td align="left">Schlafplätze</td>
+<td align="left">Anzahl Schlafplätze</td>
+</tr>
+<tr class="odd">
+<td align="left">Schlafzimmer</td>
+<td align="left">Anzahl Schlafzimmer</td>
+</tr>
+<tr class="even">
+<td align="left">Badezimmer</td>
+<td align="left">Anzahl Badezimmer</td>
+</tr>
+<tr class="odd">
+<td align="left">Reinigungsgebühr</td>
+<td align="left">Reinigungsgebühr</td>
+</tr>
+<tr class="even">
+<td align="left">Verfügbarkeit_90Tage</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Viertel</td>
+<td align="left">In welchem Viertel befindet sich das Airbnb</td>
+</tr>
+<tr class="even">
+<td align="left">Stadtteil</td>
+<td align="left">In welchem Stadtteil befindet sich das Airbnb</td>
+</tr>
+<tr class="odd">
+<td align="left">Breitengrad</td>
+<td align="left">Breitengrad</td>
+</tr>
+<tr class="even">
+<td align="left">Längengrad</td>
+<td align="left">Längengrad</td>
+</tr>
+<tr class="odd">
+<td align="left">Host_id</td>
+<td align="left">Host id</td>
+</tr>
+<tr class="even">
+<td align="left">Host_seit</td>
+<td align="left">Erfahrung des Hosts</td>
+</tr>
+<tr class="odd">
+<td align="left">Host_antwortzeit</td>
+<td align="left">Host Antwortzeit</td>
+</tr>
+<tr class="even">
+<td align="left">Host_antwortrate</td>
+<td align="left">Host Antwortrate</td>
+</tr>
+<tr class="odd">
+<td align="left">Host_superhost</td>
+<td align="left">Superhost Ja/Nein</td>
+</tr>
+<tr class="even">
+<td align="left">Host_anzahl</td>
+<td align="left">Anzahl Gäste</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_gesamt</td>
+<td align="left">Gesamtrating</td>
+</tr>
+<tr class="even">
+<td align="left">Rating_genauigkeit</td>
+<td align="left">Genauigkeitsrating</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_sauberkeit</td>
+<td align="left">Sauberkeitsrating</td>
+</tr>
+<tr class="even">
+<td align="left">Rating_checkin</td>
+<td align="left">Checkinrating</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_kommunikation</td>
+<td align="left">Kommunikationsrating</td>
+</tr>
+<tr class="even">
+<td align="left">Rating_lage</td>
+<td align="left">Lagerating</td>
+</tr>
+<tr class="odd">
+<td align="left">Rating_wertigkeit</td>
+<td align="left">Wertigkeitsrating</td>
+</tr>
+<tr class="even">
+<td align="left">Küche</td>
+<td align="left">Küche vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Wifi</td>
+<td align="left">WLAN vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">TV</td>
+<td align="left">TV vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Kaffeemaschine</td>
+<td align="left">Kaffeemaschine vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">Geschirrspüler</td>
+<td align="left">Geschirrspüler vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Terrasse_Balkon</td>
+<td align="left">Terrasse/Balkon vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">Badewanne</td>
+<td align="left">Badewanne vorhanden TRUE/FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">Check_in_24h</td>
+<td align="left">24h Check-In vorhanden TRUE/FALSE</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="funktionen" class="section level2">
+<h2>Funktionen</h2>
+<div id="paket" class="section level3">
+<h3>Paket</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Paket</th>
+<th align="left">Installation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>tidyverse</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="funktionen-1" class="section level3">
+<h3>Funktionen</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Funktion</th>
+<th align="left">Paket</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>|</code></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="materialien" class="section level2">
+<h2>Materialien</h2>
+<ul>
+<li>…</li>
+<li>…</li>
+</ul>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

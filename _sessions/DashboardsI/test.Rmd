@@ -1,0 +1,40 @@
+---
+title: "Leaflet in ioslides"
+output: 
+  ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Leaflet
+```{r, echo=F, message=F, warning=F}
+library(raster)
+library(leaflet)
+rwa_adm0 <- getData('GADM', country='RWA', level=0)
+rwa_adm1 <- getData('GADM', country='RWA', level=1)
+
+leaflet() %>%
+  addProviderTiles("OpenStreetMap") %>%
+   addPolygons(data=rwa_adm0, group="ADM 0") %>%
+   addPolygons(data=rwa_adm0, group="ADM 1") %>%
+    addLayersControl(overlayGroups = c("ADM 0", "ADM 1"),
+    options = layersControlOptions(collapsed = FALSE))
+```
+
+## nochmal
+```{r, echo=F, message=F, warning=F}
+# Initiiere leaflet
+leaflet() %>% 
+# Setze Anfangskoordinaten und Zoomwert
+  setView(lng = 7.5885761,
+          lat = 47.5595986,
+          zoom = 15) %>% 
+# Zeichne Karte
+  addTiles() %>% 
+# Zeichne Marker
+  addCircleMarkers(
+    lng = 7.589263051748261,
+    lat = 47.55892108771642)
+```

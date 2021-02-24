@@ -93,7 +93,7 @@ Am Ende des Practicals wirst du wissen wie man:
 subtitle: "Bericht: 18/19"
 ```
 
-3. Damit das Logo automatisch auf der Titelslide und in der Fusszeile jedes Slides angezeigt wird, ergänze zunächst einen Doppelpunkt hinter `ioslides` und dann darunter, eine Ebene weiter eingerückt, die Zeile unten, welche den Pfad zum Logo dem YAML Header bereitstellt. Knitte das Dokument und schaue wie R das Logo einbindet.
+3. Damit das Logo automatisch auf der Titelslide und in der Fusszeile jedes Slides angezeigt wird, ergänze zunächst einen Doppelpunkt hinter `ioslides_presentation` und dann darunter, eine Ebene weiter eingerückt, die Zeile unten, welche den Pfad zum Logo dem YAML Header bereitstellt. Knitte das Dokument und schaue wie R das Logo einbindet.
 
 ```R
 logo: ../2_Assets/airbnb.png
@@ -178,6 +178,8 @@ ggplot <- function(...) ggplot2::ggplot(...) +
 3. Vergiss nicht in den Chunk Optionen `fig.cap = cap` anzugeben, damit die Bildunterschrift angezeigt wird!
 
 4. `Knitte` das Dokument. Enthält der Slide die Abbildung 1?
+
+5. Tip zum Entfernen der Warnungen: `message`.
 
 ### G - Zwei Slides zu den Stadtteilen
 
