@@ -1,11 +1,11 @@
 ---
 title: "Wiederholung"
-author: "Statistik mit R<br>
+author: "Reporting mit R<br>
   <a href='https://therbootcamp.github.io'>
     The R Bootcamp
   </a>
   <br>
-  <a href='https://therbootcamp.github.io/SmR_2020Mai/'>
+  <a href='https://therbootcamp.github.io/RmR_2021Feb/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -17,7 +17,7 @@ author: "Statistik mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "Mai 2020"
+date: "Februar 2021"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -28,6 +28,7 @@ output:
       countIncrementalSlides: false
       ratio: '16:9'
 ---
+
 layout: true
 
 <div class="my-footer">
@@ -44,12 +45,12 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Statistik mit R | Mai 2020
+       Reporting mit R | Februar 2021
       </font>
     </a>
     </span>
   </div> 
-  
+
 ---
 
 ```{r, eval = TRUE, echo = FALSE, warning=F,message=F}

@@ -60,13 +60,13 @@ knitr::opts_chunk$set(dpi = 300, echo = FALSE, warning = FALSE, fig.align = 'cen
 <br><br><br><br><br>
 #  Hallo Reporter!
 
-In 2 days, 6 sessions, and 16 hours you have come a long way.
+In 2 Tagen, 6 Einheiten und 16 Stunden hast Du viel erreicht!
 
 ]
 
 .pull-right4[
 
-<img src="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Welcome/image/schedule.png" height="580" align="center">
+<img src="https://therbootcamp.github.io/RmR_2021Feb/_sessions/NextSteps/image/schedule.png" height="580" align="center">
 ]
 
 ---
@@ -248,45 +248,38 @@ Das Netz ist vll. der beste Ort für Informationen über R.
 # Weiterführende Kurse
 
 
-<table class="tg"  style="cellspacing:0; cellpadding:0; border:none;">
-<tr valign="top">
-  <col width="25%">
-  <col width="25%">
-  <col width="25%">
-
-
-  <td>
-    <p align="center">
-      <a class="project-link" href="http://therbootcamp.github.io/#courses" align="center">
-      <font style="font-size:20px;weight:700"><br>Explorative Datenanalyse<br></font><br>
-      <br>
-      <img src="https://therbootcamp.github.io/img/courses/1.png" height="230px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>September 4/5, 2020</high><br><br><br>
-      </a>
-    </p>
-  </td>
-  
-  <td>
-    <p align="center">
-      <a class="project-link" href="http://therbootcamp.github.io/#courses" align="center">
-      <font style="font-size:20px;weight:700"><br>Statistik mit R<br></font><br>
-      <br>
-      <img src="https://therbootcamp.github.io/img/courses/2.png" height="230px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>September 25/26, 2020</high><br><br><br>
-      </a>
-    </p>
-  </td>
-  
-    <td>
-    <p align="center">
-      <a class="project-link" href="http://therbootcamp.github.io/#courses" align="center">
-      <font style="font-size:20px;weight:700"><br>Machine Learning mit R<br></font><br>
-      <br>
-      <img src="https://therbootcamp.github.io/img/courses/3.png" height="230px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>Oktober 23/24, 2020</high><br><br><br>
-      </a>
-    </p>
-  </td>
+ <table width=50% cellspacing=0 cellpadding=0 class="courses">
+        <col width=50%>
+        <col width=50%>
+        <tr>
+          <td align=center>
+            <a href="https://advancedstudies.unibas.ch/studienangebot/kurs/explorative-datenanalyse-mit-r-272006">
+            <h4><span style="font-size:12px">Webinar</span><br>Einführung in die moderne<br>Datenanalyse mit R</h4>
+              <img class="course-img" src="https://therbootcamp.github.io/img/courses/0.png">
+            </a>
+          </td>
+          <td align=center>
+            <a href="https://advancedstudies.unibas.ch/studienangebot/kurs/explorative-datenanalyse-mit-r-272006">
+            <h4><span style="font-size:12px">Webinar</span><br>Explorative Daten-<br>analyse mit R</h4>
+              <img class="course-img" src="https://therbootcamp.github.io/img/courses/1.png">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td align=center>
+            <a href="https://advancedstudies.unibas.ch/studienangebot/kurs/statistik-mit-r-233189">
+            <h4><span style="font-size:12px">Webinar</span><br>Statistik mit R</h4>
+              <img class="course-img" src="https://therbootcamp.github.io/img/courses/2.png">
+            </a>
+          </td>
+          <td align=center>
+            <a href="https://advancedstudies.unibas.ch/studienangebot/kurs/maschinelles-lernen-mit-r-272008">
+            <h4><span style="font-size:12px">Webinar</span><br>Maschinelles Lernen<br>mit R</h4>
+              <img class="course-img" src="https://therbootcamp.github.io/img/courses/3.png">
+            </a>
+          </td>
+        </tr>
+      </table>
   
 
   
