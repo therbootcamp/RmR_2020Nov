@@ -215,23 +215,12 @@ Das Netz ist vll. der beste Ort für Informationen über R.
     </p>  
   </th>
   
-  <th class="tg-yw4l" valign='top'><p align="center"><br>
-    <a href="https://psychologie.unibas.ch/en/persons/markus-steiner/about-me/"><img border="0" alt="W3Schools" src="https://therbootcamp.github.io/img/team/2.png" height="230" style="border-radius:50%"></a><br>
-    <p align="center">
-    <font size = 5>Markus Steiner</font><br><br>
-    <a href="https://github.com/mdsteiner"><b>github.com/mdsteiner</b></a><br>
-    <font size=4><i>packages: </i></font> 
-    <a href="https://github.com/mdsteiner/ShinyPsych"><b>ShinyPsych</b></a>, <br>
-    <a href="https://github.com/mdsteiner/EFAtools"><b>EFAtools</b></a> <br><br>
-    </p>
-  </th>
-  
   <th class="tg-yw4l" valign='top'>
     <p align="center">
     <p align="center"><br>
     <a href="https://www.schulte-mecklenbeck.com/"><img border="0" alt="W3Schools" src="https://therbootcamp.github.io/img/team/3.png" height="230" style="border-radius:50%"></a><br>
     <p align="center">
-    <font size = 5>Dr. Michael Schulte-<br>Mecklenbeck</font><br><br>
+    <font size = 5>Prof. Dr. Michael Schulte-<br>Mecklenbeck</font><br><br>
     <a href="www.schulte-mecklenbeck.com"><b>schulte-mecklenbeck.com</b></a><br>
     <a href="https://github.com/schultem"><b>github.com/schultem</b></a><br><br>
     </p>
@@ -248,38 +237,45 @@ Das Netz ist vll. der beste Ort für Informationen über R.
 # Weiterführende Kurse
 
 
- <table width=50% cellspacing=0 cellpadding=0 class="courses">
-        <col width=50%>
-        <col width=50%>
-        <tr>
-          <td align=center>
-            <a href="https://advancedstudies.unibas.ch/studienangebot/kurs/explorative-datenanalyse-mit-r-272006">
-            <h4><span style="font-size:12px">Webinar</span><br>Einführung in die moderne<br>Datenanalyse mit R</h4>
-              <img class="course-img" src="https://therbootcamp.github.io/img/courses/0.png">
-            </a>
-          </td>
-          <td align=center>
-            <a href="https://advancedstudies.unibas.ch/studienangebot/kurs/explorative-datenanalyse-mit-r-272006">
-            <h4><span style="font-size:12px">Webinar</span><br>Explorative Daten-<br>analyse mit R</h4>
-              <img class="course-img" src="https://therbootcamp.github.io/img/courses/1.png">
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td align=center>
-            <a href="https://advancedstudies.unibas.ch/studienangebot/kurs/statistik-mit-r-233189">
-            <h4><span style="font-size:12px">Webinar</span><br>Statistik mit R</h4>
-              <img class="course-img" src="https://therbootcamp.github.io/img/courses/2.png">
-            </a>
-          </td>
-          <td align=center>
-            <a href="https://advancedstudies.unibas.ch/studienangebot/kurs/maschinelles-lernen-mit-r-272008">
-            <h4><span style="font-size:12px">Webinar</span><br>Maschinelles Lernen<br>mit R</h4>
-              <img class="course-img" src="https://therbootcamp.github.io/img/courses/3.png">
-            </a>
-          </td>
-        </tr>
-      </table>
+<table class="tg"  style="cellspacing:0; cellpadding:0; border:none;">
+<tr valign="top">
+  <col width="25%">
+  <col width="25%">
+  <col width="25%">
+
+
+  <td>
+    <p align="center">
+      <a class="project-link" href="http://therbootcamp.github.io/#courses" align="center">
+      <font style="font-size:20px;weight:700"><br>Explorative Datenanalyse<br></font><br>
+      <br>
+      <img src="https://therbootcamp.github.io/img/courses/1.png" height="230px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
+      <high>19/20 März, 2021</high><br><br><br>
+      </a>
+    </p>
+  </td>
+  
+  <td>
+    <p align="center">
+      <a class="project-link" href="http://therbootcamp.github.io/#courses" align="center">
+      <font style="font-size:20px;weight:700"><br>Statistik mit R<br></font><br>
+      <br>
+      <img src="https://therbootcamp.github.io/img/courses/2.png" height="230px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
+      <high>16/17 April, 2021</high><br><br><br>
+      </a>
+    </p>
+  </td>
+  
+    <td>
+    <p align="center">
+      <a class="project-link" href="http://therbootcamp.github.io/#courses" align="center">
+      <font style="font-size:20px;weight:700"><br>Maschinelles Lernen mit R<br></font><br>
+      <br>
+      <img src="https://therbootcamp.github.io/img/courses/3.png" height="230px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
+      <high>14/15 Mai, 2021</high><br><br><br>
+      </a>
+    </p>
+  </td>
   
 
   
