@@ -994,7 +994,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 # Inhalte einbetten
 
 <ul>
-  <li class="m1"><span><mono>Bilder, Videos oder HTML Seiten anzeigen.</span></li>
+  <li class="m1"><span><mono><high>Bilder</high> oder <high>Videos</high> anzeigen.</mono></span></li>
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
@@ -1047,7 +1047,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 # Inhalte einbetten
 
 <ul>
-  <li class="m1"><span><mono>Bilder, Videos oder HTML Seiten anzeigen.</span></li>
+  <li class="m1"><span><mono><high>Bilder</high> oder <high>Videos</high> anzeigen.</mono></span></li>
 </ul>
 
 <table style="cellspacing:0; cellpadding:0; border:none; padding-top:10px" width=100%>
