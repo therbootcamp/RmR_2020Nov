@@ -1010,7 +1010,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>![]</mono>
+  <mono>![]()</mono>
   </td>
   <td bgcolor="white">
   <high>Bild</high> anzeigen.
@@ -1063,7 +1063,7 @@ airbnb <- read_csv("1_Data/airbnb.csv")
 </tr>
 <tr>
   <td bgcolor="white">
-  <mono>![]</mono>
+  <mono>![]()</mono>
   </td>
   <td bgcolor="white">
   <high>Bild</high> anzeigen.

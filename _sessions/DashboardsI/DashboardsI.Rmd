@@ -104,15 +104,13 @@ basel <- read.csv("1_Data/basel.csv")
 
 ---
 
-# Ein Beispiel
+# Unser Dashboard
 
 <p align = "center">
   <iframe src="https://therbootcamp.github.io/RmR_2020Jun/_sessions/DashboardsI/app/BerlinDashboard.html" width="100%%" height="450" style="border:none;">
 </iframe><br>
   <font style="font-size:10px">from <a href="https://therbootcamp.github.io/">therbootcamp.com</a></font>
 </p>
-
-
 
 ---
 
