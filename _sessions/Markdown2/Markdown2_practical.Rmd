@@ -208,7 +208,7 @@ ausstattung %>% kable(format = 'html')
 7. Nun vergrössere die Breite der Spalten in dem du `column_spec()` hinter der `kable()` Funktion verwendest. 
 
 ```R
-airbnb_18_19 %>% 
+ausstattung %>% 
   kable(...) %>% 
   column_spec(c(2,3,4,5), width = "1.2in")
 ```
@@ -216,7 +216,7 @@ airbnb_18_19 %>%
 8. Abschliessend, gestalte die Schrifgrösse der Zellen in Abhängigkeit der Grösse der abgebildeten Zahl. Füge dafür vor der `kable()` Funktion folgenden Code ein und verbinde die beiden Teile mit einer Pipe `%>%`.
 
 ```R
-airbnb_1819 %>% 
+ausstattung %>% 
   mutate_if(is.numeric, function(x) {
             cell_spec(round(x,1), bold = T, 
             font_size = spec_font_size(x, begin=10, end=16))}) %>% 
