@@ -334,13 +334,13 @@ ausstattung %&gt;% kable(format = &#39;html&#39;)</code></pre>
 <li><p>Lege die Ausrichtung der Zellen mit <code>align = "lcccc"</code> fest. Jeder Buchstabe legt die Ausrichtung für eine Spalte fest. <code>l</code> bedeutet left und <code>c</code> center.</p></li>
 <li><p>Nun vergrössere die Breite der Spalten in dem du <code>column_spec()</code> hinter der <code>kable()</code> Funktion verwendest.</p></li>
 </ol>
-<pre class="r"><code>airbnb_18_19 %&gt;% 
+<pre class="r"><code>ausstattung %&gt;% 
   kable(...) %&gt;% 
   column_spec(c(2,3,4,5), width = &quot;1.2in&quot;)</code></pre>
 <ol start="8" style="list-style-type: decimal">
 <li>Abschliessend, gestalte die Schrifgrösse der Zellen in Abhängigkeit der Grösse der abgebildeten Zahl. Füge dafür vor der <code>kable()</code> Funktion folgenden Code ein und verbinde die beiden Teile mit einer Pipe <code>%&gt;%</code>.</li>
 </ol>
-<pre class="r"><code>airbnb_1819 %&gt;% 
+<pre class="r"><code>ausstattung %&gt;% 
   mutate_if(is.numeric, function(x) {
             cell_spec(round(x,1), bold = T, 
             font_size = spec_font_size(x, begin=10, end=16))}) %&gt;% 
