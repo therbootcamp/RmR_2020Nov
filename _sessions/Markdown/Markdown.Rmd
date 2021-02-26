@@ -828,7 +828,7 @@ basel <- read.csv("1_Data/basel.csv")
   <col width="40%">
 <tr>
   <td bgcolor="white">
-    <b>Markdown</b>
+    <b>Argument</b>
   </td>
   <td bgcolor="white">
     <b>Beschreibung</b>
@@ -902,7 +902,7 @@ basel <- read.csv("1_Data/basel.csv")
   <col width="40%">
 <tr>
   <td bgcolor="white">
-    <b>Markdown</b>
+    <b>Argument</b>
   </td>
   <td bgcolor="white">
     <b>Beschreibung</b>
@@ -975,7 +975,7 @@ basel <- read.csv("1_Data/basel.csv")
   <col width="40%">
 <tr>
   <td bgcolor="white">
-    <b>Markdown</b>
+    <b>Argument</b>
   </td>
   <td bgcolor="white">
     <b>Beschreibung</b>
