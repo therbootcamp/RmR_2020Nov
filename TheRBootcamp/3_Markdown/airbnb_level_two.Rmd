@@ -147,7 +147,7 @@ ausstattung %>%
               font_size = spec_font_size(x, begin=10, end=16))}) %>%
   kable(digits = 2,
         format='html', 
-        caption = 'Tabelle 1. Austtatung und Einfluss auf den Preis', 
+        caption = 'Tabelle 1. Austattung und Einfluss auf den Preis', 
         col.names = c('', 'Preis<br>Nicht-vorh.', 'Preis<br>vorh.','Differenz','Prozent<br>vorh.'),
         escape = FALSE,
         align="lcccc",
