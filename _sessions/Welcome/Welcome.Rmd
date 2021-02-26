@@ -62,27 +62,6 @@ options(digits = 4)
 knitr::opts_chunk$set(fig.align = 'center')
 ```
 
-
-.pull-left45[
-<br><br><br><br><br>
-#  Agenda und Materialien
-
-Klicke auf <high>"....running..."</high> auf unserer Website!
-
-<font style="font-size:28px"><a href="www.therbootcamp.com"><b>www.therbootcamp.com</b></a></font>
-
-]
-
-.pull-right5[
-
-<br><br>
-<iframe src="https://therbootcamp.github.io/RmR_2021Feb/" width="500" height="500"></iframe>
-
-]
-
-
----
-
 .pull-left6[
 
 <br><br><br>
@@ -166,7 +145,7 @@ Klicke auf <high>"....running..."</high> auf unserer Website!
 
 .pull-right45[
 <br><br>
-<img src="image/schedule.png" height="525" align="center">
+<img src="image/schedule.png" height="525" "align="center">
 
 ]
 
@@ -235,7 +214,7 @@ Klicke auf <high>"....running..."</high> auf unserer Website!
 .pull-right5[
 <br>
 
-  <iframe src="https://therbootcamp.github.io/RmR_2021Feb/_sessions/Markdown/Markdown_practical.html" height="480px" width = "500px"></iframe>
+  <iframe src="https://therbootcamp.github.io/RmR_2021Feb/_sessions/Markdown/Markdown_practical.html" height="480px" width = "600px"></iframe>
 
   Beispiel:<a href="https://therbootcamp.github.io/RmR_2021Feb/_sessions/Markdown/Markdown_practical.html"> Markdown </a>
 
