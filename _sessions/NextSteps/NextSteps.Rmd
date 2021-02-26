@@ -60,13 +60,13 @@ knitr::opts_chunk$set(dpi = 300, echo = FALSE, warning = FALSE, fig.align = 'cen
 <br><br><br><br><br>
 #  Hallo Reporter!
 
-In 2 days, 6 sessions, and 16 hours you have come a long way.
+In 2 Tagen, 6 Einheiten und 16 Stunden hast Du viel erreicht!
 
 ]
 
 .pull-right4[
 
-<img src="https://therbootcamp.github.io/RmR_2020Jun/_sessions/Welcome/image/schedule.png" height="580" align="center">
+<img src="https://therbootcamp.github.io/RmR_2021Feb/_sessions/NextSteps/image/schedule.png" height="580" align="center">
 ]
 
 ---
@@ -117,7 +117,7 @@ Eine unvollständige Liste nützlicher Bücher lose geordnet nach vorausgesetzte
   </td>
   
   <td>
-  <a href="https://mastering-shiny.org/"><img border="0" alt="W3Schools" src="image/shiny.png" height="180" ></a>
+  <a href="https://mastering-shiny.org/"><img border="0" alt="W3Schools" src="https://d33wubrfki0l68.cloudfront.net/0c97eee3d8fc820f3a8d670c08b286e8a524257b/e426c/cover.png" height="180" ></a>
   </td>
   
   <td>
@@ -147,7 +147,7 @@ Eine unvollständige Liste nützlicher Bücher lose geordnet nach vorausgesetzte
   </td>
 
   <td>
-  <a href="www.rcpp.org/"><img border="0" alt="W3Schools" src="http://t3.gstatic.com/images?q=tbn:ANd9GcSO9T6JQYtpQgcaCXudbqMB-fnvTjGowsnmeh9-BQku3zveR4-J" height="180" ></a>
+  <a href="www.rcpp.org/"><img border="0" alt="W3Schools" src="http://www.rcpp.org/book/seamless.png" height="180" ></a>
   </td>
   
   
@@ -215,23 +215,12 @@ Das Netz ist vll. der beste Ort für Informationen über R.
     </p>  
   </th>
   
-  <th class="tg-yw4l" valign='top'><p align="center"><br>
-    <a href="https://psychologie.unibas.ch/en/persons/markus-steiner/about-me/"><img border="0" alt="W3Schools" src="https://therbootcamp.github.io/img/team/2.png" height="230" style="border-radius:50%"></a><br>
-    <p align="center">
-    <font size = 5>Markus Steiner</font><br><br>
-    <a href="https://github.com/mdsteiner"><b>github.com/mdsteiner</b></a><br>
-    <font size=4><i>packages: </i></font> 
-    <a href="https://github.com/mdsteiner/ShinyPsych"><b>ShinyPsych</b></a>, <br>
-    <a href="https://github.com/mdsteiner/EFAtools"><b>EFAtools</b></a> <br><br>
-    </p>
-  </th>
-  
   <th class="tg-yw4l" valign='top'>
     <p align="center">
     <p align="center"><br>
     <a href="https://www.schulte-mecklenbeck.com/"><img border="0" alt="W3Schools" src="https://therbootcamp.github.io/img/team/3.png" height="230" style="border-radius:50%"></a><br>
     <p align="center">
-    <font size = 5>Dr. Michael Schulte-<br>Mecklenbeck</font><br><br>
+    <font size = 5>Prof. Dr. Michael Schulte-<br>Mecklenbeck</font><br><br>
     <a href="www.schulte-mecklenbeck.com"><b>schulte-mecklenbeck.com</b></a><br>
     <a href="https://github.com/schultem"><b>github.com/schultem</b></a><br><br>
     </p>
@@ -261,7 +250,7 @@ Das Netz ist vll. der beste Ort für Informationen über R.
       <font style="font-size:20px;weight:700"><br>Explorative Datenanalyse<br></font><br>
       <br>
       <img src="https://therbootcamp.github.io/img/courses/1.png" height="230px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>September 4/5, 2020</high><br><br><br>
+      <high>19/20 März, 2021</high><br><br><br>
       </a>
     </p>
   </td>
@@ -272,7 +261,7 @@ Das Netz ist vll. der beste Ort für Informationen über R.
       <font style="font-size:20px;weight:700"><br>Statistik mit R<br></font><br>
       <br>
       <img src="https://therbootcamp.github.io/img/courses/2.png" height="230px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>September 25/26, 2020</high><br><br><br>
+      <high>16/17 April, 2021</high><br><br><br>
       </a>
     </p>
   </td>
@@ -280,10 +269,10 @@ Das Netz ist vll. der beste Ort für Informationen über R.
     <td>
     <p align="center">
       <a class="project-link" href="http://therbootcamp.github.io/#courses" align="center">
-      <font style="font-size:20px;weight:700"><br>Machine Learning mit R<br></font><br>
+      <font style="font-size:20px;weight:700"><br>Maschinelles Lernen mit R<br></font><br>
       <br>
       <img src="https://therbootcamp.github.io/img/courses/3.png" height="230px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>Oktober 23/24, 2020</high><br><br><br>
+      <high>14/15 Mai, 2021</high><br><br><br>
       </a>
     </p>
   </td>
